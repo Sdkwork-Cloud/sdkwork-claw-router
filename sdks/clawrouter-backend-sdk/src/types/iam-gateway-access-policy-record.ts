@@ -1,0 +1,33 @@
+export interface IamGatewayAccessPolicyRecord {
+  allowed_capabilities?: Record<string, unknown>;
+  allowed_models?: Record<string, unknown>;
+  created_at?: string;
+  data_retention_mode?: string;
+  data_scope?: string;
+  deleted_at?: string;
+  deleted_by?: string;
+  denied_capabilities?: Record<string, unknown>;
+  denied_models?: Record<string, unknown>;
+  effective_from?: string;
+  effective_to?: string;
+  id?: string;
+  ip_allowlist?: Record<string, unknown>;
+  ip_denylist?: Record<string, unknown>;
+  ip_rule_count?: number;
+  max_context_tokens?: string;
+  metadata?: Record<string, unknown>;
+  name?: string;
+  network_policy_mode?: string;
+  organization_id?: string;
+  policy_type?: string;
+  region_allowlist?: Record<string, unknown>;
+  status?: string;
+  subject_id?: string;
+  subject_ref_hash?: string;
+  subject_ref_masked?: string;
+  subject_type?: string;
+  tenant_id?: string;
+  updated_at?: string;
+  uuid?: string;
+  version?: string;
+}

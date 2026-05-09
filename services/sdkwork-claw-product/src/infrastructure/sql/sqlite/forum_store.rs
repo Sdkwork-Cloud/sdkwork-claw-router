@@ -1,0 +1,1700 @@
+use std::sync::atomic::{AtomicU64, Ordering};
+use std::time::{SystemTime, UNIX_EPOCH};
+
+use serde_json::{json, Value};
+use sqlx::{Row, SqlitePool};
+
+use crate::domain::{DomainError, DomainResult};
+use crate::ports::{
+    CreateForumCommentCommand, CreateForumFeedCommand, ForumAuthor, ForumCommandFuture,
+    ForumCommentCommandStore, ForumCommentDetail, ForumCommentItem, ForumCommentPage,
+    ForumCommentReadStore, ForumCommentStatistics, ForumFeedCommandStore, ForumFeedItem,
+    ForumFeedQuery, ForumFeedReadStore, ForumReadFuture, ForumSubject,
+};
+
+const CONTENT_TYPE_FEEDS: i64 = 5;
+const CONTENT_TYPE_COMMENTS: i64 = 22;
+const FEEDS_STATUS_PUBLISHED: i64 = 2;
+const FEEDS_STATUS_DELETED: i64 = 3;
+const COMMENT_STATUS_PUBLISHED: i64 = 1;
+const COMMENT_STATUS_DELETED: i64 = 3;
+const FAVORITE_STATUS_ACTIVE: i64 = 1;
+const DEFAULT_PAGE_SIZE: i64 = 20;
+const MAX_PAGE_SIZE: i64 = 100;
+
+static FORUM_ENTITY_SEQUENCE: AtomicU64 = AtomicU64::new(1);
+
+#[derive(Debug, Clone)]
+pub struct SqliteForumStore {
+    pool: SqlitePool,
+}
+
+impl SqliteForumStore {
+    pub fn new(pool: SqlitePool) -> Self {
+        Self { pool }
+    }
+}
+
+impl ForumFeedReadStore for SqliteForumStore {
+    fn load_feeds<'a>(
+        &'a self,
+        query: ForumFeedQuery,
+        subject: Option<ForumSubject>,
+    ) -> ForumReadFuture<'a, Vec<ForumFeedItem>> {
+        Box::pin(async move {
+            let scope = read_scope(subject);
+            let page = query.page.unwrap_or(1).max(1);
+            let size = query
+                .limit
+                .or(query.size)
+                .unwrap_or(DEFAULT_PAGE_SIZE)
+                .clamp(1, MAX_PAGE_SIZE);
+            let offset = (page - 1) * size;
+            let content_type = query
+                .content_type
+                .as_deref()
+                .and_then(content_type_code)
+                .filter(|value| *value > 0);
+            let keyword = normalize_like_pattern(query.keyword.as_deref());
+            let feed_type = query.feed_type.as_deref().unwrap_or("latest");
+            let order_by = feed_order_by(feed_type);
+
+            let sql = format!(
+                r#"
+                SELECT
+                    f.id,
+                    f.uuid,
+                    f.tenant_id,
+                    f.organization_id,
+                    f.user_id,
+                    COALESCE(f.title, '') AS title,
+                    COALESCE(f.summary, '') AS summary,
+                    COALESCE(f.category_id, 0) AS category_id,
+                    COALESCE(f.content_type, 0) AS content_type,
+                    COALESCE(f.content_id, 0) AS content_id,
+                    CAST(COALESCE(f.cover_images, '') AS TEXT) AS cover_images,
+                    CAST(COALESCE(f.tags, '') AS TEXT) AS tags,
+                    CAST(COALESCE(f.author, '') AS TEXT) AS author,
+                    COALESCE(f.view_count, 0) AS view_count,
+                    COALESCE(f.like_count, 0) AS like_count,
+                    COALESCE(f.comment_count, 0) AS comment_count,
+                    COALESCE(f.share_count, 0) AS share_count,
+                    COALESCE(f.favorite_count, 0) AS favorite_count,
+                    COALESCE(f.is_top, 0) AS is_top,
+                    COALESCE(f.is_hot, 0) AS is_hot,
+                    COALESCE(f.is_recommended, 0) AS is_recommended,
+                    CAST(COALESCE(f.created_at, '') AS TEXT) AS created_at,
+                    CAST(COALESCE(f.updated_at, '') AS TEXT) AS updated_at,
+                    EXISTS (
+                        SELECT 1
+                        FROM plus_content_vote v
+                        WHERE v.tenant_id = f.tenant_id
+                          AND v.organization_id = f.organization_id
+                          AND v.user_id = ?3
+                          AND v.content_type = ?4
+                          AND v.content_id = f.id
+                          AND lower(COALESCE(v.rating, '')) = 'like'
+                    ) AS is_liked,
+                    EXISTS (
+                        SELECT 1
+                        FROM plus_favorite fav
+                        WHERE fav.tenant_id = f.tenant_id
+                          AND fav.organization_id = f.organization_id
+                          AND fav.user_id = ?3
+                          AND fav.content_type = ?4
+                          AND fav.content_id = f.id
+                          AND COALESCE(fav.status, 0) = ?5
+                    ) AS is_collected
+                FROM plus_feeds f
+                WHERE COALESCE(f.status, 0) = ?6
+                  AND (?7 IS NULL OR COALESCE(f.content_type, 0) = ?7)
+                  AND (?8 IS NULL OR COALESCE(f.user_id, 0) = ?8)
+                  AND (?9 IS NULL OR COALESCE(f.category_id, 0) = ?9)
+                  AND (?10 IS NULL OR lower(COALESCE(f.title, '') || ' ' || COALESCE(f.summary, '')) LIKE ?10)
+                  AND {scope_filter}
+                ORDER BY {order_by}
+                LIMIT ?11 OFFSET ?12
+                "#,
+                scope_filter = sqlite_scope_filter("f"),
+            );
+
+            let rows = sqlx::query(sql.as_str())
+                .bind(scope.tenant_id)
+                .bind(scope.organization_id)
+                .bind(scope.user_id)
+                .bind(CONTENT_TYPE_FEEDS)
+                .bind(FAVORITE_STATUS_ACTIVE)
+                .bind(FEEDS_STATUS_PUBLISHED)
+                .bind(content_type)
+                .bind(query.author_id)
+                .bind(query.category_id)
+                .bind(keyword.as_deref())
+                .bind(size)
+                .bind(offset)
+                .fetch_all(&self.pool)
+                .await
+                .map_err(sql_error)?;
+
+            Ok(rows.iter().map(feed_from_row).collect())
+        })
+    }
+
+    fn load_feed_detail<'a>(
+        &'a self,
+        feed_id: String,
+        subject: Option<ForumSubject>,
+    ) -> ForumReadFuture<'a, Option<ForumFeedItem>> {
+        Box::pin(async move {
+            let id = parse_i64_id(&feed_id, "feedId")?;
+            increment_feed_view_count(&self.pool, id).await?;
+            load_feed_by_id(&self.pool, id, subject).await
+        })
+    }
+
+    fn load_feed_categories<'a>(
+        &'a self,
+        subject: Option<ForumSubject>,
+    ) -> ForumReadFuture<'a, Vec<String>> {
+        Box::pin(async move {
+            let scope = read_scope(subject);
+            let rows = sqlx::query(
+                format!(
+                    r#"
+                    SELECT DISTINCT CAST(COALESCE(category_id, 0) AS TEXT) AS category_id
+                    FROM plus_feeds f
+                    WHERE COALESCE(status, 0) = ?3
+                      AND {scope_filter}
+                    ORDER BY category_id
+                    LIMIT 100
+                    "#,
+                    scope_filter = sqlite_scope_filter("f"),
+                )
+                .as_str(),
+            )
+            .bind(scope.tenant_id)
+            .bind(scope.organization_id)
+            .bind(FEEDS_STATUS_PUBLISHED)
+            .fetch_all(&self.pool)
+            .await
+            .map_err(sql_error)?;
+
+            Ok(rows
+                .iter()
+                .map(|row| string_cell(row, "category_id"))
+                .filter(|value| value != "0" && !value.trim().is_empty())
+                .collect())
+        })
+    }
+
+    fn is_feed_collected<'a>(
+        &'a self,
+        feed_id: i64,
+        subject: Option<ForumSubject>,
+    ) -> ForumReadFuture<'a, bool> {
+        Box::pin(async move {
+            let Some(subject) = subject else {
+                return Ok(false);
+            };
+            feed_is_collected(&self.pool, feed_id, subject).await
+        })
+    }
+}
+
+impl ForumFeedCommandStore for SqliteForumStore {
+    fn create_feed<'a>(
+        &'a self,
+        command: CreateForumFeedCommand,
+        subject: Option<ForumSubject>,
+    ) -> ForumCommandFuture<'a, ForumFeedItem> {
+        Box::pin(async move {
+            let subject = effective_subject(command.subject, subject)?;
+            let feed_id = next_entity_id();
+            let title = normalized_title(command.title.as_deref(), &command.content);
+            let category_id = command.category_id.unwrap_or_default();
+            let cover_images = cover_images_json(&command.images);
+            let resource_list = resource_list_json(&command.images);
+            let tags = tags_json(&command.tags);
+            let author = author_json(subject);
+
+            sqlx::query(
+                r#"
+                INSERT INTO plus_feeds
+                    (id, uuid, created_at, updated_at, v, tenant_id, organization_id, data_scope, user_id,
+                     title, summary, category_id, content_type, content_id, cover_images, resource_list,
+                     author, source, source_url, publish_time, tags, status, view_count, like_count,
+                     comment_count, share_count, favorite_count, is_top, is_hot, is_recommended, sort_order)
+                VALUES
+                    (?1, ?2, ?3, ?3, 0, ?4, ?5, 1, ?6,
+                     ?7, ?8, ?9, ?10, ?1, ?11, ?12,
+                     ?13, ?14, ?15, ?3, ?16, ?17, 0, 0,
+                     0, 0, 0, 0, 0, 0, 0)
+                "#,
+            )
+            .bind(feed_id)
+            .bind(&command.uuid)
+            .bind(&command.requested_at)
+            .bind(subject.tenant_id)
+            .bind(subject.organization_id)
+            .bind(subject.user_id)
+            .bind(&title)
+            .bind(&command.content)
+            .bind(category_id)
+            .bind(CONTENT_TYPE_FEEDS)
+            .bind(cover_images.to_string())
+            .bind(resource_list.to_string())
+            .bind(author.to_string())
+            .bind(command.source.as_deref())
+            .bind(command.source_url.as_deref())
+            .bind(tags.to_string())
+            .bind(FEEDS_STATUS_PUBLISHED)
+            .execute(&self.pool)
+            .await
+            .map_err(sql_error)?;
+
+            load_feed_by_id(&self.pool, feed_id, Some(subject))
+                .await?
+                .ok_or_else(|| DomainError::not_found("created feed was not found"))
+        })
+    }
+
+    fn delete_feed<'a>(
+        &'a self,
+        feed_id: i64,
+        subject: ForumSubject,
+    ) -> ForumCommandFuture<'a, bool> {
+        Box::pin(async move {
+            let rows = sqlx::query(
+                r#"
+                UPDATE plus_feeds
+                SET status = ?1,
+                    updated_at = CURRENT_TIMESTAMP
+                WHERE id = ?2
+                  AND tenant_id = ?3
+                  AND organization_id = ?4
+                  AND user_id = ?5
+                  AND COALESCE(status, 0) <> ?1
+                "#,
+            )
+            .bind(FEEDS_STATUS_DELETED)
+            .bind(feed_id)
+            .bind(subject.tenant_id)
+            .bind(subject.organization_id)
+            .bind(subject.user_id)
+            .execute(&self.pool)
+            .await
+            .map_err(sql_error)?
+            .rows_affected();
+            Ok(rows > 0)
+        })
+    }
+
+    fn like_feed<'a>(
+        &'a self,
+        feed_id: i64,
+        subject: ForumSubject,
+    ) -> ForumCommandFuture<'a, ForumFeedItem> {
+        Box::pin(async move {
+            upsert_like_vote(
+                &self.pool,
+                subject,
+                CONTENT_TYPE_FEEDS,
+                feed_id,
+                format!("forum-feed-like-{feed_id}-{}", subject.user_id),
+            )
+            .await?;
+            refresh_feed_like_count(&self.pool, feed_id).await?;
+            require_feed(&self.pool, feed_id, Some(subject)).await
+        })
+    }
+
+    fn unlike_feed<'a>(
+        &'a self,
+        feed_id: i64,
+        subject: ForumSubject,
+    ) -> ForumCommandFuture<'a, ForumFeedItem> {
+        Box::pin(async move {
+            delete_like_vote(&self.pool, subject, CONTENT_TYPE_FEEDS, feed_id).await?;
+            refresh_feed_like_count(&self.pool, feed_id).await?;
+            require_feed(&self.pool, feed_id, Some(subject)).await
+        })
+    }
+
+    fn collect_feed<'a>(
+        &'a self,
+        feed_id: i64,
+        folder_id: Option<i64>,
+        subject: ForumSubject,
+    ) -> ForumCommandFuture<'a, ForumFeedItem> {
+        Box::pin(async move {
+            let title = load_feed_title(&self.pool, feed_id)
+                .await?
+                .ok_or_else(|| DomainError::not_found("feed was not found"))?;
+            sqlx::query(
+                r#"
+                INSERT INTO plus_favorite
+                    (id, uuid, created_at, updated_at, v, tenant_id, organization_id, data_scope, user_id,
+                     title, content_type, content_id, folder_id, sort_weight, is_private, status, view_count)
+                VALUES
+                    (?1, ?2, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 0, ?3, ?4, 1, ?5,
+                     ?6, ?7, ?8, ?9, 0, 0, ?10, 0)
+                ON CONFLICT(user_id, content_type, content_id) DO UPDATE SET
+                    title = excluded.title,
+                    folder_id = excluded.folder_id,
+                    status = excluded.status,
+                    updated_at = CURRENT_TIMESTAMP
+                "#,
+            )
+            .bind(next_entity_id())
+            .bind(format!("forum-feed-favorite-{feed_id}-{}", subject.user_id))
+            .bind(subject.tenant_id)
+            .bind(subject.organization_id)
+            .bind(subject.user_id)
+            .bind(title)
+            .bind(CONTENT_TYPE_FEEDS)
+            .bind(feed_id)
+            .bind(folder_id)
+            .bind(FAVORITE_STATUS_ACTIVE)
+            .execute(&self.pool)
+            .await
+            .map_err(sql_error)?;
+            refresh_feed_favorite_count(&self.pool, feed_id).await?;
+            require_feed(&self.pool, feed_id, Some(subject)).await
+        })
+    }
+
+    fn uncollect_feed<'a>(
+        &'a self,
+        feed_id: i64,
+        subject: ForumSubject,
+    ) -> ForumCommandFuture<'a, ForumFeedItem> {
+        Box::pin(async move {
+            sqlx::query(
+                r#"
+                DELETE FROM plus_favorite
+                WHERE tenant_id = ?1
+                  AND organization_id = ?2
+                  AND user_id = ?3
+                  AND content_type = ?4
+                  AND content_id = ?5
+                "#,
+            )
+            .bind(subject.tenant_id)
+            .bind(subject.organization_id)
+            .bind(subject.user_id)
+            .bind(CONTENT_TYPE_FEEDS)
+            .bind(feed_id)
+            .execute(&self.pool)
+            .await
+            .map_err(sql_error)?;
+            refresh_feed_favorite_count(&self.pool, feed_id).await?;
+            require_feed(&self.pool, feed_id, Some(subject)).await
+        })
+    }
+
+    fn share_feed<'a>(
+        &'a self,
+        feed_id: i64,
+        subject: Option<ForumSubject>,
+    ) -> ForumCommandFuture<'a, ForumFeedItem> {
+        Box::pin(async move {
+            sqlx::query(
+                r#"
+                UPDATE plus_feeds
+                SET share_count = COALESCE(share_count, 0) + 1,
+                    updated_at = CURRENT_TIMESTAMP
+                WHERE id = ?1
+                  AND COALESCE(status, 0) = ?2
+                "#,
+            )
+            .bind(feed_id)
+            .bind(FEEDS_STATUS_PUBLISHED)
+            .execute(&self.pool)
+            .await
+            .map_err(sql_error)?;
+            require_feed(&self.pool, feed_id, subject).await
+        })
+    }
+}
+
+impl ForumCommentReadStore for SqliteForumStore {
+    fn load_comments<'a>(
+        &'a self,
+        content_type: String,
+        content_id: i64,
+        query: Option<ForumFeedQuery>,
+        _subject: Option<ForumSubject>,
+    ) -> ForumReadFuture<'a, ForumCommentPage> {
+        Box::pin(async move {
+            let content_type = required_content_type_code(&content_type)?;
+            load_comment_page(&self.pool, content_type, content_id, None, query).await
+        })
+    }
+
+    fn load_comment_replies<'a>(
+        &'a self,
+        comment_id: i64,
+        query: Option<ForumFeedQuery>,
+        _subject: Option<ForumSubject>,
+    ) -> ForumReadFuture<'a, ForumCommentPage> {
+        Box::pin(async move {
+            let parent = load_comment_parent(&self.pool, comment_id)
+                .await?
+                .ok_or_else(|| DomainError::not_found("comment was not found"))?;
+            load_comment_page(
+                &self.pool,
+                parent.content_type,
+                parent.content_id,
+                Some(comment_id),
+                query,
+            )
+            .await
+        })
+    }
+
+    fn load_comment_detail<'a>(
+        &'a self,
+        comment_id: i64,
+        _subject: Option<ForumSubject>,
+    ) -> ForumReadFuture<'a, Option<ForumCommentDetail>> {
+        Box::pin(async move {
+            let row = sqlx::query(COMMENT_SELECT_BY_ID)
+                .bind(comment_id)
+                .bind(COMMENT_STATUS_PUBLISHED)
+                .fetch_optional(&self.pool)
+                .await
+                .map_err(sql_error)?;
+            let Some(row) = row else {
+                return Ok(None);
+            };
+            let replies =
+                load_comment_items_by_parent(&self.pool, comment_id, DEFAULT_PAGE_SIZE, 0).await?;
+            Ok(Some(comment_detail_from_row(&row, replies)))
+        })
+    }
+
+    fn load_my_comments<'a>(
+        &'a self,
+        query: Option<ForumFeedQuery>,
+        subject: ForumSubject,
+    ) -> ForumReadFuture<'a, ForumCommentPage> {
+        Box::pin(async move {
+            let (page, size, offset) = page_window(query.as_ref());
+            let rows = sqlx::query(
+                r#"
+                SELECT
+                    id, uuid, tenant_id, organization_id, user_id, parent_id,
+                    content, content_type, content_id, status, likes, reply_count, is_top,
+                    CAST(COALESCE(author, '') AS TEXT) AS author,
+                    CAST(COALESCE(created_at, '') AS TEXT) AS created_at
+                FROM plus_comments
+                WHERE tenant_id = ?1
+                  AND organization_id = ?2
+                  AND user_id = ?3
+                  AND COALESCE(status, 0) = ?4
+                ORDER BY created_at DESC, id DESC
+                LIMIT ?5 OFFSET ?6
+                "#,
+            )
+            .bind(subject.tenant_id)
+            .bind(subject.organization_id)
+            .bind(subject.user_id)
+            .bind(COMMENT_STATUS_PUBLISHED)
+            .bind(size)
+            .bind(offset)
+            .fetch_all(&self.pool)
+            .await
+            .map_err(sql_error)?;
+            let total = sqlx::query_scalar::<_, i64>(
+                r#"
+                SELECT COUNT(1)
+                FROM plus_comments
+                WHERE tenant_id = ?1
+                  AND organization_id = ?2
+                  AND user_id = ?3
+                  AND COALESCE(status, 0) = ?4
+                "#,
+            )
+            .bind(subject.tenant_id)
+            .bind(subject.organization_id)
+            .bind(subject.user_id)
+            .bind(COMMENT_STATUS_PUBLISHED)
+            .fetch_one(&self.pool)
+            .await
+            .map_err(sql_error)?;
+            let items: Vec<ForumCommentItem> = rows.iter().map(comment_item_from_row).collect();
+            Ok(ForumCommentPage {
+                content: items.clone(),
+                items,
+                total_elements: total,
+                page,
+                size,
+            })
+        })
+    }
+
+    fn load_comment_statistics<'a>(
+        &'a self,
+        content_type: String,
+        content_id: i64,
+        _subject: Option<ForumSubject>,
+    ) -> ForumReadFuture<'a, ForumCommentStatistics> {
+        Box::pin(async move {
+            let content_type = required_content_type_code(&content_type)?;
+            let total = sqlx::query_scalar::<_, i64>(
+                r#"
+                SELECT COUNT(1)
+                FROM plus_comments
+                WHERE content_type = ?1
+                  AND content_id = ?2
+                  AND COALESCE(status, 0) = ?3
+                "#,
+            )
+            .bind(content_type)
+            .bind(content_id)
+            .bind(COMMENT_STATUS_PUBLISHED)
+            .fetch_one(&self.pool)
+            .await
+            .map_err(sql_error)?;
+            Ok(ForumCommentStatistics {
+                total_comments: total,
+            })
+        })
+    }
+}
+
+impl ForumCommentCommandStore for SqliteForumStore {
+    fn create_comment<'a>(
+        &'a self,
+        command: CreateForumCommentCommand,
+        subject: Option<ForumSubject>,
+    ) -> ForumCommandFuture<'a, ForumCommentItem> {
+        Box::pin(async move {
+            let subject = effective_subject(command.subject, subject)?;
+            let content_type = required_content_type_code(&command.content_type)?;
+            let comment_id = next_entity_id();
+            let author = author_json(subject);
+            let path = if let Some(parent_id) = command.parent_id {
+                let parent = load_comment_parent(&self.pool, parent_id)
+                    .await?
+                    .ok_or_else(|| DomainError::not_found("parent comment was not found"))?;
+                if parent.content_type != content_type || parent.content_id != command.content_id {
+                    return Err(DomainError::new(
+                        "parent comment does not belong to target content",
+                    ));
+                }
+                format!(
+                    "{}/{}",
+                    parent.path.unwrap_or_else(|| parent_id.to_string()),
+                    comment_id
+                )
+            } else {
+                comment_id.to_string()
+            };
+
+            sqlx::query(
+                r#"
+                INSERT INTO plus_comments
+                    (id, uuid, created_at, updated_at, v, tenant_id, organization_id, data_scope, user_id,
+                     parent_id, path, sort_weight, content, content_type, content_id, status,
+                     likes, reply_count, is_top, ip_address, device_info, author)
+                VALUES
+                    (?1, ?2, ?3, ?3, 0, ?4, ?5, 1, ?6,
+                     ?7, ?8, 0, ?9, ?10, ?11, ?12,
+                     0, 0, 0, ?13, ?14, ?15)
+                "#,
+            )
+            .bind(comment_id)
+            .bind(&command.uuid)
+            .bind(&command.requested_at)
+            .bind(subject.tenant_id)
+            .bind(subject.organization_id)
+            .bind(subject.user_id)
+            .bind(command.parent_id)
+            .bind(path)
+            .bind(&command.content)
+            .bind(content_type)
+            .bind(command.content_id)
+            .bind(COMMENT_STATUS_PUBLISHED)
+            .bind(command.ip_address.as_deref())
+            .bind(command.device_info.as_deref())
+            .bind(author.to_string())
+            .execute(&self.pool)
+            .await
+            .map_err(sql_error)?;
+
+            if let Some(parent_id) = command.parent_id {
+                sqlx::query(
+                    r#"
+                    UPDATE plus_comments
+                    SET reply_count = COALESCE(reply_count, 0) + 1,
+                        updated_at = CURRENT_TIMESTAMP
+                    WHERE id = ?1
+                    "#,
+                )
+                .bind(parent_id)
+                .execute(&self.pool)
+                .await
+                .map_err(sql_error)?;
+            }
+            increment_target_comment_count(&self.pool, content_type, command.content_id).await?;
+            require_comment_item(&self.pool, comment_id).await
+        })
+    }
+
+    fn delete_comment<'a>(
+        &'a self,
+        comment_id: i64,
+        subject: ForumSubject,
+    ) -> ForumCommandFuture<'a, bool> {
+        Box::pin(async move {
+            let parent = load_comment_parent(&self.pool, comment_id).await?;
+            let rows = sqlx::query(
+                r#"
+                UPDATE plus_comments
+                SET status = ?1,
+                    updated_at = CURRENT_TIMESTAMP
+                WHERE id = ?2
+                  AND tenant_id = ?3
+                  AND organization_id = ?4
+                  AND user_id = ?5
+                  AND COALESCE(status, 0) <> ?1
+                "#,
+            )
+            .bind(COMMENT_STATUS_DELETED)
+            .bind(comment_id)
+            .bind(subject.tenant_id)
+            .bind(subject.organization_id)
+            .bind(subject.user_id)
+            .execute(&self.pool)
+            .await
+            .map_err(sql_error)?
+            .rows_affected();
+
+            if rows > 0 {
+                if let Some(parent) = parent {
+                    decrement_target_comment_count(
+                        &self.pool,
+                        parent.content_type,
+                        parent.content_id,
+                    )
+                    .await?;
+                    if let Some(parent_id) = parent.parent_id {
+                        sqlx::query(
+                            r#"
+                            UPDATE plus_comments
+                            SET reply_count = MAX(COALESCE(reply_count, 0) - 1, 0),
+                                updated_at = CURRENT_TIMESTAMP
+                            WHERE id = ?1
+                            "#,
+                        )
+                        .bind(parent_id)
+                        .execute(&self.pool)
+                        .await
+                        .map_err(sql_error)?;
+                    }
+                }
+            }
+            Ok(rows > 0)
+        })
+    }
+
+    fn like_comment<'a>(
+        &'a self,
+        comment_id: i64,
+        subject: ForumSubject,
+    ) -> ForumCommandFuture<'a, ForumCommentItem> {
+        Box::pin(async move {
+            upsert_like_vote(
+                &self.pool,
+                subject,
+                CONTENT_TYPE_COMMENTS,
+                comment_id,
+                format!("forum-comment-like-{comment_id}-{}", subject.user_id),
+            )
+            .await?;
+            refresh_comment_like_count(&self.pool, comment_id).await?;
+            require_comment_item(&self.pool, comment_id).await
+        })
+    }
+
+    fn unlike_comment<'a>(
+        &'a self,
+        comment_id: i64,
+        subject: ForumSubject,
+    ) -> ForumCommandFuture<'a, ForumCommentItem> {
+        Box::pin(async move {
+            delete_like_vote(&self.pool, subject, CONTENT_TYPE_COMMENTS, comment_id).await?;
+            refresh_comment_like_count(&self.pool, comment_id).await?;
+            require_comment_item(&self.pool, comment_id).await
+        })
+    }
+
+    fn pin_comment<'a>(
+        &'a self,
+        comment_id: i64,
+        subject: ForumSubject,
+        pinned: bool,
+    ) -> ForumCommandFuture<'a, ForumCommentItem> {
+        Box::pin(async move {
+            let rows = sqlx::query(
+                r#"
+                UPDATE plus_comments
+                SET is_top = ?1,
+                    updated_at = CURRENT_TIMESTAMP
+                WHERE id = ?2
+                  AND tenant_id = ?3
+                  AND organization_id = ?4
+                  AND user_id = ?5
+                  AND COALESCE(status, 0) = ?6
+                "#,
+            )
+            .bind(pinned)
+            .bind(comment_id)
+            .bind(subject.tenant_id)
+            .bind(subject.organization_id)
+            .bind(subject.user_id)
+            .bind(COMMENT_STATUS_PUBLISHED)
+            .execute(&self.pool)
+            .await
+            .map_err(sql_error)?
+            .rows_affected();
+            if rows == 0 {
+                return Err(DomainError::not_found("comment was not found"));
+            }
+            require_comment_item(&self.pool, comment_id).await
+        })
+    }
+}
+
+const COMMENT_SELECT_COLUMNS: &str = r#"
+    SELECT
+        id, uuid, tenant_id, organization_id, user_id, parent_id,
+        content, content_type, content_id, status, likes, reply_count, is_top,
+        COALESCE(ip_address, '') AS ip_address,
+        COALESCE(device_info, '') AS device_info,
+        CAST(COALESCE(author, '') AS TEXT) AS author,
+        CAST(COALESCE(created_at, '') AS TEXT) AS created_at,
+        CAST(COALESCE(updated_at, '') AS TEXT) AS updated_at
+    FROM plus_comments
+"#;
+
+const COMMENT_SELECT_BY_ID: &str = r#"
+    SELECT
+        id, uuid, tenant_id, organization_id, user_id, parent_id,
+        content, content_type, content_id, status, likes, reply_count, is_top,
+        COALESCE(ip_address, '') AS ip_address,
+        COALESCE(device_info, '') AS device_info,
+        CAST(COALESCE(author, '') AS TEXT) AS author,
+        CAST(COALESCE(created_at, '') AS TEXT) AS created_at,
+        CAST(COALESCE(updated_at, '') AS TEXT) AS updated_at
+    FROM plus_comments
+    WHERE id = ?1
+      AND COALESCE(status, 0) = ?2
+    LIMIT 1
+"#;
+
+async fn load_feed_by_id(
+    pool: &SqlitePool,
+    feed_id: i64,
+    subject: Option<ForumSubject>,
+) -> DomainResult<Option<ForumFeedItem>> {
+    let scope = read_scope(subject);
+    let row = sqlx::query(
+        format!(
+            r#"
+            SELECT
+                f.id,
+                f.uuid,
+                f.tenant_id,
+                f.organization_id,
+                f.user_id,
+                COALESCE(f.title, '') AS title,
+                COALESCE(f.summary, '') AS summary,
+                COALESCE(f.category_id, 0) AS category_id,
+                COALESCE(f.content_type, 0) AS content_type,
+                COALESCE(f.content_id, 0) AS content_id,
+                CAST(COALESCE(f.cover_images, '') AS TEXT) AS cover_images,
+                CAST(COALESCE(f.tags, '') AS TEXT) AS tags,
+                CAST(COALESCE(f.author, '') AS TEXT) AS author,
+                COALESCE(f.view_count, 0) AS view_count,
+                COALESCE(f.like_count, 0) AS like_count,
+                COALESCE(f.comment_count, 0) AS comment_count,
+                COALESCE(f.share_count, 0) AS share_count,
+                COALESCE(f.favorite_count, 0) AS favorite_count,
+                COALESCE(f.is_top, 0) AS is_top,
+                COALESCE(f.is_hot, 0) AS is_hot,
+                COALESCE(f.is_recommended, 0) AS is_recommended,
+                CAST(COALESCE(f.created_at, '') AS TEXT) AS created_at,
+                CAST(COALESCE(f.updated_at, '') AS TEXT) AS updated_at,
+                EXISTS (
+                    SELECT 1
+                    FROM plus_content_vote v
+                    WHERE v.tenant_id = f.tenant_id
+                      AND v.organization_id = f.organization_id
+                      AND v.user_id = ?3
+                      AND v.content_type = ?4
+                      AND v.content_id = f.id
+                      AND lower(COALESCE(v.rating, '')) = 'like'
+                ) AS is_liked,
+                EXISTS (
+                    SELECT 1
+                    FROM plus_favorite fav
+                    WHERE fav.tenant_id = f.tenant_id
+                      AND fav.organization_id = f.organization_id
+                      AND fav.user_id = ?3
+                      AND fav.content_type = ?4
+                      AND fav.content_id = f.id
+                      AND COALESCE(fav.status, 0) = ?5
+                ) AS is_collected
+            FROM plus_feeds f
+            WHERE f.id = ?6
+              AND COALESCE(f.status, 0) = ?7
+              AND {scope_filter}
+            LIMIT 1
+            "#,
+            scope_filter = sqlite_scope_filter("f"),
+        )
+        .as_str(),
+    )
+    .bind(scope.tenant_id)
+    .bind(scope.organization_id)
+    .bind(scope.user_id)
+    .bind(CONTENT_TYPE_FEEDS)
+    .bind(FAVORITE_STATUS_ACTIVE)
+    .bind(feed_id)
+    .bind(FEEDS_STATUS_PUBLISHED)
+    .fetch_optional(pool)
+    .await
+    .map_err(sql_error)?;
+
+    Ok(row.as_ref().map(feed_from_row))
+}
+
+async fn require_feed(
+    pool: &SqlitePool,
+    feed_id: i64,
+    subject: Option<ForumSubject>,
+) -> DomainResult<ForumFeedItem> {
+    load_feed_by_id(pool, feed_id, subject)
+        .await?
+        .ok_or_else(|| DomainError::not_found("feed was not found"))
+}
+
+async fn increment_feed_view_count(pool: &SqlitePool, feed_id: i64) -> DomainResult<()> {
+    sqlx::query(
+        r#"
+        UPDATE plus_feeds
+        SET view_count = COALESCE(view_count, 0) + 1,
+            updated_at = CURRENT_TIMESTAMP
+        WHERE id = ?1
+          AND COALESCE(status, 0) = ?2
+        "#,
+    )
+    .bind(feed_id)
+    .bind(FEEDS_STATUS_PUBLISHED)
+    .execute(pool)
+    .await
+    .map_err(sql_error)?;
+    Ok(())
+}
+
+async fn load_feed_title(pool: &SqlitePool, feed_id: i64) -> DomainResult<Option<String>> {
+    let value = sqlx::query_scalar::<_, String>(
+        r#"
+        SELECT COALESCE(title, '')
+        FROM plus_feeds
+        WHERE id = ?1
+          AND COALESCE(status, 0) = ?2
+        LIMIT 1
+        "#,
+    )
+    .bind(feed_id)
+    .bind(FEEDS_STATUS_PUBLISHED)
+    .fetch_optional(pool)
+    .await
+    .map_err(sql_error)?;
+    Ok(value)
+}
+
+async fn feed_is_collected(
+    pool: &SqlitePool,
+    feed_id: i64,
+    subject: ForumSubject,
+) -> DomainResult<bool> {
+    let count = sqlx::query_scalar::<_, i64>(
+        r#"
+        SELECT COUNT(1)
+        FROM plus_favorite
+        WHERE tenant_id = ?1
+          AND organization_id = ?2
+          AND user_id = ?3
+          AND content_type = ?4
+          AND content_id = ?5
+          AND COALESCE(status, 0) = ?6
+        "#,
+    )
+    .bind(subject.tenant_id)
+    .bind(subject.organization_id)
+    .bind(subject.user_id)
+    .bind(CONTENT_TYPE_FEEDS)
+    .bind(feed_id)
+    .bind(FAVORITE_STATUS_ACTIVE)
+    .fetch_one(pool)
+    .await
+    .map_err(sql_error)?;
+    Ok(count > 0)
+}
+
+async fn upsert_like_vote(
+    pool: &SqlitePool,
+    subject: ForumSubject,
+    content_type: i64,
+    content_id: i64,
+    uuid: String,
+) -> DomainResult<()> {
+    sqlx::query(
+        r#"
+        INSERT INTO plus_content_vote
+            (id, uuid, created_at, updated_at, v, tenant_id, organization_id, data_scope,
+             user_id, content_type, content_id, rating, metadata, source)
+        VALUES
+            (?1, ?2, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 0, ?3, ?4, 1,
+             ?5, ?6, ?7, 'like', '{}', 'forum')
+        ON CONFLICT(user_id, content_type, content_id) DO UPDATE SET
+            rating = 'like',
+            updated_at = CURRENT_TIMESTAMP
+        "#,
+    )
+    .bind(next_entity_id())
+    .bind(uuid)
+    .bind(subject.tenant_id)
+    .bind(subject.organization_id)
+    .bind(subject.user_id)
+    .bind(content_type)
+    .bind(content_id)
+    .execute(pool)
+    .await
+    .map_err(sql_error)?;
+    Ok(())
+}
+
+async fn delete_like_vote(
+    pool: &SqlitePool,
+    subject: ForumSubject,
+    content_type: i64,
+    content_id: i64,
+) -> DomainResult<()> {
+    sqlx::query(
+        r#"
+        DELETE FROM plus_content_vote
+        WHERE tenant_id = ?1
+          AND organization_id = ?2
+          AND user_id = ?3
+          AND content_type = ?4
+          AND content_id = ?5
+          AND lower(COALESCE(rating, '')) = 'like'
+        "#,
+    )
+    .bind(subject.tenant_id)
+    .bind(subject.organization_id)
+    .bind(subject.user_id)
+    .bind(content_type)
+    .bind(content_id)
+    .execute(pool)
+    .await
+    .map_err(sql_error)?;
+    Ok(())
+}
+
+async fn refresh_feed_like_count(pool: &SqlitePool, feed_id: i64) -> DomainResult<()> {
+    sqlx::query(
+        r#"
+        UPDATE plus_feeds
+        SET like_count = (
+                SELECT COUNT(1)
+                FROM plus_content_vote
+                WHERE content_type = ?1
+                  AND content_id = ?2
+                  AND lower(COALESCE(rating, '')) = 'like'
+            ),
+            updated_at = CURRENT_TIMESTAMP
+        WHERE id = ?2
+        "#,
+    )
+    .bind(CONTENT_TYPE_FEEDS)
+    .bind(feed_id)
+    .execute(pool)
+    .await
+    .map_err(sql_error)?;
+    Ok(())
+}
+
+async fn refresh_feed_favorite_count(pool: &SqlitePool, feed_id: i64) -> DomainResult<()> {
+    sqlx::query(
+        r#"
+        UPDATE plus_feeds
+        SET favorite_count = (
+                SELECT COUNT(1)
+                FROM plus_favorite
+                WHERE content_type = ?1
+                  AND content_id = ?2
+                  AND COALESCE(status, 0) = ?3
+            ),
+            updated_at = CURRENT_TIMESTAMP
+        WHERE id = ?2
+        "#,
+    )
+    .bind(CONTENT_TYPE_FEEDS)
+    .bind(feed_id)
+    .bind(FAVORITE_STATUS_ACTIVE)
+    .execute(pool)
+    .await
+    .map_err(sql_error)?;
+    Ok(())
+}
+
+async fn refresh_comment_like_count(pool: &SqlitePool, comment_id: i64) -> DomainResult<()> {
+    sqlx::query(
+        r#"
+        UPDATE plus_comments
+        SET likes = (
+                SELECT COUNT(1)
+                FROM plus_content_vote
+                WHERE content_type = ?1
+                  AND content_id = ?2
+                  AND lower(COALESCE(rating, '')) = 'like'
+            ),
+            updated_at = CURRENT_TIMESTAMP
+        WHERE id = ?2
+        "#,
+    )
+    .bind(CONTENT_TYPE_COMMENTS)
+    .bind(comment_id)
+    .execute(pool)
+    .await
+    .map_err(sql_error)?;
+    Ok(())
+}
+
+async fn increment_target_comment_count(
+    pool: &SqlitePool,
+    content_type: i64,
+    content_id: i64,
+) -> DomainResult<()> {
+    if content_type == CONTENT_TYPE_FEEDS {
+        sqlx::query(
+            r#"
+            UPDATE plus_feeds
+            SET comment_count = COALESCE(comment_count, 0) + 1,
+                updated_at = CURRENT_TIMESTAMP
+            WHERE id = ?1
+            "#,
+        )
+        .bind(content_id)
+        .execute(pool)
+        .await
+        .map_err(sql_error)?;
+    }
+    Ok(())
+}
+
+async fn decrement_target_comment_count(
+    pool: &SqlitePool,
+    content_type: i64,
+    content_id: i64,
+) -> DomainResult<()> {
+    if content_type == CONTENT_TYPE_FEEDS {
+        sqlx::query(
+            r#"
+            UPDATE plus_feeds
+            SET comment_count = MAX(COALESCE(comment_count, 0) - 1, 0),
+                updated_at = CURRENT_TIMESTAMP
+            WHERE id = ?1
+            "#,
+        )
+        .bind(content_id)
+        .execute(pool)
+        .await
+        .map_err(sql_error)?;
+    }
+    Ok(())
+}
+
+async fn load_comment_page(
+    pool: &SqlitePool,
+    content_type: i64,
+    content_id: i64,
+    parent_id: Option<i64>,
+    query: Option<ForumFeedQuery>,
+) -> DomainResult<ForumCommentPage> {
+    let (page, size, offset) = page_window(query.as_ref());
+    let parent_filter = if parent_id.is_some() {
+        "parent_id = ?4"
+    } else {
+        "parent_id IS NULL"
+    };
+    let sql = format!(
+        r#"
+        {select}
+        WHERE content_type = ?1
+          AND content_id = ?2
+          AND COALESCE(status, 0) = ?3
+          AND {parent_filter}
+        ORDER BY COALESCE(is_top, 0) DESC, created_at ASC, id ASC
+        LIMIT ?5 OFFSET ?6
+        "#,
+        select = COMMENT_SELECT_COLUMNS,
+    );
+    let rows = sqlx::query(sql.as_str())
+        .bind(content_type)
+        .bind(content_id)
+        .bind(COMMENT_STATUS_PUBLISHED)
+        .bind(parent_id)
+        .bind(size)
+        .bind(offset)
+        .fetch_all(pool)
+        .await
+        .map_err(sql_error)?;
+
+    let count_sql = format!(
+        r#"
+        SELECT COUNT(1)
+        FROM plus_comments
+        WHERE content_type = ?1
+          AND content_id = ?2
+          AND COALESCE(status, 0) = ?3
+          AND {parent_filter}
+        "#,
+    );
+    let total = sqlx::query_scalar::<_, i64>(count_sql.as_str())
+        .bind(content_type)
+        .bind(content_id)
+        .bind(COMMENT_STATUS_PUBLISHED)
+        .bind(parent_id)
+        .fetch_one(pool)
+        .await
+        .map_err(sql_error)?;
+    let items: Vec<ForumCommentItem> = rows.iter().map(comment_item_from_row).collect();
+    Ok(ForumCommentPage {
+        content: items.clone(),
+        items,
+        total_elements: total,
+        page,
+        size,
+    })
+}
+
+async fn load_comment_items_by_parent(
+    pool: &SqlitePool,
+    parent_id: i64,
+    limit: i64,
+    offset: i64,
+) -> DomainResult<Vec<ForumCommentItem>> {
+    let rows = sqlx::query(
+        format!(
+            r#"
+            {select}
+            WHERE parent_id = ?1
+              AND COALESCE(status, 0) = ?2
+            ORDER BY created_at ASC, id ASC
+            LIMIT ?3 OFFSET ?4
+            "#,
+            select = COMMENT_SELECT_COLUMNS,
+        )
+        .as_str(),
+    )
+    .bind(parent_id)
+    .bind(COMMENT_STATUS_PUBLISHED)
+    .bind(limit)
+    .bind(offset)
+    .fetch_all(pool)
+    .await
+    .map_err(sql_error)?;
+    Ok(rows.iter().map(comment_item_from_row).collect())
+}
+
+#[derive(Debug, Clone)]
+struct CommentParent {
+    content_type: i64,
+    content_id: i64,
+    parent_id: Option<i64>,
+    path: Option<String>,
+}
+
+async fn load_comment_parent(
+    pool: &SqlitePool,
+    comment_id: i64,
+) -> DomainResult<Option<CommentParent>> {
+    let row = sqlx::query(
+        r#"
+        SELECT content_type, content_id, parent_id, path
+        FROM plus_comments
+        WHERE id = ?1
+          AND COALESCE(status, 0) = ?2
+        LIMIT 1
+        "#,
+    )
+    .bind(comment_id)
+    .bind(COMMENT_STATUS_PUBLISHED)
+    .fetch_optional(pool)
+    .await
+    .map_err(sql_error)?;
+    Ok(row.map(|row| CommentParent {
+        content_type: integer_cell(&row, "content_type"),
+        content_id: integer_cell(&row, "content_id"),
+        parent_id: optional_integer_cell(&row, "parent_id"),
+        path: optional_string_cell(&row, "path"),
+    }))
+}
+
+async fn require_comment_item(
+    pool: &SqlitePool,
+    comment_id: i64,
+) -> DomainResult<ForumCommentItem> {
+    let row = sqlx::query(COMMENT_SELECT_BY_ID)
+        .bind(comment_id)
+        .bind(COMMENT_STATUS_PUBLISHED)
+        .fetch_optional(pool)
+        .await
+        .map_err(sql_error)?;
+    row.as_ref()
+        .map(comment_item_from_row)
+        .ok_or_else(|| DomainError::not_found("comment was not found"))
+}
+
+fn feed_from_row(row: &sqlx::sqlite::SqliteRow) -> ForumFeedItem {
+    let user_id = integer_cell(row, "user_id");
+    ForumFeedItem {
+        id: integer_cell(row, "id").to_string(),
+        title: string_cell(row, "title"),
+        content: string_cell(row, "summary"),
+        summary: string_cell(row, "summary"),
+        cover_image: first_cover_image(&string_cell(row, "cover_images")),
+        content_type: content_type_slug(integer_cell(row, "content_type")).to_owned(),
+        content_id: integer_cell(row, "content_id"),
+        category_id: integer_cell(row, "category_id"),
+        tags: parse_tags(&string_cell(row, "tags")),
+        author: parse_author(&string_cell(row, "author"), user_id),
+        view_count: integer_cell(row, "view_count"),
+        like_count: integer_cell(row, "like_count"),
+        comment_count: integer_cell(row, "comment_count"),
+        share_count: integer_cell(row, "share_count"),
+        favorite_count: integer_cell(row, "favorite_count"),
+        is_liked: bool_cell(row, "is_liked"),
+        is_collected: bool_cell(row, "is_collected"),
+        is_top: bool_cell(row, "is_top"),
+        is_hot: bool_cell(row, "is_hot"),
+        is_recommended: bool_cell(row, "is_recommended"),
+        created_at: string_cell(row, "created_at"),
+        updated_at: string_cell(row, "updated_at"),
+    }
+}
+
+fn comment_item_from_row(row: &sqlx::sqlite::SqliteRow) -> ForumCommentItem {
+    let user_id = integer_cell(row, "user_id");
+    ForumCommentItem {
+        comment_id: integer_cell(row, "id").to_string(),
+        content: string_cell(row, "content"),
+        content_type: content_type_name(integer_cell(row, "content_type")).to_owned(),
+        content_id: integer_cell(row, "content_id"),
+        user_id,
+        status: comment_status_name(integer_cell(row, "status")).to_owned(),
+        likes: integer_cell(row, "likes"),
+        reply_count: integer_cell(row, "reply_count"),
+        is_top: bool_cell(row, "is_top"),
+        parent_id: optional_integer_cell(row, "parent_id"),
+        author: parse_author(&string_cell(row, "author"), user_id),
+        created_at: string_cell(row, "created_at"),
+    }
+}
+
+fn comment_detail_from_row(
+    row: &sqlx::sqlite::SqliteRow,
+    replies: Vec<ForumCommentItem>,
+) -> ForumCommentDetail {
+    let item = comment_item_from_row(row);
+    ForumCommentDetail {
+        comment_id: item.comment_id,
+        content: item.content,
+        content_type: item.content_type,
+        content_id: item.content_id,
+        user_id: item.user_id,
+        status: item.status,
+        likes: item.likes,
+        reply_count: item.reply_count,
+        is_top: item.is_top,
+        parent_id: item.parent_id,
+        author: item.author,
+        ip_address: string_cell(row, "ip_address"),
+        device_info: string_cell(row, "device_info"),
+        created_at: item.created_at,
+        updated_at: string_cell(row, "updated_at"),
+        replies,
+    }
+}
+
+#[derive(Debug, Clone, Copy)]
+struct ReadScope {
+    tenant_id: i64,
+    organization_id: i64,
+    user_id: i64,
+}
+
+fn read_scope(subject: Option<ForumSubject>) -> ReadScope {
+    let subject = subject.unwrap_or(ForumSubject {
+        tenant_id: 0,
+        organization_id: 0,
+        user_id: 0,
+    });
+    ReadScope {
+        tenant_id: subject.tenant_id.max(0),
+        organization_id: subject.organization_id.max(0),
+        user_id: subject.user_id.max(0),
+    }
+}
+
+fn sqlite_scope_filter(alias: &str) -> String {
+    format!(
+        r#"(
+            (?1 > 0 AND {alias}.tenant_id = ?1 AND {alias}.organization_id = ?2)
+            OR (?1 > 0 AND ?2 > 0 AND {alias}.tenant_id = ?1 AND {alias}.organization_id = 0)
+            OR ({alias}.tenant_id = 0 AND {alias}.organization_id = 0)
+        )"#
+    )
+}
+
+fn effective_subject(
+    command_subject: ForumSubject,
+    request_subject: Option<ForumSubject>,
+) -> DomainResult<ForumSubject> {
+    if let Some(request_subject) = request_subject {
+        if request_subject != command_subject {
+            return Err(DomainError::new(
+                "trusted request subject does not match command subject",
+            ));
+        }
+    }
+    Ok(command_subject)
+}
+
+fn next_entity_id() -> i64 {
+    let millis = SystemTime::now()
+        .duration_since(UNIX_EPOCH)
+        .map(|duration| duration.as_millis() as u64)
+        .unwrap_or_default();
+    let sequence = FORUM_ENTITY_SEQUENCE.fetch_add(1, Ordering::Relaxed) & 0xffff;
+    ((millis << 16) | sequence) as i64
+}
+
+fn page_window(query: Option<&ForumFeedQuery>) -> (i64, i64, i64) {
+    let page = query.and_then(|query| query.page).unwrap_or(1).max(1);
+    let size = query
+        .and_then(|query| query.limit.or(query.size))
+        .unwrap_or(DEFAULT_PAGE_SIZE)
+        .clamp(1, MAX_PAGE_SIZE);
+    let offset = (page - 1) * size;
+    (page, size, offset)
+}
+
+fn normalized_title(title: Option<&str>, content: &str) -> String {
+    let title = title.unwrap_or_default().trim();
+    if !title.is_empty() {
+        return truncate_chars(title, 255);
+    }
+    let compact = content.split_whitespace().collect::<Vec<_>>().join(" ");
+    if compact.chars().count() <= 32 {
+        truncate_chars(&compact, 255)
+    } else {
+        format!("{}...", truncate_chars(&compact, 32))
+    }
+}
+
+fn truncate_chars(value: &str, max: usize) -> String {
+    value.chars().take(max).collect()
+}
+
+fn normalize_like_pattern(value: Option<&str>) -> Option<String> {
+    let normalized = value?.trim().to_ascii_lowercase();
+    if normalized.is_empty() {
+        None
+    } else {
+        Some(format!(
+            "%{}%",
+            normalized.replace('%', "\\%").replace('_', "\\_")
+        ))
+    }
+}
+
+fn feed_order_by(feed_type: &str) -> &'static str {
+    match feed_type.trim().to_ascii_lowercase().as_str() {
+        "hot" => "COALESCE(f.is_hot, 0) DESC, COALESCE(f.like_count, 0) DESC, COALESCE(f.view_count, 0) DESC, COALESCE(f.publish_time, f.created_at) DESC, f.id DESC",
+        "recommend" | "recommended" => "COALESCE(f.is_recommended, 0) DESC, COALESCE(f.sort_order, 0) DESC, COALESCE(f.publish_time, f.created_at) DESC, f.id DESC",
+        "top" | "pinned" => "COALESCE(f.is_top, 0) DESC, COALESCE(f.publish_time, f.created_at) DESC, f.id DESC",
+        "most-viewed" | "viewed" => "COALESCE(f.view_count, 0) DESC, COALESCE(f.publish_time, f.created_at) DESC, f.id DESC",
+        "most-liked" | "liked" => "COALESCE(f.like_count, 0) DESC, COALESCE(f.publish_time, f.created_at) DESC, f.id DESC",
+        _ => "COALESCE(f.is_top, 0) DESC, COALESCE(f.publish_time, f.created_at) DESC, f.id DESC",
+    }
+}
+
+fn required_content_type_code(value: &str) -> DomainResult<i64> {
+    content_type_code(value)
+        .filter(|value| *value > 0)
+        .ok_or_else(|| DomainError::new(format!("unsupported content type: {value}")))
+}
+
+fn content_type_code(value: &str) -> Option<i64> {
+    match value.trim().to_ascii_lowercase().replace('-', "_").as_str() {
+        "feeds" | "feed" | "forum" | "post" => Some(CONTENT_TYPE_FEEDS),
+        "comments" | "comment" => Some(CONTENT_TYPE_COMMENTS),
+        "all" | "" => None,
+        _ => value.trim().parse::<i64>().ok(),
+    }
+}
+
+fn content_type_slug(value: i64) -> &'static str {
+    match value {
+        CONTENT_TYPE_FEEDS => "feeds",
+        CONTENT_TYPE_COMMENTS => "comments",
+        _ => "unknown",
+    }
+}
+
+fn content_type_name(value: i64) -> &'static str {
+    match value {
+        CONTENT_TYPE_FEEDS => "FEEDS",
+        CONTENT_TYPE_COMMENTS => "COMMENTS",
+        _ => "DEFAULT",
+    }
+}
+
+fn comment_status_name(value: i64) -> &'static str {
+    match value {
+        COMMENT_STATUS_PUBLISHED => "PUBLISHED",
+        2 => "PENDING",
+        COMMENT_STATUS_DELETED => "DELETED",
+        _ => "DEFAULT",
+    }
+}
+
+fn parse_i64_id(value: &str, field: &str) -> DomainResult<i64> {
+    value
+        .trim()
+        .parse::<i64>()
+        .map_err(|_| DomainError::new(format!("{field} must be a valid int64 id")))
+}
+
+fn cover_images_json(images: &[String]) -> Value {
+    json!({
+        "images": images
+            .iter()
+            .filter_map(|url| {
+                let url = url.trim();
+                if url.is_empty() {
+                    None
+                } else {
+                    Some(json!({ "url": url }))
+                }
+            })
+            .collect::<Vec<_>>()
+    })
+}
+
+fn resource_list_json(images: &[String]) -> Value {
+    json!({
+        "resources": images
+            .iter()
+            .filter_map(|url| {
+                let url = url.trim();
+                if url.is_empty() {
+                    None
+                } else {
+                    Some(json!({ "type": "image", "url": url }))
+                }
+            })
+            .collect::<Vec<_>>()
+    })
+}
+
+fn tags_json(tags: &[String]) -> Value {
+    json!({
+        "list": tags
+            .iter()
+            .map(|tag| tag.trim())
+            .filter(|tag| !tag.is_empty())
+            .collect::<Vec<_>>()
+    })
+}
+
+fn author_json(subject: ForumSubject) -> Value {
+    json!({
+        "id": subject.user_id,
+        "name": format!("User-{}", subject.user_id),
+        "avatar": Value::Null,
+        "bio": Value::Null,
+        "isFollowing": false
+    })
+}
+
+fn first_cover_image(raw: &str) -> String {
+    let Ok(value) = serde_json::from_str::<Value>(raw) else {
+        return String::new();
+    };
+    find_url_in_value(&value).unwrap_or_default()
+}
+
+fn find_url_in_value(value: &Value) -> Option<String> {
+    match value {
+        Value::String(value) => {
+            let value = value.trim();
+            if value.is_empty() {
+                None
+            } else {
+                Some(value.to_owned())
+            }
+        }
+        Value::Array(items) => items.iter().find_map(find_url_in_value),
+        Value::Object(object) => {
+            if let Some(Value::String(url)) = object.get("url") {
+                let url = url.trim();
+                if !url.is_empty() {
+                    return Some(url.to_owned());
+                }
+            }
+            for key in [
+                "images",
+                "resources",
+                "list",
+                "items",
+                "faceImage",
+                "avatar",
+            ] {
+                if let Some(value) = object.get(key).and_then(find_url_in_value) {
+                    return Some(value);
+                }
+            }
+            None
+        }
+        _ => None,
+    }
+}
+
+fn parse_tags(raw: &str) -> Vec<String> {
+    let Ok(value) = serde_json::from_str::<Value>(raw) else {
+        return Vec::new();
+    };
+    match value {
+        Value::Array(items) => strings_from_values(&items),
+        Value::Object(object) => object
+            .get("list")
+            .or_else(|| object.get("tags"))
+            .and_then(Value::as_array)
+            .map(|items| strings_from_values(items))
+            .unwrap_or_default(),
+        _ => Vec::new(),
+    }
+}
+
+fn strings_from_values(items: &[Value]) -> Vec<String> {
+    items
+        .iter()
+        .filter_map(Value::as_str)
+        .map(str::trim)
+        .filter(|value| !value.is_empty())
+        .map(str::to_owned)
+        .collect()
+}
+
+fn parse_author(raw: &str, fallback_user_id: i64) -> ForumAuthor {
+    let value = serde_json::from_str::<Value>(raw).unwrap_or(Value::Null);
+    let object = value.as_object();
+    let id = object
+        .and_then(|object| object.get("id"))
+        .and_then(value_to_i64)
+        .unwrap_or(fallback_user_id);
+    let name = object
+        .and_then(|object| object.get("name").or_else(|| object.get("nickname")))
+        .and_then(Value::as_str)
+        .map(str::trim)
+        .filter(|value| !value.is_empty())
+        .map(str::to_owned)
+        .unwrap_or_else(|| format!("User-{id}"));
+    let avatar = object
+        .and_then(|object| object.get("avatar").or_else(|| object.get("faceImage")))
+        .and_then(find_url_in_value);
+    let bio = object
+        .and_then(|object| object.get("bio"))
+        .and_then(Value::as_str)
+        .map(str::trim)
+        .filter(|value| !value.is_empty())
+        .map(str::to_owned);
+    let is_following = object
+        .and_then(|object| {
+            object
+                .get("isFollowing")
+                .or_else(|| object.get("is_following"))
+        })
+        .and_then(Value::as_bool)
+        .unwrap_or(false);
+    ForumAuthor {
+        id,
+        name,
+        avatar,
+        bio,
+        is_following,
+    }
+}
+
+fn value_to_i64(value: &Value) -> Option<i64> {
+    value
+        .as_i64()
+        .or_else(|| value.as_str().and_then(|value| value.parse::<i64>().ok()))
+}
+
+fn string_cell(row: &sqlx::sqlite::SqliteRow, column: &str) -> String {
+    row.try_get::<Option<String>, _>(column)
+        .ok()
+        .flatten()
+        .or_else(|| {
+            row.try_get::<Option<i64>, _>(column)
+                .ok()
+                .flatten()
+                .map(|value| value.to_string())
+        })
+        .unwrap_or_default()
+}
+
+fn optional_string_cell(row: &sqlx::sqlite::SqliteRow, column: &str) -> Option<String> {
+    row.try_get::<Option<String>, _>(column)
+        .ok()
+        .flatten()
+        .filter(|value| !value.trim().is_empty())
+}
+
+fn integer_cell(row: &sqlx::sqlite::SqliteRow, column: &str) -> i64 {
+    optional_integer_cell(row, column).unwrap_or_default()
+}
+
+fn optional_integer_cell(row: &sqlx::sqlite::SqliteRow, column: &str) -> Option<i64> {
+    row.try_get::<Option<i64>, _>(column)
+        .ok()
+        .flatten()
+        .or_else(|| {
+            row.try_get::<Option<i32>, _>(column)
+                .ok()
+                .flatten()
+                .map(i64::from)
+        })
+        .or_else(|| string_cell(row, column).parse::<i64>().ok())
+}
+
+fn bool_cell(row: &sqlx::sqlite::SqliteRow, column: &str) -> bool {
+    row.try_get::<Option<bool>, _>(column)
+        .ok()
+        .flatten()
+        .or_else(|| optional_integer_cell(row, column).map(|value| value != 0))
+        .unwrap_or(false)
+}
+
+fn sql_error(error: sqlx::Error) -> DomainError {
+    DomainError::new(error.to_string())
+}

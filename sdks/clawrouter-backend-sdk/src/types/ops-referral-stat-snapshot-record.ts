@@ -1,0 +1,32 @@
+export interface OpsReferralStatSnapshotRecord {
+  created_at?: string;
+  currency?: string;
+  direct_invited_count?: string;
+  id?: string;
+  invitation_code?: string;
+  invitation_code_id?: string;
+  invite_link?: string;
+  inviter_email_snapshot?: string;
+  inviter_name_snapshot?: string;
+  inviter_user_id?: string;
+  metadata?: Record<string, unknown>;
+  organization_id?: string;
+  paid_invitee_count?: string;
+  period_end?: string;
+  period_start?: string;
+  rebuild_version?: string;
+  reward_awarded_amount?: string;
+  reward_pending_amount?: string;
+  secondary_invited_count?: string;
+  snapshot_at?: string;
+  snapshot_period?: string;
+  source_id?: string;
+  source_type?: string;
+  source_version?: string;
+  status?: string;
+  tenant_id?: string;
+  total_invited_count?: string;
+  total_revenue_amount?: string;
+  updated_at?: string;
+  uuid?: string;
+}

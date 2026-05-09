@@ -1,0 +1,227 @@
+use crate::domain::{
+    AiModel, ApiKeyGroup, ApiKeyGroupMetricSnapshot, BillingMeter, DomainResult,
+    GatewayAccessPolicy, GatewayApiKey, ModelPrice, ModelProviderRoute, ModelVendorDefinition,
+    PriceSide, PricingPlan, QuotaPolicy,
+};
+use crate::infrastructure::sql::rows::{
+    AiModelRow, ApiKeyGroupMetricSnapshotRow, ApiKeyGroupRow, GatewayAccessPolicyRow,
+    GatewayApiKeyRow, ModelPriceRow, ModelProviderRouteRow, ModelVendorRow, PricingPlanRow,
+    QuotaPolicyRow,
+};
+use crate::ports::PricingCatalog;
+
+#[derive(Default)]
+pub struct PricingCatalogRows {
+    pub vendors: Vec<ModelVendorRow>,
+    pub models: Vec<AiModelRow>,
+    pub provider_routes: Vec<ModelProviderRouteRow>,
+    pub pricing_plans: Vec<PricingPlanRow>,
+    pub api_key_groups: Vec<ApiKeyGroupRow>,
+    pub api_keys: Vec<GatewayApiKeyRow>,
+    pub access_policies: Vec<GatewayAccessPolicyRow>,
+    pub quota_policies: Vec<QuotaPolicyRow>,
+    pub api_key_group_metric_snapshots: Vec<ApiKeyGroupMetricSnapshotRow>,
+    pub prices: Vec<ModelPriceRow>,
+}
+
+pub struct SqlPricingCatalogSnapshot {
+    vendors: Vec<ModelVendorDefinition>,
+    models: Vec<AiModel>,
+    provider_routes: Vec<ModelProviderRoute>,
+    pricing_plans: Vec<PricingPlan>,
+    api_key_groups: Vec<ApiKeyGroup>,
+    api_keys: Vec<GatewayApiKey>,
+    access_policies: Vec<GatewayAccessPolicy>,
+    quota_policies: Vec<QuotaPolicy>,
+    api_key_group_metric_snapshots: Vec<ApiKeyGroupMetricSnapshot>,
+    prices: Vec<ModelPrice>,
+}
+
+impl SqlPricingCatalogSnapshot {
+    pub fn from_rows(rows: PricingCatalogRows) -> DomainResult<Self> {
+        Ok(Self {
+            vendors: map_rows(rows.vendors, ModelVendorRow::try_into_domain)?,
+            models: map_rows(rows.models, AiModelRow::try_into_domain)?,
+            provider_routes: map_rows(
+                rows.provider_routes,
+                ModelProviderRouteRow::try_into_domain,
+            )?,
+            pricing_plans: map_rows(rows.pricing_plans, PricingPlanRow::try_into_domain)?,
+            api_key_groups: map_rows(rows.api_key_groups, ApiKeyGroupRow::try_into_domain)?,
+            api_keys: rows
+                .api_keys
+                .into_iter()
+                .map(GatewayApiKeyRow::into_domain)
+                .collect(),
+            access_policies: map_rows(
+                rows.access_policies,
+                GatewayAccessPolicyRow::try_into_domain,
+            )?,
+            quota_policies: map_rows(rows.quota_policies, QuotaPolicyRow::try_into_domain)?,
+            api_key_group_metric_snapshots: map_rows(
+                rows.api_key_group_metric_snapshots,
+                ApiKeyGroupMetricSnapshotRow::try_into_domain,
+            )?,
+            prices: map_rows(rows.prices, ModelPriceRow::try_into_domain)?,
+        })
+    }
+}
+
+impl PricingCatalog for SqlPricingCatalogSnapshot {
+    fn list_models(&self, vendor_code: Option<&str>) -> Vec<AiModel> {
+        self.models
+            .iter()
+            .filter(|model| {
+                vendor_code
+                    .map(|vendor_code| model.vendor_code == vendor_code)
+                    .unwrap_or(true)
+            })
+            .cloned()
+            .collect()
+    }
+
+    fn list_provider_routes(&self, model: &str) -> Vec<ModelProviderRoute> {
+        self.provider_routes
+            .iter()
+            .filter(|route| route.catalog_key == model)
+            .cloned()
+            .collect()
+    }
+
+    fn list_api_keys(&self) -> Vec<GatewayApiKey> {
+        self.api_keys.clone()
+    }
+
+    fn list_api_key_groups(&self) -> Vec<ApiKeyGroup> {
+        self.api_key_groups.clone()
+    }
+
+    fn list_model_prices(
+        &self,
+        model: &str,
+        price_side: PriceSide,
+        billing_meter: BillingMeter,
+    ) -> Vec<ModelPrice> {
+        self.prices
+            .iter()
+            .filter(|price| {
+                price.catalog_key == model
+                    && price.price_side == price_side
+                    && price.billing_meter == billing_meter
+            })
+            .cloned()
+            .collect()
+    }
+
+    fn list_model_prices_for_side(&self, model: &str, price_side: PriceSide) -> Vec<ModelPrice> {
+        self.prices
+            .iter()
+            .filter(|price| price.catalog_key == model && price.price_side == price_side)
+            .cloned()
+            .collect()
+    }
+
+    fn find_api_key(&self, api_key_id: i64) -> Option<GatewayApiKey> {
+        self.api_keys
+            .iter()
+            .find(|api_key| api_key.id == api_key_id)
+            .cloned()
+    }
+
+    fn find_api_key_by_hash(&self, key_hash: &str) -> Option<GatewayApiKey> {
+        self.api_keys
+            .iter()
+            .find(|api_key| api_key.key_hash == key_hash)
+            .cloned()
+    }
+
+    fn find_api_key_group(&self, group_id: i64) -> Option<ApiKeyGroup> {
+        self.api_key_groups
+            .iter()
+            .find(|group| group.id == group_id)
+            .cloned()
+    }
+
+    fn find_access_policy(&self, policy_id: i64) -> Option<GatewayAccessPolicy> {
+        self.access_policies
+            .iter()
+            .find(|policy| policy.id == policy_id)
+            .cloned()
+    }
+
+    fn find_quota_policy(&self, policy_id: i64) -> Option<QuotaPolicy> {
+        self.quota_policies
+            .iter()
+            .find(|policy| policy.id == policy_id)
+            .cloned()
+    }
+
+    fn find_latest_api_key_group_metric_snapshot(
+        &self,
+        group_id: i64,
+    ) -> Option<ApiKeyGroupMetricSnapshot> {
+        self.api_key_group_metric_snapshots
+            .iter()
+            .find(|snapshot| snapshot.group_id == group_id)
+            .cloned()
+    }
+
+    fn find_pricing_plan(&self, plan_code: &str) -> Option<PricingPlan> {
+        self.pricing_plans
+            .iter()
+            .find(|plan| plan.plan_code == plan_code)
+            .cloned()
+    }
+
+    fn find_model(&self, model: &str) -> Option<AiModel> {
+        self.models
+            .iter()
+            .find(|candidate| candidate.catalog_key == model)
+            .cloned()
+    }
+
+    fn find_vendor(&self, vendor_code: &str) -> Option<ModelVendorDefinition> {
+        self.vendors
+            .iter()
+            .find(|vendor| vendor.vendor_code == vendor_code)
+            .cloned()
+    }
+
+    fn find_provider_route(&self, model: &str, provider_code: &str) -> Option<ModelProviderRoute> {
+        self.provider_routes
+            .iter()
+            .find(|route| route.catalog_key == model && route.provider_code == provider_code)
+            .cloned()
+    }
+
+    fn find_model_price(
+        &self,
+        model: &str,
+        price_side: PriceSide,
+        billing_meter: BillingMeter,
+        provider_code: Option<&str>,
+        pricing_plan_code: Option<&str>,
+    ) -> Option<ModelPrice> {
+        self.prices
+            .iter()
+            .find(|price| {
+                price.catalog_key == model
+                    && price.price_side == price_side
+                    && price.billing_meter == billing_meter
+                    && option_matches(price.provider_code.as_deref(), provider_code)
+                    && option_matches(price.pricing_plan_code.as_deref(), pricing_plan_code)
+            })
+            .cloned()
+    }
+}
+
+fn map_rows<R, T>(rows: Vec<R>, mapper: impl Fn(R) -> DomainResult<T>) -> DomainResult<Vec<T>> {
+    rows.into_iter().map(mapper).collect()
+}
+
+fn option_matches(actual: Option<&str>, expected: Option<&str>) -> bool {
+    match expected {
+        Some(expected) => actual == Some(expected),
+        None => actual.is_none(),
+    }
+}

@@ -1,0 +1,303 @@
+import { MethodBadge } from '../components/MethodBadge';
+import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import { ApiEndpointView } from '../components/ApiEndpointView';
+import { ChevronRight, Search, Loader2 } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
+import {
+  createReferenceSidebarGroupElementId,
+  isReferenceSidebarGroupCollapsed,
+  toggleReferenceSidebarGroup,
+  type ReferenceSidebarCollapsedGroups,
+} from 'sdkwork-claw-router-commons';
+import type { ApiReferenceEndpoint } from '../openapiTypes';
+import {
+  buildApiCategorySidebarTree,
+  loadApiReferenceSystems,
+  type ApiCategorySidebarNode,
+  type ApiSystemData,
+} from '../apiReferenceSchemaTabs';
+
+export function ApiReference() {
+  const { t } = useTranslation();
+
+  // State for navigation
+  const [activeSystem, setActiveSystem] = useState<string>('');
+  const [activeEndpointId, setActiveEndpointId] = useState<string>('');
+  const [apiData, setApiData] = useState<ApiSystemData[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [collapsedGroups, setCollapsedGroups] = useState<ReferenceSidebarCollapsedGroups>({});
+
+  useEffect(() => {
+    const loadOpenApi = async () => {
+      try {
+        const systems = await loadApiReferenceSystems();
+        setApiData(systems);
+
+        if (systems.length > 0) {
+          setActiveSystem(systems[0].id);
+          if (systems[0].categories.length > 0 && systems[0].categories[0].endpoints.length > 0) {
+            setActiveEndpointId(systems[0].categories[0].endpoints[0].id);
+          }
+        }
+
+        setLoading(false);
+      } catch {
+        setLoading(false);
+      }
+    };
+
+    loadOpenApi();
+  }, []);
+
+  const activeSystemData = apiData.find(s => s.id === activeSystem);
+  const sidebarTree = activeSystemData ? buildApiCategorySidebarTree(activeSystemData.categories) : [];
+
+  // Find the active endpoint
+  let activeEndpoint: ApiReferenceEndpoint | null = null;
+  if (activeSystemData) {
+    for (const category of activeSystemData.categories) {
+      const endpoint = category.endpoints.find(e => e.id === activeEndpointId);
+      if (endpoint) {
+        activeEndpoint = endpoint;
+        break;
+      }
+    }
+    // Fallback to first endpoint if not found in current system
+    if (!activeEndpoint && activeSystemData.categories.length > 0 && activeSystemData.categories[0].endpoints.length > 0) {
+      activeEndpoint = activeSystemData.categories[0].endpoints[0];
+    }
+  }
+
+  const handleEndpointClick = (endpointId: string) => {
+    setActiveEndpointId(endpointId);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleCategoryToggle = (categoryId: string) => {
+    setCollapsedGroups((current) => toggleReferenceSidebarGroup(current, activeSystem, categoryId));
+  };
+
+  const renderEndpointItem = (endpoint: ApiReferenceEndpoint, compact = false) => {
+    const isActive = activeEndpointId === endpoint.id;
+    return (
+      <li key={endpoint.id}>
+        <button
+          onClick={() => handleEndpointClick(endpoint.id)}
+          className={`w-full flex items-center gap-3 text-left px-2 py-2 text-[13px] rounded-lg transition-all ${
+            compact ? 'pl-3' : ''
+          } ${
+            isActive
+              ? 'bg-white dark:bg-white/10 text-blue-600 dark:text-blue-400 font-medium shadow-sm ring-1 ring-slate-200 dark:ring-white/10'
+              : 'text-slate-600 dark:text-slate-400 hover:bg-white dark:hover:bg-white/5 hover:text-slate-900 dark:hover:text-white'
+          }`}
+        >
+          <MethodBadge method={endpoint.method} />
+          <span className="truncate">{endpoint.name}</span>
+        </button>
+      </li>
+    );
+  };
+
+  const renderSidebarNode = (node: ApiCategorySidebarNode) => {
+    const isCollapsed = isReferenceSidebarGroupCollapsed(collapsedGroups, activeSystem, node.id);
+    const groupElementId = createReferenceSidebarGroupElementId('api-reference-sidebar-group', activeSystem, node.id);
+    return (
+      <div key={node.id} className="space-y-2">
+        <button
+          type="button"
+          onClick={() => handleCategoryToggle(node.id)}
+          aria-expanded={!isCollapsed}
+          aria-controls={groupElementId}
+          className="flex w-full items-center gap-2 rounded-lg px-2 py-1.5 text-left text-xs font-bold uppercase tracking-wider text-slate-900 transition-colors hover:bg-white dark:text-white dark:hover:bg-white/5"
+        >
+          <ChevronRight
+            className={`h-3.5 w-3.5 shrink-0 text-slate-400 transition-transform ${
+              isCollapsed ? '' : 'rotate-90'
+            }`}
+            aria-hidden="true"
+          />
+          <span className="min-w-0 flex-1 truncate">{node.name}</span>
+          <span className="shrink-0 rounded-full bg-slate-200 px-1.5 py-0.5 text-[10px] font-semibold leading-none text-slate-600 dark:bg-white/10 dark:text-slate-300">
+            {node.totalEndpoints}
+          </span>
+        </button>
+        <AnimatePresence initial={false}>
+          {!isCollapsed && (
+            <motion.div
+              id={groupElementId}
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: 'auto', opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.16, ease: 'easeOut' }}
+              className="space-y-2 overflow-hidden"
+            >
+              {node.endpoints.length > 0 && (
+                <ul className="space-y-0.5">
+                  {node.endpoints.map((endpoint) => renderEndpointItem(endpoint))}
+                </ul>
+              )}
+              {node.children.map((child) => renderSidebarChildNode(child, 1))}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    );
+  };
+
+  const renderSidebarChildNode = (node: ApiCategorySidebarNode, depth: number) => {
+    const isCollapsed = isReferenceSidebarGroupCollapsed(collapsedGroups, activeSystem, node.id);
+    const groupElementId = createReferenceSidebarGroupElementId('api-reference-sidebar-subgroup', activeSystem, node.id);
+    return (
+      <div key={node.id} className="space-y-1">
+        <button
+          type="button"
+          onClick={() => handleCategoryToggle(node.id)}
+          aria-expanded={!isCollapsed}
+          aria-controls={groupElementId}
+          className="mb-1 flex w-full items-center gap-2 rounded-md px-2 py-1.5 text-left text-[12px] font-semibold text-slate-500 transition-colors hover:bg-white hover:text-slate-800 dark:text-slate-400 dark:hover:bg-white/5 dark:hover:text-white"
+        >
+          <ChevronRight
+            className={`h-3 w-3 shrink-0 text-slate-400 transition-transform ${
+              isCollapsed ? '' : 'rotate-90'
+            }`}
+            aria-hidden="true"
+          />
+          <span className="min-w-0 flex-1 truncate">{node.name}</span>
+          <span className="shrink-0 rounded-full bg-slate-200 px-1.5 py-0.5 text-[10px] font-semibold leading-none text-slate-600 dark:bg-white/10 dark:text-slate-300">
+            {node.totalEndpoints}
+          </span>
+        </button>
+        <AnimatePresence initial={false}>
+          {!isCollapsed && (
+            <motion.div
+              id={groupElementId}
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: 'auto', opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.16, ease: 'easeOut' }}
+              className="space-y-2 overflow-hidden"
+            >
+              {node.endpoints.length > 0 && (
+                <ul className="space-y-0.5">
+                  {node.endpoints.map((endpoint) => renderEndpointItem(endpoint))}
+                </ul>
+              )}
+              {node.children.map((child) => renderSidebarChildNode(child, depth + 1))}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    );
+  };
+
+  if (loading) {
+    return (
+      <div className="w-full min-h-screen pt-20 bg-white dark:bg-[#0a0a0a] flex items-center justify-center">
+        <Loader2 className="w-8 h-8 animate-spin text-blue-500" />
+      </div>
+    );
+  }
+
+  return (
+    <div className="w-full min-h-screen pt-20 bg-white dark:bg-[#0a0a0a] flex flex-col">
+      {/* Sub-header Tabs for API Systems */}
+      <div className="sticky top-[56px] z-40 bg-white/80 dark:bg-[#0a0a0a]/80 backdrop-blur-md border-b border-slate-200 dark:border-white/10">
+        <div className="w-full mx-auto px-4 md:px-6 lg:px-8 flex items-center gap-8 overflow-x-auto custom-scrollbar">
+          {apiData.map((system) => {
+            const Icon = system.icon;
+            const isActive = activeSystem === system.id;
+            return (
+              <button
+                key={system.id}
+                onClick={() => {
+                  setActiveSystem(system.id);
+                  if (system.categories.length > 0 && system.categories[0].endpoints.length > 0) {
+                    setActiveEndpointId(system.categories[0].endpoints[0].id);
+                  }
+                }}
+                className={`flex items-center gap-2 py-4 text-sm font-medium border-b-2 transition-colors whitespace-nowrap ${
+                  isActive
+                    ? 'border-blue-500 text-blue-600 dark:text-blue-400'
+                    : 'border-transparent text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:border-slate-300 dark:hover:border-slate-700'
+                }`}
+              >
+                <Icon className="w-4 h-4" />
+                {system.name}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="flex flex-1 w-full mx-auto">
+        {/* Sidebar */}
+        <aside
+          className="relative hidden h-[calc(100vh-110px)] w-[360px] max-w-[360px] basis-[360px] shrink-0 flex-col border-r border-slate-200 bg-slate-50/50 dark:border-white/10 dark:bg-[#0a0a0a] md:flex sticky top-[110px]"
+        >
+          {/* Header Area: Search */}
+          <div className="p-4 border-b border-slate-200 dark:border-white/10">
+            {/* Search Bar */}
+            <button className="w-full flex items-center justify-between bg-white dark:bg-[#111] border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 text-sm text-slate-500 hover:border-slate-300 dark:hover:border-white/20 transition-colors shadow-sm group">
+              <div className="flex items-center gap-2">
+                <Search className="w-4 h-4 text-slate-400 group-hover:text-slate-500 dark:group-hover:text-slate-300" />
+                <span>{t('api.searchDocs', 'Search docs...')}</span>
+              </div>
+              <kbd className="hidden sm:inline-flex items-center gap-1 text-[10px] font-medium text-slate-400 bg-slate-100 dark:bg-white/10 px-1.5 py-0.5 rounded border border-slate-200 dark:border-white/10">
+                <span className="text-xs">⌘</span>K
+              </kbd>
+            </button>
+          </div>
+
+          {/* Categories and Endpoints */}
+          <div className="flex-1 overflow-y-auto custom-scrollbar p-4">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeSystem}
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 10 }}
+                transition={{ duration: 0.2 }}
+                className="space-y-8 pb-8"
+              >
+                {sidebarTree.map((node) => renderSidebarNode(node))}
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </aside>
+
+        {/* Main Content */}
+        <main className="flex-1 min-w-0 p-6 md:p-10 lg:p-12 pb-24 overflow-x-hidden">
+          <div className="max-w-full">
+            <div className="mb-12 pb-8 border-b border-slate-200 dark:border-white/10">
+              <h1 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">{activeSystemData?.name || t('api.title')}</h1>
+              <p className="text-lg text-slate-600 dark:text-slate-400 max-w-3xl leading-relaxed">
+                {t('api.description')} Explore the {activeSystemData?.name} endpoints using the sidebar.
+              </p>
+            </div>
+
+            <div className="space-y-16">
+              <AnimatePresence mode="wait">
+                {activeEndpoint ? (
+                  <motion.div
+                    key={activeEndpoint.id}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <ApiEndpointView endpoint={activeEndpoint} />
+                  </motion.div>
+                ) : (
+                  <div className="text-center py-20 text-slate-500">
+                    {t('api.selectEndpoint', 'Select an endpoint from the sidebar to view its documentation.')}
+                  </div>
+                )}
+              </AnimatePresence>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  );
+}

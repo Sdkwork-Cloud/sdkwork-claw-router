@@ -1,0 +1,30 @@
+{
+  "name": "sdkwork-claw-router-workspace",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.33.0",
+  "scripts": {
+    "dev": "node scripts/run-claw-router-product.mjs server",
+    "test": "node scripts/run-claw-router-product.test.mjs",
+    "build": "node scripts/build-claw-router-production.mjs",
+    "start": "node scripts/start-claw-router-production.mjs",
+    "release": "pnpm release:preflight && pnpm verify",
+    "portal:dev": "node scripts/run-claw-router-product.mjs browser",
+    "desktop:dev": "node scripts/run-claw-router-product.mjs desktop",
+    "tauri:dev": "node scripts/run-claw-router-product.mjs desktop",
+    "service:dev": "node scripts/run-claw-router-product.mjs service",
+    "server:dev": "node scripts/run-claw-router-product.mjs server",
+    "server:plan": "node scripts/run-claw-router-product.mjs plan",
+    "smoke:dev": "node scripts/smoke-edge-dev-server.mjs",
+    "product:check": "node scripts/run-claw-router-product.mjs check",
+    "test:tooling": "node scripts/run-claw-router-product.test.mjs",
+    "test:postgres": "node scripts/run-postgres-integration.mjs",
+    "test:postgres:required": "node scripts/run-postgres-integration.mjs --require-database",
+    "test:postgres:docker": "node scripts/run-postgres-integration.mjs --with-docker",
+    "verify": "node scripts/verify-claw-router-product.mjs",
+    "verify:fast": "node scripts/verify-claw-router-product.mjs --fast",
+    "models:check": "node data/sdkwork-models/tools/build-index.mjs --check && node data/sdkwork-models/tools/validate-catalog.mjs && node data/sdkwork-models/tools/freshness-report.mjs --max-age-policy catalog-freshness-policy.json && node data/sdkwork-models/tools/catalog-audit.mjs && node data/sdkwork-models/tools/release-catalog.mjs --check",
+    "clean:fast": "node scripts/clean-claw-router-workspace.mjs",
+    "release:preflight": "node scripts/release-preflight.mjs"
+  }
+}

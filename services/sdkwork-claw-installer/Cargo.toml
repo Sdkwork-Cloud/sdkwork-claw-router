@@ -1,0 +1,14 @@
+[package]
+name = "sdkwork-claw-installer"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+anyhow.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+sdkwork-claw-config = { path = "../../crates/sdkwork-claw-config" }
+sdkwork-claw-product = { path = "../sdkwork-claw-product" }
+sqlx.workspace = true
+tokio.workspace = true

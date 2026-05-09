@@ -1,0 +1,30 @@
+export interface IamGatewayApiKeyGroupRecord {
+  allowed_origin?: Record<string, unknown>;
+  billing_type?: string;
+  capacity_limit?: string;
+  code?: string;
+  created_at?: string;
+  data_scope?: string;
+  default_policy_id?: string;
+  default_quota_policy_id?: string;
+  deleted_at?: string;
+  deleted_by?: string;
+  description?: string;
+  environment?: string;
+  group_type?: string;
+  id?: string;
+  metadata?: Record<string, unknown>;
+  name?: string;
+  official_price_multiplier?: string;
+  organization_id?: string;
+  price_reference_mode?: string;
+  pricing_plan_code?: string;
+  pricing_plan_id?: string;
+  provider_code?: string;
+  rate_multiplier?: string;
+  status?: string;
+  tenant_id?: string;
+  updated_at?: string;
+  uuid?: string;
+  version?: string;
+}

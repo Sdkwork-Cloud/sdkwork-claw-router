@@ -1,0 +1,43 @@
+[workspace]
+members = [
+    "crates/sdkwork-claw-contract",
+    "crates/sdkwork-claw-config",
+    "crates/sdkwork-claw-core",
+    "crates/sdkwork-claw-security",
+    "crates/sdkwork-claw-http",
+    "crates/sdkwork-claw-observability",
+    "crates/sdkwork-claw-test-support",
+    "services/sdkwork-claw-gateway",
+    "services/sdkwork-claw-admin-api",
+    "services/sdkwork-claw-app-api",
+    "services/sdkwork-claw-installer",
+    "services/sdkwork-claw-product",
+    "data/sdkwork-models/sdkwork-models-rust",
+]
+resolver = "2"
+
+[workspace.package]
+edition = "2021"
+version = "0.1.0"
+license = "MIT"
+
+[workspace.dependencies]
+anyhow = "1.0"
+axum = "0.8"
+bytes = "1.11.1"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+hmac = "0.12.1"
+futures-core = "0.3.32"
+http-body-util = "0.1.3"
+hyper = { version = "1.9.0", features = ["client", "http1"] }
+hyper-rustls = { version = "0.27.9", default-features = false, features = ["http1", "ring", "webpki-tokio"] }
+hyper-util = { version = "0.1.20", features = ["client-legacy", "http1", "tokio"] }
+hex = "0.4.3"
+sha2 = "0.10.9"
+sqlx = { version = "0.8.6", default-features = false, features = ["runtime-tokio", "sqlite", "postgres"] }
+tokio = { version = "1.51", features = ["macros", "rt-multi-thread", "net", "time", "test-util"] }
+tower = { version = "0.5", features = ["util"] }
+tower-http = { version = "0.6", features = ["cors", "trace"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt"] }

@@ -1,0 +1,38 @@
+{
+  "name": "sdkwork-claw-router-commons",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./src/index.ts",
+      "require": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./runtime": {
+      "types": "./src/runtime.ts",
+      "import": "./src/runtime.ts",
+      "require": "./src/runtime.ts",
+      "default": "./src/runtime.ts"
+    }
+  },
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "vite build",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@sdkwork/clawrouter-app-sdk": "file:../../../../sdks/clawrouter-app-sdk",
+    "@sdkwork/clawrouter-backend-sdk": "file:../../../../sdks/clawrouter-backend-sdk",
+    "lucide-react": "^0.546.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0"
+  }
+}

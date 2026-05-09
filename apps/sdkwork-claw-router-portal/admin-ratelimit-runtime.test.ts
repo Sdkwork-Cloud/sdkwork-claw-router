@@ -1,0 +1,596 @@
+import assert from "node:assert/strict";
+import test from "node:test";
+
+import { clearStoredAppSessionToken } from "./packages/sdkwork-claw-router-commons/src/app-session-token.ts";
+import { resetClawRouterSdkClients } from "./packages/sdkwork-claw-router-commons/src/sdk-clients.ts";
+import { RateLimitService } from "./packages/sdkwork-claw-router-admin-ratelimit/src/ratelimitService.ts";
+import {
+  createFirewallInputFromForm,
+  createIpLimitInputFromForm,
+  createModelLimitInputFromForm,
+  createTokenLimitInputFromForm,
+} from "./packages/sdkwork-claw-router-admin-ratelimit/src/ratelimitForm.ts";
+
+const originalFetch = globalThis.fetch;
+const originalWindowDescriptor = Object.getOwnPropertyDescriptor(globalThis, "window");
+
+type CapturedBackendRequest = {
+  url: string;
+  method: string;
+  headers: Record<string, string>;
+  body: string;
+};
+
+async function withBackendSdkFetch<T>(
+  handler: (url: string, init?: RequestInit) => unknown,
+  fn: (captured: CapturedBackendRequest[]) => Promise<T>,
+): Promise<T> {
+  const captured: CapturedBackendRequest[] = [];
+  Object.defineProperty(globalThis, "window", {
+    configurable: true,
+    enumerable: true,
+    value: {},
+  });
+  globalThis.fetch = (async (input: RequestInfo | URL, init?: RequestInit) => {
+    const url = typeof input === "string" ? input : input instanceof URL ? input.toString() : input.url;
+    const body = typeof init?.body === "string" ? init.body : "";
+    const headers = Object.fromEntries(new Headers(init?.headers).entries());
+    captured.push({
+      url,
+      method: init?.method ?? "GET",
+      headers,
+      body,
+    });
+    const result = handler(url, init);
+    return new Response(JSON.stringify({ code: "2000", data: result }), {
+      status: 200,
+      headers: { "content-type": "application/json" },
+    });
+  }) as typeof fetch;
+  clearStoredAppSessionToken();
+  resetClawRouterSdkClients();
+
+  try {
+    return await fn(captured);
+  } finally {
+    clearStoredAppSessionToken();
+    resetClawRouterSdkClients();
+    globalThis.fetch = originalFetch;
+    if (originalWindowDescriptor) {
+      Object.defineProperty(globalThis, "window", originalWindowDescriptor);
+    } else {
+      delete (globalThis as { window?: Window }).window;
+    }
+  }
+}
+
+test("admin IP limit create input does not reuse returned rule view model", () => {
+  const form = new FormData();
+  form.set("ruleName", " Edge CIDR ");
+  form.set("targetIp", " 10.0.0.0/24 ");
+  form.set("rps", " 15 ");
+  form.set("rpm", " 900 ");
+
+  const input = createIpLimitInputFromForm(form);
+
+  assert.deepEqual(input, {
+    ruleName: "Edge CIDR",
+    targetIp: "10.0.0.0/24",
+    rps: 15,
+    rpm: 900,
+    blockDuration: "10m",
+  });
+  for (const field of ["id", "status"]) {
+    assert.equal(field in input, false);
+  }
+});
+
+test("admin token limit create input defaults invalid numeric values safely", () => {
+  const form = new FormData();
+  form.set("keyPrefix", " ");
+  form.set("user", " Platform Ops ");
+  form.set("rps", "not-a-number");
+  form.set("rpd", "-1");
+  form.set("burst", "0");
+
+  assert.deepEqual(createTokenLimitInputFromForm(form), {
+    keyPrefix: "sk-proj-...",
+    user: "Platform Ops",
+    rps: 1,
+    rpd: 1,
+    burst: 1,
+  });
+});
+
+test("admin model limit create input does not reuse returned model limit view model", () => {
+  const form = new FormData();
+  form.set("model", " gpt-4o-mini ");
+  form.set("group", " enterprise ");
+  form.set("rpm", " 60 ");
+  form.set("tpm", " 200000 ");
+
+  const input = createModelLimitInputFromForm(form);
+
+  assert.deepEqual(input, {
+    model: "gpt-4o-mini",
+    group: "enterprise",
+    rpm: 60,
+    tpm: 200000,
+  });
+  for (const field of ["id", "status"]) {
+    assert.equal(field in input, false);
+  }
+});
+
+test("admin firewall create input does not reuse returned firewall view model", () => {
+  const form = new FormData();
+  form.set("type", " IP deny ");
+  form.set("value", " 203.0.113.10 ");
+  form.set("reason", " Abuse ");
+
+  const input = createFirewallInputFromForm(form);
+
+  assert.deepEqual(input, {
+    type: "IP deny",
+    value: "203.0.113.10",
+    reason: "Abuse",
+  });
+  for (const field of ["id", "time"]) {
+    assert.equal(field in input, false);
+  }
+});
+
+test("admin ratelimit service calls generated backend SDK paths and normalizes rule data", async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      const method = init?.method ?? "GET";
+      if (url === "/backend/v3/api/router/rate-limits/ip" && method === "GET") {
+        return {
+          items: [
+            {
+              id: "ip-1",
+              ruleName: "Edge CIDR",
+              targetIp: "10.0.0.0/24",
+              rps: "15",
+              rpm: 900,
+              blockDuration: "10m",
+              status: "inactive",
+            },
+          ],
+        };
+      }
+      if (url === "/backend/v3/api/router/rate-limits/ip" && method === "POST") {
+        return {
+          item: {
+            id: "ip-2",
+            ruleName: "Created CIDR",
+            targetIp: "192.0.2.0/24",
+            rps: 20,
+            rpm: 1200,
+            blockDuration: "30m",
+            status: "active",
+          },
+        };
+      }
+      if (url === "/backend/v3/api/router/rate-limits/api-keys" && method === "GET") {
+        return {
+          items: [
+            {
+              id: "token-1",
+              keyPrefix: "sk-prod",
+              user: "Platform Ops",
+              rps: "2",
+              rpd: 10000,
+              burst: 8,
+              status: "exhausted",
+            },
+          ],
+        };
+      }
+      if (url === "/backend/v3/api/router/rate-limits/api-keys" && method === "POST") {
+        return {
+          item: {
+            id: "token-2",
+            keyPrefix: "sk-new",
+            user: "Billing",
+            rps: 3,
+            rpd: 20000,
+            burst: 10,
+            status: "active",
+          },
+        };
+      }
+      if (url === "/backend/v3/api/router/rate-limits/models" && method === "GET") {
+        return {
+          items: [
+            {
+              id: "model-limit-1",
+              model: "gpt-4o-mini",
+              group: "enterprise",
+              rpm: "60",
+              tpm: 200000,
+              status: "inactive",
+            },
+          ],
+        };
+      }
+      if (url === "/backend/v3/api/router/rate-limits/models" && method === "POST") {
+        return {
+          item: {
+            id: "model-limit-2",
+            model: "claude-3-5-sonnet",
+            group: "enterprise",
+            rpm: 30,
+            tpm: 100000,
+            status: "active",
+          },
+        };
+      }
+      if (url === "/backend/v3/api/router/firewall/rules" && method === "GET") {
+        return {
+          items: [
+            {
+              id: "firewall-1",
+              type: "IP deny",
+              value: "203.0.113.10",
+              reason: "Abuse",
+              time: "2026-05-05T08:00:00Z",
+            },
+          ],
+        };
+      }
+      if (url === "/backend/v3/api/router/firewall/rules" && method === "POST") {
+        return {
+          item: {
+            id: "firewall-2",
+            type: "IP allow",
+            value: "198.51.100.10",
+            reason: "Enterprise",
+            time: "2026-05-05T08:05:00Z",
+          },
+        };
+      }
+      if (url === "/backend/v3/api/router/firewall/rules/firewall-2" && method === "DELETE") {
+        return { deleted: true };
+      }
+      throw new Error(`Unexpected SDK request ${method} ${url}`);
+    },
+    async (captured) => {
+      const ipLimits = await RateLimitService.fetchIpLimits();
+      const createdIp = await RateLimitService.addIpLimit({
+        ruleName: "Created CIDR",
+        targetIp: "192.0.2.0/24",
+        rps: 20,
+        rpm: 1200,
+        blockDuration: "30m",
+      });
+      const tokenLimits = await RateLimitService.fetchTokenLimits();
+      const createdToken = await RateLimitService.addTokenLimit({
+        keyPrefix: "sk-new",
+        user: "Billing",
+        rps: 3,
+        rpd: 20000,
+        burst: 10,
+      });
+      const modelLimits = await RateLimitService.fetchModelLimits();
+      const createdModel = await RateLimitService.addModelLimit({
+        model: "claude-3-5-sonnet",
+        group: "enterprise",
+        rpm: 30,
+        tpm: 100000,
+      });
+      const firewalls = await RateLimitService.fetchFirewalls();
+      const createdFirewall = await RateLimitService.addFirewall({
+        type: "IP allow",
+        value: "198.51.100.10",
+        reason: "Enterprise",
+      });
+      const removed = await RateLimitService.removeFirewall("firewall-2");
+
+      assert.equal(ipLimits[0].rps, 15);
+      assert.equal(ipLimits[0].status, "inactive");
+      assert.equal(createdIp.id, "ip-2");
+      assert.equal(tokenLimits[0].status, "exhausted");
+      assert.equal(createdToken.burst, 10);
+      assert.equal(modelLimits[0].rpm, 60);
+      assert.equal(createdModel.status, "active");
+      assert.equal(firewalls[0].value, "203.0.113.10");
+      assert.equal(createdFirewall.id, "firewall-2");
+      assert.equal(removed, true);
+      assert.deepEqual(
+        captured.map((request) => `${request.method} ${request.url}`),
+        [
+          "GET /backend/v3/api/router/rate-limits/ip",
+          "POST /backend/v3/api/router/rate-limits/ip",
+          "GET /backend/v3/api/router/rate-limits/api-keys",
+          "POST /backend/v3/api/router/rate-limits/api-keys",
+          "GET /backend/v3/api/router/rate-limits/models",
+          "POST /backend/v3/api/router/rate-limits/models",
+          "GET /backend/v3/api/router/firewall/rules",
+          "POST /backend/v3/api/router/firewall/rules",
+          "DELETE /backend/v3/api/router/firewall/rules/firewall-2",
+        ],
+      );
+      assert.deepEqual(JSON.parse(captured[1].body), {
+        ruleName: "Created CIDR",
+        targetIp: "192.0.2.0/24",
+        rps: 20,
+        rpm: 1200,
+        blockDuration: "30m",
+      });
+      assert.equal(captured[1].headers["x-request-id"]?.startsWith("admin-ip-limit-create-"), true);
+      assert.equal(captured[3].headers["x-request-id"]?.startsWith("admin-token-limit-create-"), true);
+      assert.equal(captured[5].headers["x-request-id"]?.startsWith("admin-model-limit-create-"), true);
+      assert.equal(captured[7].headers["x-request-id"]?.startsWith("admin-firewall-create-"), true);
+    },
+  );
+});
+
+test("admin ratelimit service rejects invalid commands before calling generated backend SDK", async () => {
+  await withBackendSdkFetch(
+    () => {
+      throw new Error("backend SDK must not be called for invalid ratelimit commands");
+    },
+    async (captured) => {
+      await assert.rejects(
+        () =>
+          RateLimitService.addIpLimit({
+            ruleName: "",
+            targetIp: "10.0.0.0/24",
+            rps: 1,
+            rpm: 60,
+            blockDuration: "10m",
+          }),
+        /ruleName is required/,
+      );
+      await assert.rejects(
+        () =>
+          RateLimitService.addTokenLimit({
+            keyPrefix: "sk-prod",
+            user: "Ops",
+            rps: 0,
+            rpd: 100,
+            burst: 1,
+          }),
+        /rps must be a positive integer/,
+      );
+      await assert.rejects(
+        () =>
+          RateLimitService.addFirewall({
+            type: "IP deny",
+            value: "",
+            reason: "Abuse",
+          }),
+        /value is required/,
+      );
+      assert.equal(captured.length, 0);
+    },
+  );
+});
+
+test("admin ratelimit service rejects unsafe firewall path ids before calling generated backend SDK", async () => {
+  await withBackendSdkFetch(
+    () => {
+      throw new Error("backend SDK must not be called for unsafe firewall path ids");
+    },
+    async (captured) => {
+      await assert.rejects(
+        () => RateLimitService.removeFirewall("firewall/2"),
+        /firewallRuleId must be a safe path segment/,
+      );
+      assert.equal(captured.length, 0);
+    },
+  );
+});
+
+test("admin IP limit list fails closed when backend omits stable rule ids", async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      if (url === "/backend/v3/api/router/rate-limits/ip" && (init?.method ?? "GET") === "GET") {
+        return {
+          items: [
+            {
+              ruleName: "Missing Id CIDR",
+              targetIp: "10.0.0.0/24",
+              rps: 15,
+              rpm: 900,
+              blockDuration: "10m",
+              status: "active",
+            },
+          ],
+        };
+      }
+      throw new Error(`Unexpected SDK request ${init?.method ?? "GET"} ${url}`);
+    },
+    async () => {
+      await assert.rejects(
+        () => RateLimitService.fetchIpLimits(),
+        /IP limit id is required/,
+      );
+    },
+  );
+});
+
+test("admin IP limit list fails closed when backend returns malformed rows", async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      if (url === "/backend/v3/api/router/rate-limits/ip" && (init?.method ?? "GET") === "GET") {
+        return {
+          items: [
+            {
+              id: "ip-1",
+              ruleName: "Edge CIDR",
+              targetIp: "10.0.0.0/24",
+              rps: 15,
+              rpm: 900,
+              blockDuration: "10m",
+              status: "active",
+            },
+            "malformed-ip-limit-row",
+          ],
+        };
+      }
+      throw new Error(`Unexpected SDK request ${init?.method ?? "GET"} ${url}`);
+    },
+    async () => {
+      await assert.rejects(
+        () => RateLimitService.fetchIpLimits(),
+        /IP limit record is required/,
+      );
+    },
+  );
+});
+
+test("admin IP limit list fails closed when backend omits positive thresholds", async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      if (url === "/backend/v3/api/router/rate-limits/ip" && (init?.method ?? "GET") === "GET") {
+        return {
+          items: [
+            {
+              id: "ip-1",
+              ruleName: "Edge CIDR",
+              targetIp: "10.0.0.0/24",
+              rpm: 900,
+              blockDuration: "10m",
+              status: "active",
+            },
+          ],
+        };
+      }
+      throw new Error(`Unexpected SDK request ${init?.method ?? "GET"} ${url}`);
+    },
+    async () => {
+      await assert.rejects(
+        () => RateLimitService.fetchIpLimits(),
+        /IP limit rps is required/,
+      );
+    },
+  );
+});
+
+test("admin token limit list fails closed when backend returns malformed rows", async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      if (url === "/backend/v3/api/router/rate-limits/api-keys" && (init?.method ?? "GET") === "GET") {
+        return {
+          items: ["malformed-token-limit-row"],
+        };
+      }
+      throw new Error(`Unexpected SDK request ${init?.method ?? "GET"} ${url}`);
+    },
+    async () => {
+      await assert.rejects(
+        () => RateLimitService.fetchTokenLimits(),
+        /Token limit record is required/,
+      );
+    },
+  );
+});
+
+test("admin model limit list fails closed when backend omits stable rule ids", async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      if (url === "/backend/v3/api/router/rate-limits/models" && (init?.method ?? "GET") === "GET") {
+        return {
+          items: [
+            {
+              model: "gpt-4o-mini",
+              group: "enterprise",
+              rpm: 60,
+              tpm: 200000,
+              status: "active",
+            },
+          ],
+        };
+      }
+      throw new Error(`Unexpected SDK request ${init?.method ?? "GET"} ${url}`);
+    },
+    async () => {
+      await assert.rejects(
+        () => RateLimitService.fetchModelLimits(),
+        /Model limit id is required/,
+      );
+    },
+  );
+});
+
+test("admin firewall list fails closed when backend omits stable rule ids", async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      if (url === "/backend/v3/api/router/firewall/rules" && (init?.method ?? "GET") === "GET") {
+        return {
+          items: [
+            {
+              type: "IP deny",
+              value: "203.0.113.10",
+              reason: "Abuse",
+              time: "2026-05-05T08:00:00Z",
+            },
+          ],
+        };
+      }
+      throw new Error(`Unexpected SDK request ${init?.method ?? "GET"} ${url}`);
+    },
+    async () => {
+      await assert.rejects(
+        () => RateLimitService.fetchFirewalls(),
+        /Firewall rule id is required/,
+      );
+    },
+  );
+});
+
+test("admin firewall list fails closed when backend returns malformed rows", async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      if (url === "/backend/v3/api/router/firewall/rules" && (init?.method ?? "GET") === "GET") {
+        return {
+          items: [
+            {
+              id: "firewall-1",
+              type: "IP deny",
+              value: "203.0.113.10",
+              reason: "Abuse",
+              time: "2026-05-05T08:00:00Z",
+            },
+            "malformed-firewall-row",
+          ],
+        };
+      }
+      throw new Error(`Unexpected SDK request ${init?.method ?? "GET"} ${url}`);
+    },
+    async () => {
+      await assert.rejects(
+        () => RateLimitService.fetchFirewalls(),
+        /Firewall rule record is required/,
+      );
+    },
+  );
+});
+
+test("admin firewall list fails closed when backend omits firewall values", async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      if (url === "/backend/v3/api/router/firewall/rules" && (init?.method ?? "GET") === "GET") {
+        return {
+          items: [
+            {
+              id: "firewall-1",
+              type: "IP deny",
+              reason: "Abuse",
+              time: "2026-05-05T08:00:00Z",
+            },
+          ],
+        };
+      }
+      throw new Error(`Unexpected SDK request ${init?.method ?? "GET"} ${url}`);
+    },
+    async () => {
+      await assert.rejects(
+        () => RateLimitService.fetchFirewalls(),
+        /Firewall rule value is required/,
+      );
+    },
+  );
+});

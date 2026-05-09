@@ -1,0 +1,31 @@
+export interface IntegrationProviderRecord {
+  auth_type?: string;
+  base_url_template?: string;
+  capabilities?: Record<string, unknown>;
+  color_token?: string;
+  created_at?: string;
+  data_scope?: string;
+  default_vendor_code?: string;
+  deleted_at?: string;
+  deleted_by?: string;
+  description?: string;
+  display_name?: string;
+  docs_url?: string;
+  icon_url?: string;
+  id?: string;
+  integration_type?: string;
+  metadata?: Record<string, unknown>;
+  metadata_schema_version?: string;
+  organization_id?: string;
+  protocol?: string;
+  provider_code?: string;
+  sort_order?: number;
+  status?: string;
+  tenant_id?: string;
+  updated_at?: string;
+  upstream_provider_code?: string;
+  upstream_vendor_code?: string;
+  uuid?: string;
+  version?: string;
+  website_url?: string;
+}

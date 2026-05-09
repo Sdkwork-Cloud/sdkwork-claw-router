@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8101,
+  "uuid": "skill-prompt-optimizer",
+  "skillKey": "prompt-optimizer",
+  "name": "Prompt Optimizer",
+  "summary": "Analyze, rewrite, and harden prompts for reliable agent execution.",
+  "version": "1.0.0",
+  "runtime": "builtin",
+  "entrypoint": "sdkwork.skills.prompt_optimizer",
+  "provider": "SDKWork",
+  "licenseName": "SDKWork Commercial",
+  "capabilities": ["prompt.analysis", "prompt.rewrite", "instruction.hardening"],
+  "configSchema": {
+    "type": "object",
+    "properties": {
+      "targetModel": { "type": "string" },
+      "strictness": { "type": "string", "enum": ["balanced", "strict", "maximum"] }
+    }
+  },
+  "defaultConfig": {
+    "strictness": "balanced",
+    "portal": {
+      "developer": "Prompt Copilot",
+      "features": ["Ambiguity detection", "Constraint strengthening", "Output contract shaping"],
+      "frameworks": ["OpenAI-compatible", "Spring AI", "Rust service"],
+      "sizeText": "24 KB",
+      "clawhubImage": "https://cdn.sdkwork.example/skills/prompt-optimizer/clawhub.png",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/prompt-optimizer/screenshot-1.png",
+        "https://cdn.sdkwork.example/skills/prompt-optimizer/screenshot-2.png"
+      ]
+    }
+  },
+  "artifacts": [
+    {
+      "artifactRef": "builtin://sdkwork.skills.prompt_optimizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/prompt-optimizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "builtin",
+      "checksumHash": "sha256:3dae84ec4a2bbff9c17a65db78aded0974cbcac33007decee51bff6f779bfc0f",
+      "artifactSizeBytes": 1748
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T00:00:00Z"
+}

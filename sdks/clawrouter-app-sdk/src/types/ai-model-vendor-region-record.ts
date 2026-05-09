@@ -1,0 +1,30 @@
+export interface AiModelVendorRegionRecord {
+  billing_currency: string;
+  billing_jurisdiction: string;
+  capabilities?: Record<string, unknown>;
+  country_region?: string;
+  created_at?: string;
+  data_scope?: string;
+  deleted_at?: string;
+  deleted_by?: string;
+  description?: string;
+  display_name: string;
+  docs_url?: string;
+  id?: string;
+  legal_name?: string;
+  market_scope: string;
+  metadata?: Record<string, unknown>;
+  open_source?: boolean;
+  operating_regions: Record<string, unknown>;
+  organization_id: string;
+  region_code: string;
+  sort_order?: number;
+  status: string;
+  tenant_id: string;
+  updated_at?: string;
+  uuid: string;
+  vendor_code: string;
+  vendor_id?: string;
+  version?: string;
+  website_url?: string;
+}

@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "builtin://sdkwork.skills.rag_context_builder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "builtin",
+  "entrypoint": "sdkwork.skills.rag_context_builder",
+  "checksumHash": "sha256:8bd4c9343703c2834177638a6b7e1850480a3be1c7beba9c87a6b643ef958406",
+  "skill": {
+    "id": 8102,
+    "skillKey": "rag-context-builder",
+    "name": "RAG Context Builder"
+  },
+  "instructions": [
+    "Normalize source excerpts into citation-ready context blocks with stable source identifiers.",
+    "Group related evidence, remove duplicate claims, and keep uncertainty notes attached to their source blocks.",
+    "Return a retrieval context pack that an agent can use directly for grounded answer generation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "required": ["sources"],
+    "properties": {
+      "sources": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "type": "object",
+          "required": ["id", "content"],
+          "properties": {
+            "id": { "type": "string", "minLength": 1 },
+            "title": { "type": "string" },
+            "url": { "type": "string" },
+            "content": { "type": "string", "minLength": 1 }
+          },
+          "additionalProperties": false
+        }
+      },
+      "citationStyle": { "type": "string", "enum": ["inline", "footnote"] },
+      "maxSources": { "type": "integer", "minimum": 1, "maximum": 50 }
+    },
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "required": ["contextBlocks", "citationIndex"],
+    "properties": {
+      "contextBlocks": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["claim", "sourceIds"],
+          "properties": {
+            "claim": { "type": "string" },
+            "sourceIds": { "type": "array", "items": { "type": "string" } },
+            "confidence": { "type": "string", "enum": ["low", "medium", "high"] }
+          },
+          "additionalProperties": false
+        }
+      },
+      "citationIndex": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["sourceId", "label"],
+          "properties": {
+            "sourceId": { "type": "string" },
+            "label": { "type": "string" }
+          },
+          "additionalProperties": false
+        }
+      }
+    },
+    "additionalProperties": false
+  },
+  "limits": {
+    "maxInputBytes": 262144,
+    "maxOutputBytes": 131072
+  }
+}

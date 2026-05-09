@@ -1,0 +1,33 @@
+export interface AiModelCapabilityRecord {
+  capability?: string;
+  capability_code: string;
+  catalog_key: string;
+  created_at?: string;
+  data_scope?: string;
+  deleted_at?: string;
+  deleted_by?: string;
+  description?: string;
+  endpoint_formats?: Record<string, unknown>;
+  id?: string;
+  input_modalities?: Record<string, unknown>;
+  limit_unit?: string;
+  limit_value?: string;
+  metadata?: Record<string, unknown>;
+  modality?: string;
+  model: string;
+  model_id: string;
+  organization_id: string;
+  output_modalities?: Record<string, unknown>;
+  parameter_name?: string;
+  parameter_schema?: Record<string, unknown>;
+  region_code: string;
+  schema_version?: string;
+  sort_order?: number;
+  status: string;
+  supported: boolean;
+  tenant_id: string;
+  updated_at?: string;
+  uuid: string;
+  vendor_code: string;
+  version?: string;
+}

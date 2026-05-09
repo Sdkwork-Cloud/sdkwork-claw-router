@@ -1,0 +1,21 @@
+[package]
+name = "sdkwork-claw-http"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+axum.workspace = true
+hex.workspace = true
+hmac.workspace = true
+sdkwork-claw-contract = { path = "../sdkwork-claw-contract" }
+sdkwork-claw-config = { path = "../sdkwork-claw-config" }
+sdkwork-claw-core = { path = "../sdkwork-claw-core" }
+sdkwork-claw-security = { path = "../sdkwork-claw-security" }
+serde.workspace = true
+sha2.workspace = true
+
+[dev-dependencies]
+serde_json.workspace = true
+tokio.workspace = true
+tower.workspace = true

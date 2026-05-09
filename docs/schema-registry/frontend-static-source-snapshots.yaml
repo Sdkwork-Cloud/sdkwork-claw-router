@@ -1,0 +1,54 @@
+schema: sdkwork-claw-router-frontend-static-source-snapshots
+version: 1
+source: docs/schema-registry/frontend-route-classification.yaml
+rule: schema-provenanced static frontend routes must bind each curated or generated snapshot to one repo source and one generated sha256 manifest entry.
+
+snapshots:
+  - id: static-route:/
+    route: /
+    mode: curated_seed_content
+    source_ref: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-home/src/pages/Home.tsx
+    observed_at: "2026-05-03"
+    schema_tables: [content_doc_page, plus_app]
+
+  - id: static-route:/courses
+    route: /courses
+    mode: curated_seed_content
+    source_ref: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseCatalog.ts
+    observed_at: "2026-05-03"
+    schema_tables: [content_course, content_course_relation, content_reaction]
+
+  - id: static-route:/courses/:id
+    route: /courses/:id
+    mode: curated_seed_content
+    source_ref: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseCatalog.ts
+    observed_at: "2026-05-03"
+    schema_tables: [content_course, content_course_section, content_course_lesson, content_course_relation]
+
+  - id: static-route:/docs
+    route: /docs
+    mode: generated_reference_snapshot
+    source_ref: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-api-reference/src/pages/Docs.tsx
+    observed_at: "2026-05-03"
+    schema_tables: [content_doc_page, content_openapi_snapshot, content_sdk_release]
+
+  - id: static-route:/models
+    route: /models
+    mode: published_catalog_snapshot
+    source_ref: docs/schema-registry/sdkwork-claw-router.tables.yaml
+    observed_at: "2026-05-03"
+    schema_tables: [ai_model_vendor, ai_model, ai_model_capability, ai_model_pricing]
+
+  - id: static-route:/product-docs
+    route: /product-docs
+    mode: generated_reference_snapshot
+    source_ref: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-api-reference/src/pages/ProductDocs.tsx
+    observed_at: "2026-05-03"
+    schema_tables: [content_doc_page, content_openapi_snapshot]
+
+  - id: static-route:/rankings
+    route: /rankings
+    mode: published_catalog_snapshot
+    source_ref: docs/schema-registry/sdkwork-claw-router.tables.yaml
+    observed_at: "2026-05-03"
+    schema_tables: [ai_model_rank_snapshot, ai_usage_fact]

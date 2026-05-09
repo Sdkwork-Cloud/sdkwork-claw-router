@@ -1,0 +1,46 @@
+/** Reviewed agent skill snapshot returned by the backend. */
+export interface AdminSkillItem {
+  builtin: boolean;
+  capabilities: string[];
+  categoryId?: string | null;
+  configSchema: Record<string, unknown>;
+  coverImage?: string;
+  createdAt: string;
+  currency: string;
+  defaultConfig: Record<string, unknown>;
+  description?: string;
+  documentationUrl?: string;
+  enabled: boolean;
+  entrypoint?: string;
+  featured: boolean;
+  homepageUrl?: string;
+  icon?: string;
+  id: string;
+  installCount: string;
+  isBuiltin: boolean;
+  latestPublishedAt?: string;
+  licenseName?: string;
+  manifestUrl?: string;
+  marketStatus: 'DRAFT' | 'PUBLISHED' | 'OFFLINE' | 'DEPRECATED';
+  name: string;
+  packageId?: string | null;
+  price?: string | null;
+  provider?: string;
+  ratingAvg: string;
+  ratingCount: string;
+  recommendWeight: number;
+  repositoryUrl?: string;
+  reviewComment?: string;
+  reviewStatus: 'PENDING' | 'APPROVED' | 'REJECTED';
+  reviewedAt?: string;
+  reviewedBy?: string;
+  runtime?: string;
+  skillKey: string;
+  sourceType: 'OFFICIAL' | 'COMMUNITY' | 'ENTERPRISE' | 'PRIVATE' | 'CUSTOM';
+  summary?: string;
+  tags: string[];
+  updatedAt: string;
+  version?: string;
+  versionName?: string;
+  visibility: 'PUBLIC' | 'PRIVATE' | 'UNLISTED';
+}

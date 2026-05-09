@@ -1,0 +1,60 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "experimentalDecorators": true,
+    "useDefineForClassFields": false,
+    "module": "ESNext",
+    "lib": [
+      "ES2022",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "baseUrl": ".",
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "allowJs": true,
+    "jsx": "react-jsx",
+    "paths": {
+      "@sdkwork/clawrouter-app-sdk": [
+        "../../sdks/clawrouter-app-sdk/src/index.ts"
+      ],
+      "@sdkwork/clawrouter-backend-sdk": [
+        "../../sdks/clawrouter-backend-sdk/src/index.ts"
+      ],
+      "@sdkwork/appbase-pc-react": [
+        "../../../sdkwork-appbase/packages/pc-react/foundation/sdkwork-appbase-pc-react/src/index.ts"
+      ],
+      "@sdkwork/auth-pc-react": [
+        "../../../sdkwork-appbase/packages/pc-react/identity/sdkwork-auth-pc-react/src/index.ts"
+      ],
+      "@sdkwork/auth-runtime-pc-react": [
+        "../../../sdkwork-appbase/packages/pc-react/identity/sdkwork-auth-runtime-pc-react/src/index.ts"
+      ],
+      "@sdkwork/core-pc-react": [
+        "./src/auth/corePcReactCompat.ts"
+      ],
+      "@sdkwork/host-pc-react": [
+        "../../../sdkwork-appbase/packages/pc-react/host/sdkwork-host-pc-react/src/index.ts"
+      ],
+      "@sdkwork/host-tauri-pc-react": [
+        "../../../sdkwork-appbase/packages/pc-react/host/sdkwork-host-tauri-pc-react/src/index.ts"
+      ],
+      "@sdkwork/ui-pc-react": [
+        "../../../sdkwork-ui/sdkwork-ui-pc-react/src/index.ts"
+      ],
+      "@sdkwork/ui-pc-react/theme": [
+        "../../../sdkwork-ui/sdkwork-ui-pc-react/src/theme/index.ts"
+      ],
+      "@sdkwork/sdk-common": [
+        "node_modules/@sdkwork/sdk-common/dist/index.d.ts"
+      ],
+      "@/*": [
+        "./*"
+      ]
+    },
+    "allowImportingTsExtensions": true,
+    "noEmit": true
+  }
+}

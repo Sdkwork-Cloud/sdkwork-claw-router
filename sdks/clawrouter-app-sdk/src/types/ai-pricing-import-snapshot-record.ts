@@ -1,0 +1,32 @@
+export interface AiPricingImportSnapshotRecord {
+  accepted_count?: string;
+  created_at?: string;
+  currency?: string;
+  data_format?: string;
+  error_message_masked?: string;
+  id?: string;
+  import_source: string;
+  legal_hold?: boolean;
+  metadata?: Record<string, unknown>;
+  normalized_payload_hash?: string;
+  observed_at: string;
+  organization_id: string;
+  payload_hash?: string;
+  published_at?: string;
+  raw_payload_ref?: string;
+  rejected_count?: string;
+  request_id: string;
+  retention_until?: string;
+  row_count?: string;
+  schema_version?: string;
+  source_hash: string;
+  source_name: string;
+  source_url?: string;
+  source_version?: string;
+  status: string;
+  tenant_id: string;
+  trace_id?: string;
+  upstream_commit?: string;
+  user_id?: string;
+  uuid: string;
+}

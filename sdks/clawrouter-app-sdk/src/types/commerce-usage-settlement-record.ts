@@ -1,0 +1,32 @@
+export interface CommerceUsageSettlementRecord {
+  account_history_id?: string;
+  account_id?: string;
+  amount?: string;
+  asset_type?: string;
+  created_at?: string;
+  currency?: string;
+  direction?: string;
+  failure_code?: string;
+  failure_message?: string;
+  id?: string;
+  legal_hold?: boolean;
+  metadata?: Record<string, unknown>;
+  order_id?: string;
+  organization_id?: string;
+  payload_hash?: string;
+  payment_id?: string;
+  points?: string;
+  price_snapshot?: Record<string, unknown>;
+  request_id?: string;
+  retention_until?: string;
+  settled_at?: string;
+  settlement_no?: string;
+  settlement_status?: string;
+  status?: string;
+  tenant_id?: string;
+  tokens?: string;
+  trace_id?: string;
+  usage_fact_id?: string;
+  user_id?: string;
+  uuid?: string;
+}

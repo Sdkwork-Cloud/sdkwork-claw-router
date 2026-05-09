@@ -1,0 +1,332 @@
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Any
+
+
+@dataclass(frozen=True)
+class ClawRouterSkillGuardianResult:
+    ok: bool
+    messages: list[str]
+
+
+class ClawRouterSkillGuardian:
+    """Validate project-local skills that enforce ClawRouter SDK integration."""
+
+    REQUIRED_SKILLS: dict[str, tuple[str, ...]] = {
+        "clawrouter-app-sdk-integration": (
+            "@sdkwork/clawrouter-app-sdk",
+            "/app/v3/api",
+            "sdkwork-sdk-generator",
+            "Never hand-edit generated SDK output",
+            "raw fetch",
+            "axios",
+            "apps/sdkwork-claw-router-portal",
+        ),
+        "clawrouter-backend-sdk-integration": (
+            "@sdkwork/clawrouter-backend-sdk",
+            "/backend/v3/api",
+            "sdkwork-sdk-generator",
+            "Never hand-edit generated SDK output",
+            "raw fetch",
+            "axios",
+            "apps/sdkwork-claw-router-portal",
+        ),
+        "clawrouter-sdk-generation": (
+            "@sdkwork/clawrouter-app-sdk",
+            "@sdkwork/clawrouter-backend-sdk",
+            "generated/api/api-contract-manifest.json",
+            "generated/openapi/clawrouter-app-openapi.json",
+            "generated/openapi/clawrouter-backend-openapi.json",
+            "sdkwork-sdk-generator",
+            "Never hand-edit generated SDK output",
+        ),
+    }
+
+    def __init__(self, root: Path) -> None:
+        self.root = Path(root).resolve()
+        self.skills_root = self.root / ".agents" / "skills"
+
+    def run(self) -> ClawRouterSkillGuardianResult:
+        messages: list[str] = []
+        for name, tokens in self.REQUIRED_SKILLS.items():
+            skill_path = self.skills_root / name / "SKILL.md"
+            if not skill_path.exists():
+                messages.append(f"skill is missing: {name}")
+                continue
+            try:
+                content = skill_path.read_text(encoding="utf-8")
+            except OSError as exc:
+                messages.append(f"skill cannot be read: {name}: {exc}")
+                continue
+            messages.extend(self._check_content(name, content, tokens))
+        messages.extend(self._check_skill_seed_bundle())
+        return ClawRouterSkillGuardianResult(ok=not messages, messages=messages)
+
+    def _check_content(self, name: str, content: str, tokens: tuple[str, ...]) -> list[str]:
+        messages: list[str] = []
+        lowered = content.lower()
+        for token in tokens:
+            if token.lower() not in lowered:
+                messages.append(f"skill {name} must mention {token}")
+        if f"name: {name}" not in content:
+            messages.append(f"skill {name} frontmatter name must be {name}")
+        if "description:" not in content:
+            messages.append(f"skill {name} must declare description frontmatter")
+        return messages
+
+    def _check_skill_seed_bundle(self) -> list[str]:
+        skills_root = self.root / "data" / "skills"
+        if not skills_root.exists():
+            return [f"skill seed bundle is missing: {self._display(skills_root)}"]
+
+        messages: list[str] = []
+        manifest = self._read_seed_json(skills_root / "install-manifest.json", messages)
+        categories = self._read_seed_json(skills_root / "categories.json", messages)
+        packages = self._read_seed_json(skills_root / "packages.json", messages)
+        skills = self._read_seed_json(skills_root / "skills.json", messages)
+        assets = self._read_seed_json(skills_root / "assets.json", messages)
+        artifacts = self._read_seed_json(skills_root / "artifacts.json", messages)
+        if messages:
+            return messages
+        if not isinstance(manifest, dict):
+            messages.append("skill seed install-manifest.json must be an object")
+            return messages
+        for label, value in [
+            ("categories", categories),
+            ("packages", packages),
+            ("skills", skills),
+            ("assets", assets),
+            ("artifacts", artifacts),
+        ]:
+            if not isinstance(value, list):
+                messages.append(f"skill seed {label}.json must be an array")
+        if messages:
+            return messages
+
+        if manifest.get("catalogCode") != "sdkwork-agent-skills":
+            messages.append("skill seed catalogCode must be sdkwork-agent-skills")
+        if manifest.get("schemaVersion") != "agent-skills-seed.v1":
+            messages.append("skill seed schemaVersion must be agent-skills-seed.v1")
+        if manifest.get("source") != "bundled":
+            messages.append("skill seed source must be bundled")
+
+        category_ids = self._id_set(categories, "category", messages)
+        package_ids = self._id_set(packages, "package", messages)
+        skill_ids = self._id_set(skills, "skill", messages)
+        self._unique_values((item.get("skillKey") for item in skills if isinstance(item, dict)), "skillKey", messages)
+        self._unique_values((item.get("uuid") for item in artifacts if isinstance(item, dict)), "artifact uuid", messages)
+        self._unique_values((item.get("uuid") for item in assets if isinstance(item, dict)), "asset uuid", messages)
+
+        for package in packages:
+            if not isinstance(package, dict):
+                messages.append("skill seed package entries must be objects")
+                continue
+            category_id = package.get("categoryId")
+            if category_id not in category_ids:
+                messages.append(f"skill seed package {package.get('packageKey')} references missing categoryId: {category_id}")
+            if package.get("enabled") is not True:
+                messages.append(f"skill seed package {package.get('packageKey')} must be enabled")
+
+        artifacts_by_skill: dict[Any, list[dict[str, Any]]] = {}
+        for artifact in artifacts:
+            if not isinstance(artifact, dict):
+                messages.append("skill seed artifact entries must be objects")
+                continue
+            target_id = artifact.get("targetId")
+            if artifact.get("targetType") != 35:
+                messages.append(f"skill seed artifact {artifact.get('uuid')} targetType must be 35")
+            if target_id not in skill_ids:
+                messages.append(f"skill seed artifact {artifact.get('uuid')} references missing targetId: {target_id}")
+            artifact_ref = artifact.get("artifactRef")
+            if not isinstance(artifact_ref, str) or not artifact_ref.startswith("builtin://sdkwork.skills."):
+                messages.append(f"skill seed artifact {artifact.get('uuid')} must use builtin artifactRef")
+            checksum_hash = artifact.get("checksumHash")
+            if not isinstance(checksum_hash, str) or not self._is_sha256_hash(checksum_hash):
+                messages.append(f"skill seed artifact {artifact.get('uuid')} checksumHash must be sha256:<64 lowercase hex>")
+            artifact_url = artifact.get("artifactUrl")
+            artifact_path = self._local_seed_path(artifact_url, messages)
+            if artifact_path is not None:
+                if not artifact_path.exists():
+                    messages.append(f"skill seed artifactUrl must exist: {artifact_url}")
+                else:
+                    if artifact.get("artifactSizeBytes") != artifact_path.stat().st_size:
+                        messages.append(
+                            f"skill seed artifact {artifact.get('uuid')} artifactSizeBytes must match payload size: {artifact_url}"
+                        )
+                    payload = self._read_seed_json(artifact_path, messages)
+                    if isinstance(payload, dict):
+                        if payload.get("artifactRef") != artifact_ref:
+                            messages.append(f"skill seed artifact payload artifactRef mismatch: {artifact_url}")
+                        if payload.get("version") != artifact.get("version"):
+                            messages.append(f"skill seed artifact payload version mismatch: {artifact_url}")
+                        if payload.get("runtime") != artifact.get("runtime"):
+                            messages.append(f"skill seed artifact payload runtime mismatch: {artifact_url}")
+                        if payload.get("checksumHash") != checksum_hash:
+                            messages.append(f"skill seed artifact payload checksumHash mismatch: {artifact_url}")
+                        if self._artifact_payload_checksum(payload) != checksum_hash:
+                            messages.append(f"skill seed artifact checksumHash does not match payload: {artifact_url}")
+                        if payload.get("skill", {}).get("id") != target_id:
+                            messages.append(f"skill seed artifact payload skill id mismatch: {artifact_url}")
+                        if not isinstance(payload.get("instructions"), list) or not payload.get("instructions"):
+                            messages.append(f"skill seed artifact payload instructions must be non-empty: {artifact_url}")
+                        if not isinstance(payload.get("inputSchema"), dict):
+                            messages.append(f"skill seed artifact payload inputSchema must be an object: {artifact_url}")
+                        if not isinstance(payload.get("outputSchema"), dict):
+                            messages.append(f"skill seed artifact payload outputSchema must be an object: {artifact_url}")
+            artifacts_by_skill.setdefault(target_id, []).append(artifact)
+
+        assets_by_skill: dict[Any, list[dict[str, Any]]] = {}
+        for asset in assets:
+            if not isinstance(asset, dict):
+                messages.append("skill seed asset entries must be objects")
+                continue
+            target_id = asset.get("targetId")
+            if asset.get("targetType") != 35:
+                messages.append(f"skill seed asset {asset.get('uuid')} targetType must be 35")
+            if target_id not in skill_ids:
+                messages.append(f"skill seed asset {asset.get('uuid')} references missing targetId: {target_id}")
+            assets_by_skill.setdefault(target_id, []).append(asset)
+
+        for skill in skills:
+            if not isinstance(skill, dict):
+                messages.append("skill seed skill entries must be objects")
+                continue
+            skill_id = skill.get("id")
+            skill_key = skill.get("skillKey")
+            if skill.get("categoryId") not in category_ids:
+                messages.append(f"skill seed skill {skill_key} references missing categoryId: {skill.get('categoryId')}")
+            if skill.get("packageId") not in package_ids:
+                messages.append(f"skill seed skill {skill_key} references missing packageId: {skill.get('packageId')}")
+            if (
+                skill.get("marketStatus") != "PUBLISHED"
+                or skill.get("visibility") != "PUBLIC"
+                or skill.get("reviewStatus") != "APPROVED"
+                or skill.get("enabled") is not True
+            ):
+                messages.append(f"skill seed skill {skill_key} must be published public approved and enabled")
+            if skill.get("builtin") is not True or skill.get("isBuiltin") is not True:
+                messages.append(f"skill seed skill {skill_key} must be builtin official seed data")
+            if skill.get("versionName") != skill.get("version"):
+                messages.append(f"skill seed skill {skill_key} versionName must match version")
+            if skill_id not in artifacts_by_skill:
+                messages.append(f"skill seed skill {skill_key} must have at least one artifact")
+            if skill_id not in assets_by_skill:
+                messages.append(f"skill seed skill {skill_key} must have at least one asset")
+            manifest_url = skill.get("manifestUrl")
+            manifest_path = self._local_seed_path(manifest_url, messages)
+            if manifest_path is not None:
+                if not manifest_path.exists():
+                    messages.append(f"skill seed manifestUrl must exist: {manifest_url}")
+                else:
+                    skill_manifest = self._read_seed_json(manifest_path, messages)
+                    if isinstance(skill_manifest, dict):
+                        if skill_manifest.get("schemaVersion") != "agent-skill-manifest.v1":
+                            messages.append(f"skill seed manifest schemaVersion must be agent-skill-manifest.v1 for {skill_key}")
+                        for field in ["id", "uuid", "skillKey", "name", "version", "runtime", "entrypoint", "capabilities", "configSchema", "defaultConfig"]:
+                            if skill_manifest.get(field) != skill.get(field):
+                                messages.append(f"skill seed manifest field mismatch for {skill_key}: {field}")
+                        expected_artifacts = sorted(
+                            (
+                                self._manifest_artifact_metadata(artifact)
+                                for artifact in artifacts_by_skill.get(skill_id, [])
+                                if isinstance(artifact.get("artifactRef"), str)
+                            ),
+                            key=lambda artifact: artifact.get("artifactRef") or "",
+                        )
+                        manifest_artifacts = skill_manifest.get("artifacts")
+                        if not isinstance(manifest_artifacts, list):
+                            messages.append(f"skill seed manifest artifacts must be an array for {skill_key}")
+                            continue
+                        actual_artifacts = sorted(
+                            (
+                                self._manifest_artifact_metadata(artifact)
+                                for artifact in manifest_artifacts
+                                if isinstance(artifact, dict) and isinstance(artifact.get("artifactRef"), str)
+                            ),
+                            key=lambda artifact: artifact.get("artifactRef") or "",
+                        )
+                        if actual_artifacts != expected_artifacts:
+                            messages.append(f"skill seed manifest artifact metadata mismatch for {skill_key}")
+
+        return messages
+
+    def _read_seed_json(self, path: Path, messages: list[str]) -> Any:
+        if not path.exists():
+            messages.append(f"skill seed file is missing: {self._display(path)}")
+            return None
+        try:
+            return json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as exc:
+            messages.append(f"skill seed file cannot be read: {self._display(path)}: {exc}")
+            return None
+
+    def _local_seed_path(self, value: Any, messages: list[str]) -> Path | None:
+        if not isinstance(value, str) or not value.strip():
+            messages.append(f"skill seed local reference must be a non-empty string: {value}")
+            return None
+        normalized = value.replace("\\", "/")
+        if normalized.startswith(("http://", "https://")):
+            messages.append(f"skill seed local reference must not be remote: {value}")
+            return None
+        if not normalized.startswith("data/skills/"):
+            messages.append(f"skill seed local reference must stay under data/skills: {value}")
+            return None
+        return self.root / normalized
+
+    def _id_set(self, items: list[Any], label: str, messages: list[str]) -> set[Any]:
+        values = [item.get("id") for item in items if isinstance(item, dict)]
+        self._unique_values(values, f"{label} id", messages)
+        return set(values)
+
+    def _unique_values(self, values: Any, label: str, messages: list[str]) -> None:
+        materialized = list(values)
+        if len(materialized) != len(set(materialized)):
+            messages.append(f"skill seed {label} values must be unique")
+
+    def _is_sha256_hash(self, value: str) -> bool:
+        return len(value) == 71 and value.startswith("sha256:") and all(char in "0123456789abcdef" for char in value[7:])
+
+    def _artifact_payload_checksum(self, payload: dict[str, Any]) -> str:
+        canonical = dict(payload)
+        canonical.pop("checksumHash", None)
+        encoded = json.dumps(canonical, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode("utf-8")
+        return "sha256:" + hashlib.sha256(encoded).hexdigest()
+
+    def _manifest_artifact_metadata(self, artifact: dict[str, Any]) -> dict[str, Any]:
+        return {
+            "artifactRef": artifact.get("artifactRef"),
+            "artifactUrl": artifact.get("artifactUrl"),
+            "version": artifact.get("version"),
+            "runtime": artifact.get("runtime"),
+            "checksumHash": artifact.get("checksumHash"),
+            "artifactSizeBytes": artifact.get("artifactSizeBytes"),
+        }
+
+    def _display(self, path: Path) -> str:
+        try:
+            return path.relative_to(self.root).as_posix()
+        except ValueError:
+            return str(path)
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description="Check sdkwork-claw-router project-local SDK skills.")
+    parser.add_argument("--root", type=Path, default=Path.cwd(), help="sdkwork-claw-router root directory")
+    args = parser.parse_args()
+
+    result = ClawRouterSkillGuardian(root=args.root).run()
+    if result.ok:
+        print("ClawRouter project skills passed")
+        return 0
+    for message in result.messages:
+        print(message)
+    return 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

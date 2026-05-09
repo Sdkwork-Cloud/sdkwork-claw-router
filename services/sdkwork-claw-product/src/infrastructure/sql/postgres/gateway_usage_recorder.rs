@@ -1,0 +1,223 @@
+use std::collections::hash_map::DefaultHasher;
+use std::hash::{Hash, Hasher};
+
+use sqlx::PgPool;
+
+use crate::domain::DomainError;
+use crate::ports::{GatewayUsageRecordCommand, GatewayUsageRecordFuture, GatewayUsageRecorder};
+
+const OWNER_TYPE_USER: i64 = 1;
+const MODALITY_TEXT: i64 = 1;
+const USAGE_TYPE_CHAT_COMPLETION: i64 = 1;
+const SETTLEMENT_PENDING: i64 = 0;
+
+const UPSERT_TRACE: &str = r#"
+INSERT INTO ai_request_trace
+    (uuid, tenant_id, organization_id, user_id, request_id, trace_id, status, attempt_no,
+     api_key_id, api_key_name_snapshot, api_key_group_id, api_key_group_snapshot,
+     owner_type, owner_id, channel_id, channel_name_snapshot, requested_model, provider_model,
+     endpoint, request_path, http_method, http_status, started_at, ended_at, streaming,
+     prompt_tokens, cached_tokens, completion_tokens, total_tokens)
+VALUES
+    ($1, $2, $3, $4, $5, $6, 1, 1, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16,
+     $17, $18, $19, $20, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, $21, $22, $23, $24, $25)
+ON CONFLICT (tenant_id, organization_id, request_id, attempt_no) DO UPDATE SET
+    trace_id = excluded.trace_id,
+    api_key_id = excluded.api_key_id,
+    api_key_name_snapshot = excluded.api_key_name_snapshot,
+    api_key_group_id = excluded.api_key_group_id,
+    api_key_group_snapshot = excluded.api_key_group_snapshot,
+    owner_type = excluded.owner_type,
+    owner_id = excluded.owner_id,
+    channel_id = excluded.channel_id,
+    channel_name_snapshot = excluded.channel_name_snapshot,
+    requested_model = excluded.requested_model,
+    provider_model = excluded.provider_model,
+    endpoint = excluded.endpoint,
+    request_path = excluded.request_path,
+    http_method = excluded.http_method,
+    http_status = excluded.http_status,
+    ended_at = CURRENT_TIMESTAMP,
+    streaming = excluded.streaming,
+    prompt_tokens = excluded.prompt_tokens,
+    cached_tokens = excluded.cached_tokens,
+    completion_tokens = excluded.completion_tokens,
+    total_tokens = excluded.total_tokens
+WHERE NOT EXISTS (
+    SELECT 1
+    FROM ai_usage_fact settled_usage
+    WHERE settled_usage.tenant_id = ai_request_trace.tenant_id
+      AND settled_usage.organization_id = ai_request_trace.organization_id
+      AND settled_usage.request_id = ai_request_trace.request_id
+      AND settled_usage.settlement_status IS DISTINCT FROM 0
+)
+"#;
+
+const UPSERT_USAGE_FACT: &str = r#"
+INSERT INTO ai_usage_fact
+    (uuid, tenant_id, organization_id, user_id, request_id, trace_id, status,
+     api_key_id, api_key_name_snapshot, api_key_group_id, api_key_group_snapshot,
+     owner_type, owner_id, catalog_key, model, channel_id, modality, usage_type, billing_meter_code,
+     billable_quantity, prompt_tokens, cached_tokens, completion_tokens, total_tokens,
+     request_count, unit_price_snapshot, base_input_unit_price, base_output_unit_price,
+     upstream_cost_amount, customer_charge_amount, cost_amount, currency, pricing_plan_code,
+     occurred_at, settlement_status)
+VALUES
+    ($1, $2, $3, $4, $5, $6, 1, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17,
+     $18, $19::numeric, $20, $21, $22, $23, 1, $24::numeric, $25::numeric,
+     $26::numeric, $27::numeric, $28::numeric, $29::numeric, $30, $31, CURRENT_TIMESTAMP, $32)
+ON CONFLICT (tenant_id, organization_id, request_id, usage_type) DO UPDATE SET
+    trace_id = excluded.trace_id,
+    api_key_id = excluded.api_key_id,
+    api_key_name_snapshot = excluded.api_key_name_snapshot,
+    api_key_group_id = excluded.api_key_group_id,
+    api_key_group_snapshot = excluded.api_key_group_snapshot,
+    owner_type = excluded.owner_type,
+    owner_id = excluded.owner_id,
+    catalog_key = excluded.catalog_key,
+    model = excluded.model,
+    channel_id = excluded.channel_id,
+    modality = excluded.modality,
+    billing_meter_code = excluded.billing_meter_code,
+    billable_quantity = excluded.billable_quantity,
+    prompt_tokens = excluded.prompt_tokens,
+    cached_tokens = excluded.cached_tokens,
+    completion_tokens = excluded.completion_tokens,
+    total_tokens = excluded.total_tokens,
+    request_count = excluded.request_count,
+    unit_price_snapshot = excluded.unit_price_snapshot,
+    base_input_unit_price = excluded.base_input_unit_price,
+    base_output_unit_price = excluded.base_output_unit_price,
+    upstream_cost_amount = excluded.upstream_cost_amount,
+    customer_charge_amount = excluded.customer_charge_amount,
+    cost_amount = excluded.cost_amount,
+    currency = excluded.currency,
+    pricing_plan_code = excluded.pricing_plan_code,
+    occurred_at = CURRENT_TIMESTAMP,
+    settlement_status = excluded.settlement_status
+WHERE ai_usage_fact.settlement_status = 0
+"#;
+
+#[derive(Debug, Clone)]
+pub struct PostgresGatewayUsageRecorder {
+    pool: PgPool,
+}
+
+impl PostgresGatewayUsageRecorder {
+    pub fn new(pool: PgPool) -> Self {
+        Self { pool }
+    }
+}
+
+impl GatewayUsageRecorder for PostgresGatewayUsageRecorder {
+    fn record_gateway_usage<'a>(
+        &'a self,
+        command: GatewayUsageRecordCommand,
+    ) -> GatewayUsageRecordFuture<'a> {
+        Box::pin(async move {
+            upsert_trace(&self.pool, &command).await?;
+            upsert_usage_fact(&self.pool, &command).await?;
+            Ok(())
+        })
+    }
+}
+
+async fn upsert_trace(
+    pool: &PgPool,
+    command: &GatewayUsageRecordCommand,
+) -> Result<(), DomainError> {
+    sqlx::query(UPSERT_TRACE)
+        .bind(trace_uuid(command))
+        .bind(command.tenant_id)
+        .bind(command.organization_id)
+        .bind(command.user_id)
+        .bind(&command.request_id)
+        .bind(command.trace_id.as_deref())
+        .bind(command.api_key_id)
+        .bind(&command.api_key_name_snapshot)
+        .bind(command.api_key_group_id)
+        .bind(&command.api_key_group_snapshot)
+        .bind(OWNER_TYPE_USER)
+        .bind(command.user_id)
+        .bind(command.channel_id)
+        .bind(&command.provider_code)
+        .bind(&command.requested_model)
+        .bind(&command.provider_model)
+        .bind(&command.request_path)
+        .bind(&command.request_path)
+        .bind(&command.http_method)
+        .bind(i64::from(command.http_status))
+        .bind(command.streaming)
+        .bind(command.prompt_tokens)
+        .bind(command.cached_tokens)
+        .bind(command.completion_tokens)
+        .bind(command.total_tokens)
+        .execute(pool)
+        .await
+        .map_err(|error| store_error("failed to upsert gateway request trace", error))?;
+    Ok(())
+}
+
+async fn upsert_usage_fact(
+    pool: &PgPool,
+    command: &GatewayUsageRecordCommand,
+) -> Result<(), DomainError> {
+    sqlx::query(UPSERT_USAGE_FACT)
+        .bind(usage_uuid(command))
+        .bind(command.tenant_id)
+        .bind(command.organization_id)
+        .bind(command.user_id)
+        .bind(&command.request_id)
+        .bind(command.trace_id.as_deref())
+        .bind(command.api_key_id)
+        .bind(&command.api_key_name_snapshot)
+        .bind(command.api_key_group_id)
+        .bind(&command.api_key_group_snapshot)
+        .bind(OWNER_TYPE_USER)
+        .bind(command.user_id)
+        .bind(&command.catalog_key)
+        .bind(&command.requested_model)
+        .bind(command.channel_id)
+        .bind(MODALITY_TEXT)
+        .bind(USAGE_TYPE_CHAT_COMPLETION)
+        .bind("llm_input_token")
+        .bind(command.total_tokens.to_string())
+        .bind(command.prompt_tokens)
+        .bind(command.cached_tokens)
+        .bind(command.completion_tokens)
+        .bind(command.total_tokens)
+        .bind(&command.base_input_unit_price)
+        .bind(&command.base_input_unit_price)
+        .bind(&command.base_output_unit_price)
+        .bind(&command.upstream_cost_amount)
+        .bind(&command.customer_charge_amount)
+        .bind(&command.upstream_cost_amount)
+        .bind(&command.currency)
+        .bind(&command.pricing_plan_code)
+        .bind(SETTLEMENT_PENDING)
+        .execute(pool)
+        .await
+        .map_err(|error| store_error("failed to upsert gateway usage fact", error))?;
+    Ok(())
+}
+
+fn trace_uuid(command: &GatewayUsageRecordCommand) -> String {
+    stable_uuid("trace", command)
+}
+
+fn usage_uuid(command: &GatewayUsageRecordCommand) -> String {
+    stable_uuid("usage", command)
+}
+
+fn stable_uuid(prefix: &str, command: &GatewayUsageRecordCommand) -> String {
+    let mut hasher = DefaultHasher::new();
+    command.tenant_id.hash(&mut hasher);
+    command.organization_id.hash(&mut hasher);
+    command.request_id.hash(&mut hasher);
+    prefix.hash(&mut hasher);
+    format!("{prefix}-{:016x}", hasher.finish())
+}
+
+fn store_error(context: &str, error: sqlx::Error) -> DomainError {
+    DomainError::new(format!("{context}: {error}"))
+}

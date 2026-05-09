@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8102,
+  "uuid": "skill-rag-context-builder",
+  "skillKey": "rag-context-builder",
+  "name": "RAG Context Builder",
+  "summary": "Prepare grounded retrieval context and citations for agent answers.",
+  "version": "1.0.0",
+  "runtime": "builtin",
+  "entrypoint": "sdkwork.skills.rag_context_builder",
+  "provider": "SDKWork",
+  "licenseName": "SDKWork Commercial",
+  "capabilities": ["retrieval.context", "citation.pack", "source.synthesis"],
+  "configSchema": {
+    "type": "object",
+    "properties": {
+      "citationStyle": { "type": "string", "enum": ["inline", "footnote"] },
+      "maxSources": { "type": "integer", "minimum": 1, "maximum": 50 }
+    }
+  },
+  "defaultConfig": {
+    "citationStyle": "inline",
+    "maxSources": 12,
+    "portal": {
+      "developer": "Retrieval Studio",
+      "features": ["Source clustering", "Citation packs", "Confidence notes"],
+      "frameworks": ["OpenAI-compatible", "Vector search", "Spring AI"],
+      "sizeText": "32 KB",
+      "clawhubImage": "https://cdn.sdkwork.example/skills/rag-context-builder/clawhub.png",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/rag-context-builder/screenshot-1.png"
+      ]
+    }
+  },
+  "artifacts": [
+    {
+      "artifactRef": "builtin://sdkwork.skills.rag_context_builder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/rag-context-builder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "builtin",
+      "checksumHash": "sha256:8bd4c9343703c2834177638a6b7e1850480a3be1c7beba9c87a6b643ef958406",
+      "artifactSizeBytes": 2506
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T00:00:00Z"
+}

@@ -1,0 +1,1612 @@
+use std::collections::HashMap;
+use std::sync::Arc;
+
+use sha2::{Digest, Sha256};
+use sqlx::{PgPool, Postgres, Row, Transaction};
+
+use crate::domain::{DomainError, DomainResult};
+use crate::ports::{
+    AppRoutingChannelCommandFuture, AppRoutingChannelCommandStore, AppRoutingChannelDeleteOutcome,
+    AppRoutingChannelItem, AppRoutingChannelMutationOutcome, AppRoutingChannelTestOutcome,
+    CreateAppRoutingChannelCommand, DeleteAppRoutingChannelCommand, ProviderHealthProbe,
+    ProviderHealthProbeOutcome, ProviderHealthProbeRequest, SetAppRoutingChannelStatusCommand,
+    TestAppRoutingChannelCommand, UnconfiguredProviderHealthProbe, UpdateAppRoutingChannelCommand,
+};
+
+const CHANNEL_TARGET_TYPE: i32 = 10;
+const CONFIG_SCOPE_ROUTER: i32 = 10;
+const CONFIG_TYPE_CHANNEL: i32 = 20;
+
+#[derive(Clone)]
+pub struct PostgresAppRoutingChannelCommandStore {
+    pool: PgPool,
+    provider_health_probe: Arc<dyn ProviderHealthProbe + Send + Sync>,
+}
+
+impl std::fmt::Debug for PostgresAppRoutingChannelCommandStore {
+    fn fmt(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        formatter
+            .debug_struct("PostgresAppRoutingChannelCommandStore")
+            .field("pool", &self.pool)
+            .field("provider_health_probe", &"[configured]")
+            .finish()
+    }
+}
+
+impl PostgresAppRoutingChannelCommandStore {
+    pub fn new(pool: PgPool) -> Self {
+        Self::with_provider_health_probe(pool, Arc::new(UnconfiguredProviderHealthProbe))
+    }
+
+    pub fn with_provider_health_probe(
+        pool: PgPool,
+        provider_health_probe: Arc<dyn ProviderHealthProbe + Send + Sync>,
+    ) -> Self {
+        Self {
+            pool,
+            provider_health_probe,
+        }
+    }
+}
+
+impl AppRoutingChannelCommandStore for PostgresAppRoutingChannelCommandStore {
+    fn create_channel<'a>(
+        &'a self,
+        command: CreateAppRoutingChannelCommand,
+    ) -> AppRoutingChannelCommandFuture<'a, AppRoutingChannelMutationOutcome> {
+        Box::pin(async move {
+            let mut tx = self.pool.begin().await.map_err(|error| {
+                store_error("failed to begin routing channel transaction", error)
+            })?;
+            let provider_id = insert_or_load_provider(&mut tx, &command).await?;
+            let account_id = insert_provider_account(&mut tx, &command, provider_id).await?;
+            let channel_id = insert_channel(&mut tx, &command, provider_id, account_id).await?;
+            replace_channel_models(
+                &mut tx,
+                channel_id,
+                &command.model_uuids,
+                command.subject.tenant_id,
+                command.subject.organization_id,
+                &command.provider_code,
+                &command.models,
+                &command.capabilities,
+                &command.requested_at,
+            )
+            .await?;
+            insert_config_snapshot(
+                &mut tx,
+                &command.config_snapshot_uuid,
+                &command.request_id,
+                command.subject.tenant_id,
+                command.subject.organization_id,
+                command.subject.user_id,
+                "create_channel",
+                channel_id,
+                &channel_snapshot_payload(channel_id, &command.name, &command.provider_code),
+                &command.requested_at,
+            )
+            .await?;
+            insert_audit_log(
+                &mut tx,
+                &command.audit_log_uuid,
+                &command.request_id,
+                command.subject.tenant_id,
+                command.subject.organization_id,
+                command.subject.user_id,
+                "create_channel",
+                channel_id,
+                serde_json::json!({
+                    "action": "create_channel",
+                    "channelId": channel_id,
+                    "name": &command.name,
+                    "providerCode": &command.provider_code,
+                    "models": &command.models,
+                    "capabilities": &command.capabilities,
+                    "secretStoredAsRef": true
+                }),
+            )
+            .await?;
+            let item = load_channel_by_id(
+                &mut tx,
+                channel_id,
+                command.subject.tenant_id,
+                command.subject.organization_id,
+            )
+            .await?
+            .ok_or_else(|| DomainError::new("created routing channel could not be reloaded"))?;
+            tx.commit().await.map_err(|error| {
+                store_error("failed to commit routing channel transaction", error)
+            })?;
+            Ok(AppRoutingChannelMutationOutcome { item })
+        })
+    }
+
+    fn update_channel<'a>(
+        &'a self,
+        command: UpdateAppRoutingChannelCommand,
+    ) -> AppRoutingChannelCommandFuture<'a, Option<AppRoutingChannelMutationOutcome>> {
+        Box::pin(async move {
+            let mut tx = self.pool.begin().await.map_err(|error| {
+                store_error("failed to begin routing channel transaction", error)
+            })?;
+            let provider_id = match command.provider_code.as_deref() {
+                Some(provider_code) => Some(
+                    insert_or_load_provider_for_code(
+                        &mut tx,
+                        command.subject.tenant_id,
+                        command.subject.organization_id,
+                        &command.provider_uuid,
+                        provider_code,
+                        command.vendor.as_deref().unwrap_or(provider_code),
+                        command.base_url.as_ref().and_then(|value| value.as_deref()),
+                        &command.requested_at,
+                    )
+                    .await?,
+                ),
+                None => None,
+            };
+            let updated = update_channel(&mut tx, &command, provider_id).await?;
+            if !updated {
+                tx.commit().await.map_err(|error| {
+                    store_error("failed to commit routing channel transaction", error)
+                })?;
+                return Ok(None);
+            }
+            update_provider_account(&mut tx, &command, provider_id).await?;
+            if let Some(models) = command.models.as_deref() {
+                let provider_code = if let Some(provider_code) = command.provider_code.clone() {
+                    provider_code
+                } else {
+                    load_channel_provider_code(
+                        &mut tx,
+                        command.channel_id,
+                        command.subject.tenant_id,
+                        command.subject.organization_id,
+                    )
+                    .await?
+                };
+                let capabilities = command
+                    .capabilities
+                    .as_deref()
+                    .map(Vec::from)
+                    .unwrap_or_else(|| vec!["llm".to_owned()]);
+                let scope = DeleteAppRoutingChannelModelScope::from(&command);
+                soft_delete_channel_models(&mut tx, &scope).await?;
+                replace_channel_models(
+                    &mut tx,
+                    command.channel_id,
+                    &command.model_uuids,
+                    command.subject.tenant_id,
+                    command.subject.organization_id,
+                    &provider_code,
+                    models,
+                    &capabilities,
+                    &command.requested_at,
+                )
+                .await?;
+            }
+            insert_config_snapshot(
+                &mut tx,
+                &command.config_snapshot_uuid,
+                &command.request_id,
+                command.subject.tenant_id,
+                command.subject.organization_id,
+                command.subject.user_id,
+                "update_channel",
+                command.channel_id,
+                &serde_json::json!({
+                    "channelId": command.channel_id,
+                    "name": command.name,
+                    "providerCode": command.provider_code,
+                    "modelsChanged": command.models.is_some(),
+                    "secretRefChanged": command.secret_ref.is_some()
+                }),
+                &command.requested_at,
+            )
+            .await?;
+            insert_audit_log(
+                &mut tx,
+                &command.audit_log_uuid,
+                &command.request_id,
+                command.subject.tenant_id,
+                command.subject.organization_id,
+                command.subject.user_id,
+                "update_channel",
+                command.channel_id,
+                serde_json::json!({
+                    "action": "update_channel",
+                    "channelId": command.channel_id,
+                    "modelsChanged": command.models.is_some(),
+                    "secretRefChanged": command.secret_ref.is_some(),
+                    "status": command.status
+                }),
+            )
+            .await?;
+            let item = load_channel_by_id(
+                &mut tx,
+                command.channel_id,
+                command.subject.tenant_id,
+                command.subject.organization_id,
+            )
+            .await?
+            .ok_or_else(|| DomainError::new("updated routing channel could not be reloaded"))?;
+            tx.commit().await.map_err(|error| {
+                store_error("failed to commit routing channel transaction", error)
+            })?;
+            Ok(Some(AppRoutingChannelMutationOutcome { item }))
+        })
+    }
+
+    fn set_channel_status<'a>(
+        &'a self,
+        command: SetAppRoutingChannelStatusCommand,
+    ) -> AppRoutingChannelCommandFuture<'a, Option<AppRoutingChannelMutationOutcome>> {
+        Box::pin(async move {
+            let mut tx = self.pool.begin().await.map_err(|error| {
+                store_error("failed to begin routing channel transaction", error)
+            })?;
+            let updated = update_channel_status(&mut tx, &command).await?;
+            if !updated {
+                tx.commit().await.map_err(|error| {
+                    store_error("failed to commit routing channel transaction", error)
+                })?;
+                return Ok(None);
+            }
+            insert_config_snapshot(
+                &mut tx,
+                &command.config_snapshot_uuid,
+                &command.request_id,
+                command.subject.tenant_id,
+                command.subject.organization_id,
+                command.subject.user_id,
+                "set_channel_status",
+                command.channel_id,
+                &serde_json::json!({
+                    "channelId": command.channel_id,
+                    "status": &command.status
+                }),
+                &command.requested_at,
+            )
+            .await?;
+            insert_audit_log(
+                &mut tx,
+                &command.audit_log_uuid,
+                &command.request_id,
+                command.subject.tenant_id,
+                command.subject.organization_id,
+                command.subject.user_id,
+                "set_channel_status",
+                command.channel_id,
+                serde_json::json!({
+                    "action": "set_channel_status",
+                    "channelId": command.channel_id,
+                    "status": &command.status
+                }),
+            )
+            .await?;
+            let item = load_channel_by_id(
+                &mut tx,
+                command.channel_id,
+                command.subject.tenant_id,
+                command.subject.organization_id,
+            )
+            .await?
+            .ok_or_else(|| DomainError::new("updated routing channel could not be reloaded"))?;
+            tx.commit().await.map_err(|error| {
+                store_error("failed to commit routing channel transaction", error)
+            })?;
+            Ok(Some(AppRoutingChannelMutationOutcome { item }))
+        })
+    }
+
+    fn delete_channel<'a>(
+        &'a self,
+        command: DeleteAppRoutingChannelCommand,
+    ) -> AppRoutingChannelCommandFuture<'a, AppRoutingChannelDeleteOutcome> {
+        Box::pin(async move {
+            let mut tx = self.pool.begin().await.map_err(|error| {
+                store_error("failed to begin routing channel transaction", error)
+            })?;
+            let scope = DeleteAppRoutingChannelModelScope::from(command.clone());
+            soft_delete_channel_models(&mut tx, &scope).await?;
+            let deleted = soft_delete_channel(&mut tx, &command).await?;
+            if deleted {
+                insert_config_snapshot(
+                    &mut tx,
+                    &command.config_snapshot_uuid,
+                    &command.request_id,
+                    command.subject.tenant_id,
+                    command.subject.organization_id,
+                    command.subject.user_id,
+                    "delete_channel",
+                    command.channel_id,
+                    &serde_json::json!({
+                        "channelId": command.channel_id,
+                        "deleted": true
+                    }),
+                    &command.requested_at,
+                )
+                .await?;
+                insert_audit_log(
+                    &mut tx,
+                    &command.audit_log_uuid,
+                    &command.request_id,
+                    command.subject.tenant_id,
+                    command.subject.organization_id,
+                    command.subject.user_id,
+                    "delete_channel",
+                    command.channel_id,
+                    serde_json::json!({
+                        "action": "delete_channel",
+                        "channelId": command.channel_id
+                    }),
+                )
+                .await?;
+            }
+            tx.commit().await.map_err(|error| {
+                store_error("failed to commit routing channel transaction", error)
+            })?;
+            Ok(AppRoutingChannelDeleteOutcome { deleted })
+        })
+    }
+
+    fn test_channel<'a>(
+        &'a self,
+        command: TestAppRoutingChannelCommand,
+    ) -> AppRoutingChannelCommandFuture<'a, Option<AppRoutingChannelTestOutcome>> {
+        Box::pin(async move {
+            let probe_target = {
+                let mut tx = self.pool.begin().await.map_err(|error| {
+                    store_error("failed to begin routing channel transaction", error)
+                })?;
+                let probe_target = load_channel_probe_target(&mut tx, &command).await?;
+                tx.commit().await.map_err(|error| {
+                    store_error(
+                        "failed to commit routing channel probe target transaction",
+                        error,
+                    )
+                })?;
+                match probe_target {
+                    Some(probe_target) => probe_target,
+                    None => return Ok(None),
+                }
+            };
+            let probe_outcome = self
+                .provider_health_probe
+                .probe_provider_health(ProviderHealthProbeRequest {
+                    provider_base_url: probe_target.provider_base_url.clone(),
+                    provider_secret_ref: probe_target.provider_secret_ref.clone(),
+                    provider_model: probe_target.provider_model.clone(),
+                    provider_timeout_ms: probe_target.provider_timeout_ms,
+                })
+                .await?;
+            let mut tx = self.pool.begin().await.map_err(|error| {
+                store_error("failed to begin routing channel transaction", error)
+            })?;
+            let updated =
+                record_channel_health_test(&mut tx, &command, &probe_target, &probe_outcome)
+                    .await?;
+            if !updated {
+                tx.commit().await.map_err(|error| {
+                    store_error("failed to commit routing channel transaction", error)
+                })?;
+                return Ok(None);
+            }
+            insert_config_snapshot(
+                &mut tx,
+                &command.config_snapshot_uuid,
+                &command.request_id,
+                command.subject.tenant_id,
+                command.subject.organization_id,
+                command.subject.user_id,
+                "test_channel",
+                command.channel_id,
+                &serde_json::json!({
+                    "channelId": command.channel_id,
+                    "success": probe_outcome.success,
+                    "healthStatus": if probe_outcome.success { "healthy" } else { "error" },
+                    "httpStatus": probe_outcome.http_status
+                }),
+                &command.requested_at,
+            )
+            .await?;
+            insert_audit_log(
+                &mut tx,
+                &command.audit_log_uuid,
+                &command.request_id,
+                command.subject.tenant_id,
+                command.subject.organization_id,
+                command.subject.user_id,
+                "test_channel",
+                command.channel_id,
+                serde_json::json!({
+                    "action": "test_channel",
+                    "channelId": command.channel_id,
+                    "success": probe_outcome.success,
+                    "healthStatus": if probe_outcome.success { "healthy" } else { "error" },
+                    "httpStatus": probe_outcome.http_status
+                }),
+            )
+            .await?;
+            let item = load_channel_by_id(
+                &mut tx,
+                command.channel_id,
+                command.subject.tenant_id,
+                command.subject.organization_id,
+            )
+            .await?
+            .ok_or_else(|| DomainError::new("tested routing channel could not be reloaded"))?;
+            let outcome = AppRoutingChannelTestOutcome {
+                channel_id: item.id.clone(),
+                success: probe_outcome.success,
+                status: item.status.clone(),
+                latency: item.latency.clone(),
+                item,
+            };
+            tx.commit().await.map_err(|error| {
+                store_error("failed to commit routing channel transaction", error)
+            })?;
+            Ok(Some(outcome))
+        })
+    }
+}
+
+async fn insert_or_load_provider(
+    tx: &mut Transaction<'_, Postgres>,
+    command: &CreateAppRoutingChannelCommand,
+) -> DomainResult<i64> {
+    insert_or_load_provider_for_code(
+        tx,
+        command.subject.tenant_id,
+        command.subject.organization_id,
+        &command.provider_uuid,
+        &command.provider_code,
+        &command.vendor,
+        command.base_url.as_deref(),
+        &command.requested_at,
+    )
+    .await
+}
+
+async fn insert_or_load_provider_for_code(
+    tx: &mut Transaction<'_, Postgres>,
+    tenant_id: i64,
+    organization_id: i64,
+    provider_uuid: &str,
+    provider_code: &str,
+    vendor: &str,
+    base_url: Option<&str>,
+    requested_at: &str,
+) -> DomainResult<i64> {
+    if let Some(provider_id) = sqlx::query_scalar::<_, i64>(
+        r#"
+        SELECT id
+        FROM integration_provider
+        WHERE provider_code = $1
+          AND (
+              (tenant_id = $2 AND organization_id = $3)
+              OR (tenant_id IS NULL AND organization_id IS NULL)
+          )
+          AND deleted_at IS NULL
+        ORDER BY CASE WHEN tenant_id = $4 AND organization_id = $5 THEN 0 ELSE 1 END, id ASC
+        LIMIT 1
+        "#,
+    )
+    .bind(provider_code)
+    .bind(tenant_id)
+    .bind(organization_id)
+    .bind(tenant_id)
+    .bind(organization_id)
+    .fetch_optional(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to load routing channel provider", error))?
+    {
+        return Ok(provider_id);
+    }
+
+    sqlx::query_scalar(
+        r#"
+        INSERT INTO integration_provider
+            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, provider_code, default_vendor_code, display_name, base_url_template, sort_order)
+        VALUES
+            ($1, $2, $3, 1, 1, $4::timestamptz, $5::timestamptz, 0, $6, $7, $8, $9, 100)
+        RETURNING id
+        "#,
+    )
+    .bind(provider_uuid)
+    .bind(tenant_id)
+    .bind(organization_id)
+    .bind(requested_at)
+    .bind(requested_at)
+    .bind(provider_code)
+    .bind(provider_code)
+    .bind(vendor)
+    .bind(base_url)
+    .fetch_one(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to create routing channel provider", error))
+}
+
+async fn insert_provider_account(
+    tx: &mut Transaction<'_, Postgres>,
+    command: &CreateAppRoutingChannelCommand,
+    provider_id: i64,
+) -> DomainResult<i64> {
+    let account_code = entity_code("acct", &command.account_uuid);
+    let auth_config = serde_json::json!({
+        "accessType": &command.access_type,
+        "protocol": &command.protocol
+    })
+    .to_string();
+    sqlx::query_scalar(
+        r#"
+        INSERT INTO integration_provider_account
+            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, provider_id, provider_code, account_code, account_name, auth_type, credential_profile, auth_config, secret_ref, secret_hash, masked_label, consecutive_error_count, risk_level)
+        VALUES
+            ($1, $2, $3, 1, 1, $4::timestamptz, $5::timestamptz, 0, $6, $7, $8, $9, $10, 1, $11::jsonb, $12, $13, $14, 0, 1)
+        RETURNING id
+        "#,
+    )
+    .bind(&command.account_uuid)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .bind(&command.requested_at)
+    .bind(&command.requested_at)
+    .bind(provider_id)
+    .bind(&command.provider_code)
+    .bind(account_code)
+    .bind(&command.name)
+    .bind(access_type_code(&command.access_type))
+    .bind(auth_config)
+    .bind(&command.secret_ref)
+    .bind(digest_hex(&command.secret_ref))
+    .bind(mask_secret_ref(&command.secret_ref))
+    .fetch_one(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to create routing channel provider account", error))
+}
+
+async fn insert_channel(
+    tx: &mut Transaction<'_, Postgres>,
+    command: &CreateAppRoutingChannelCommand,
+    provider_id: i64,
+    account_id: i64,
+) -> DomainResult<i64> {
+    let capabilities_json = string_array_json(&command.capabilities)?;
+    sqlx::query_scalar(
+        r#"
+        INSERT INTO integration_channel
+            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, provider_id, provider_code, channel_code, name, protocol, access_type, base_url_override, model_mode, environment, capabilities, priority, weight, account_id, health_status, last_latency_ms, rpm_limit, consecutive_error_count)
+        VALUES
+            ($1, $2, $3, 1, $4, $5::timestamptz, $6::timestamptz, 0, $7, $8, $9, $10, $11, $12, $13, 1, 1, $14::jsonb, 100, $15, $16, $17, 0, 0, 0)
+        RETURNING id
+        "#,
+    )
+    .bind(&command.channel_uuid)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .bind(status_code(&command.status))
+    .bind(&command.requested_at)
+    .bind(&command.requested_at)
+    .bind(provider_id)
+    .bind(&command.provider_code)
+    .bind(entity_code("chn", &command.channel_uuid))
+    .bind(&command.name)
+    .bind(protocol_code(&command.protocol))
+    .bind(access_type_code(&command.access_type))
+    .bind(command.base_url.as_deref())
+    .bind(capabilities_json)
+    .bind(command.weight)
+    .bind(account_id)
+    .bind(health_status_code(&command.status))
+    .fetch_one(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to create routing channel", error))
+}
+
+async fn update_channel(
+    tx: &mut Transaction<'_, Postgres>,
+    command: &UpdateAppRoutingChannelCommand,
+    provider_id: Option<i64>,
+) -> DomainResult<bool> {
+    let base_url_touched = command.base_url.is_some();
+    let base_url = command.base_url.as_ref().and_then(|value| value.as_deref());
+    let capabilities_json = command
+        .capabilities
+        .as_ref()
+        .map(|capabilities| string_array_json(capabilities))
+        .transpose()?;
+    let result = sqlx::query(
+        r#"
+        UPDATE integration_channel
+        SET name = COALESCE($1, name),
+            provider_id = COALESCE($2, provider_id),
+            provider_code = COALESCE($3, provider_code),
+            protocol = COALESCE($4, protocol),
+            access_type = COALESCE($5, access_type),
+            base_url_override = CASE WHEN $6 THEN $7 ELSE base_url_override END,
+            capabilities = COALESCE($8::jsonb, capabilities),
+            weight = COALESCE($9, weight),
+            status = COALESCE($10, status),
+            health_status = COALESCE($11, health_status),
+            updated_at = $12::timestamptz,
+            version = COALESCE(version, 0) + 1
+        WHERE id = $13
+          AND tenant_id = $14
+          AND organization_id = $15
+          AND deleted_at IS NULL
+        "#,
+    )
+    .bind(command.name.as_deref())
+    .bind(provider_id)
+    .bind(command.provider_code.as_deref())
+    .bind(command.protocol.as_ref().map(|value| protocol_code(value)))
+    .bind(
+        command
+            .access_type
+            .as_ref()
+            .map(|value| access_type_code(value)),
+    )
+    .bind(base_url_touched)
+    .bind(base_url)
+    .bind(capabilities_json)
+    .bind(command.weight)
+    .bind(command.status.as_ref().map(|value| status_code(value)))
+    .bind(
+        command
+            .status
+            .as_ref()
+            .map(|value| health_status_code(value)),
+    )
+    .bind(&command.requested_at)
+    .bind(command.channel_id)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to update routing channel", error))?;
+    Ok(result.rows_affected() > 0)
+}
+
+async fn update_provider_account(
+    tx: &mut Transaction<'_, Postgres>,
+    command: &UpdateAppRoutingChannelCommand,
+    provider_id: Option<i64>,
+) -> DomainResult<()> {
+    if command.secret_ref.is_none()
+        && command.provider_code.is_none()
+        && command.name.is_none()
+        && provider_id.is_none()
+    {
+        return Ok(());
+    }
+    let secret_hash = command
+        .secret_ref
+        .as_ref()
+        .map(|secret_ref| digest_hex(secret_ref));
+    let masked_label = command
+        .secret_ref
+        .as_ref()
+        .map(|secret_ref| mask_secret_ref(secret_ref));
+    sqlx::query(
+        r#"
+        UPDATE integration_provider_account
+        SET provider_id = COALESCE($1, provider_id),
+            provider_code = COALESCE($2, provider_code),
+            account_name = COALESCE($3, account_name),
+            secret_ref = COALESCE($4, secret_ref),
+            secret_hash = COALESCE($5, secret_hash),
+            masked_label = COALESCE($6, masked_label),
+            updated_at = $7::timestamptz,
+            version = COALESCE(version, 0) + 1
+        WHERE id = (
+            SELECT account_id
+            FROM integration_channel
+            WHERE id = $8
+              AND tenant_id = $9
+              AND organization_id = $10
+              AND deleted_at IS NULL
+        )
+          AND tenant_id = $11
+          AND organization_id = $12
+          AND deleted_at IS NULL
+        "#,
+    )
+    .bind(provider_id)
+    .bind(command.provider_code.as_deref())
+    .bind(command.name.as_deref())
+    .bind(command.secret_ref.as_deref())
+    .bind(secret_hash)
+    .bind(masked_label)
+    .bind(&command.requested_at)
+    .bind(command.channel_id)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to update routing channel provider account", error))?;
+    Ok(())
+}
+
+async fn update_channel_status(
+    tx: &mut Transaction<'_, Postgres>,
+    command: &SetAppRoutingChannelStatusCommand,
+) -> DomainResult<bool> {
+    let result = sqlx::query(
+        r#"
+        UPDATE integration_channel
+        SET status = $1,
+            health_status = $2,
+            consecutive_error_count = CASE WHEN $3 = 1 THEN 0 ELSE consecutive_error_count END,
+            updated_at = $4::timestamptz,
+            version = COALESCE(version, 0) + 1
+        WHERE id = $5
+          AND tenant_id = $6
+          AND organization_id = $7
+          AND deleted_at IS NULL
+        "#,
+    )
+    .bind(status_code(&command.status))
+    .bind(health_status_code(&command.status))
+    .bind(status_code(&command.status))
+    .bind(&command.requested_at)
+    .bind(command.channel_id)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to update routing channel status", error))?;
+    Ok(result.rows_affected() > 0)
+}
+
+async fn replace_channel_models(
+    tx: &mut Transaction<'_, Postgres>,
+    channel_id: i64,
+    model_uuids: &[String],
+    tenant_id: i64,
+    organization_id: i64,
+    _provider_code: &str,
+    models: &[String],
+    capabilities: &[String],
+    requested_at: &str,
+) -> DomainResult<()> {
+    let capability = capabilities
+        .first()
+        .map(|value| capability_code(value))
+        .unwrap_or(1);
+    for (index, model) in models.iter().enumerate() {
+        let (catalog_key, vendor_code, official_model) = split_catalog_model_key(model)?;
+        let uuid = model_uuids
+            .get(index)
+            .cloned()
+            .unwrap_or_else(|| digest_hex(&format!("{channel_id}:{model}:{index}")));
+        sqlx::query(
+            r#"
+            INSERT INTO integration_channel_model
+                (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, channel_id, catalog_key, model, vendor_code, provider_model, capability, supports_streaming, supports_tools)
+            VALUES
+                ($1, $2, $3, 1, 1, $4::timestamptz, $5::timestamptz, 0, $6, $7, $8, $9, $10, $11, true, true)
+            "#,
+        )
+        .bind(uuid)
+        .bind(tenant_id)
+        .bind(organization_id)
+        .bind(requested_at)
+        .bind(requested_at)
+        .bind(channel_id)
+        .bind(catalog_key)
+        .bind(official_model)
+        .bind(vendor_code)
+        .bind(catalog_key)
+        .bind(capability)
+        .execute(&mut **tx)
+        .await
+        .map_err(|error| store_error("failed to replace routing channel models", error))?;
+    }
+    Ok(())
+}
+
+async fn soft_delete_channel_models(
+    tx: &mut Transaction<'_, Postgres>,
+    command: &DeleteAppRoutingChannelModelScope,
+) -> DomainResult<()> {
+    sqlx::query(
+        r#"
+        UPDATE integration_channel_model
+        SET status = -1,
+            deleted_at = $1::timestamptz,
+            deleted_by = $2,
+            updated_at = $3::timestamptz,
+            version = COALESCE(version, 0) + 1
+        WHERE channel_id = $4
+          AND tenant_id = $5
+          AND organization_id = $6
+          AND deleted_at IS NULL
+        "#,
+    )
+    .bind(&command.requested_at)
+    .bind(command.user_id)
+    .bind(&command.requested_at)
+    .bind(command.channel_id)
+    .bind(command.tenant_id)
+    .bind(command.organization_id)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to delete routing channel models", error))?;
+    Ok(())
+}
+
+async fn soft_delete_channel(
+    tx: &mut Transaction<'_, Postgres>,
+    command: &DeleteAppRoutingChannelCommand,
+) -> DomainResult<bool> {
+    let result = sqlx::query(
+        r#"
+        UPDATE integration_channel
+        SET status = -1,
+            deleted_at = $1::timestamptz,
+            deleted_by = $2,
+            updated_at = $3::timestamptz,
+            version = COALESCE(version, 0) + 1
+        WHERE id = $4
+          AND tenant_id = $5
+          AND organization_id = $6
+          AND deleted_at IS NULL
+        "#,
+    )
+    .bind(&command.requested_at)
+    .bind(command.subject.user_id)
+    .bind(&command.requested_at)
+    .bind(command.channel_id)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to delete routing channel", error))?;
+    Ok(result.rows_affected() > 0)
+}
+
+#[derive(Debug, Clone)]
+struct ChannelHealthProbeTarget {
+    provider_id: i64,
+    channel_id: i64,
+    provider_account_id: i64,
+    provider_base_url: String,
+    provider_secret_ref: String,
+    provider_model: String,
+    provider_timeout_ms: Option<u64>,
+}
+
+async fn load_channel_probe_target(
+    tx: &mut Transaction<'_, Postgres>,
+    command: &TestAppRoutingChannelCommand,
+) -> DomainResult<Option<ChannelHealthProbeTarget>> {
+    let row = sqlx::query(
+        r#"
+        SELECT
+            c.id AS channel_id,
+            c.provider_id,
+            c.account_id AS provider_account_id,
+            COALESCE(NULLIF(c.base_url_override, ''), NULLIF(p.base_url_template, ''), '') AS provider_base_url,
+            COALESCE(NULLIF(a.secret_ref, ''), '') AS provider_secret_ref,
+            COALESCE(NULLIF(cm.provider_model, ''), '') AS provider_model,
+            c.timeout_ms
+        FROM integration_channel c
+        JOIN integration_provider p
+          ON p.id = c.provider_id
+         AND p.deleted_at IS NULL
+         AND (
+             (p.tenant_id = c.tenant_id AND p.organization_id = c.organization_id)
+             OR (p.tenant_id IS NULL AND p.organization_id IS NULL)
+         )
+        JOIN integration_provider_account a
+          ON a.id = c.account_id
+         AND a.tenant_id = c.tenant_id
+         AND a.organization_id = c.organization_id
+         AND a.deleted_at IS NULL
+        LEFT JOIN integration_channel_model cm
+          ON cm.channel_id = c.id
+         AND cm.tenant_id = c.tenant_id
+         AND cm.organization_id = c.organization_id
+         AND cm.status = 1
+         AND cm.deleted_at IS NULL
+        WHERE c.id = $1
+          AND c.tenant_id = $2
+          AND c.organization_id = $3
+          AND c.deleted_at IS NULL
+        ORDER BY cm.id ASC
+        LIMIT 1
+        "#,
+    )
+    .bind(command.channel_id)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .fetch_optional(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to load routing channel health probe target", error))?;
+
+    let Some(row) = row else {
+        return Ok(None);
+    };
+    let provider_base_url = string_cell(&row, "provider_base_url");
+    let provider_secret_ref = string_cell(&row, "provider_secret_ref");
+    let provider_model = string_cell(&row, "provider_model");
+    if provider_base_url.trim().is_empty()
+        || provider_secret_ref.trim().is_empty()
+        || provider_model.trim().is_empty()
+    {
+        return Err(DomainError::new(
+            "routing channel health probe requires base URL, secret_ref, and model",
+        ));
+    }
+    Ok(Some(ChannelHealthProbeTarget {
+        provider_id: integer_cell(&row, "provider_id"),
+        channel_id: integer_cell(&row, "channel_id"),
+        provider_account_id: integer_cell(&row, "provider_account_id"),
+        provider_base_url,
+        provider_secret_ref,
+        provider_model,
+        provider_timeout_ms: optional_u64_cell(&row, "timeout_ms"),
+    }))
+}
+
+async fn record_channel_health_test(
+    tx: &mut Transaction<'_, Postgres>,
+    command: &TestAppRoutingChannelCommand,
+    target: &ChannelHealthProbeTarget,
+    outcome: &ProviderHealthProbeOutcome,
+) -> DomainResult<bool> {
+    let health_status = if outcome.success { 1 } else { 2 };
+    let result = sqlx::query(
+        r#"
+        UPDATE integration_channel
+        SET updated_at = $1::timestamptz,
+            health_status = $2,
+            last_latency_ms = $3,
+            consecutive_error_count = CASE
+                WHEN $4 = 1 THEN 0
+                ELSE COALESCE(consecutive_error_count, 0) + 1
+            END,
+            version = COALESCE(version, 0) + 1
+        WHERE id = $5
+          AND tenant_id = $6
+          AND organization_id = $7
+          AND deleted_at IS NULL
+        "#,
+    )
+    .bind(&command.requested_at)
+    .bind(health_status)
+    .bind(outcome.latency_ms)
+    .bind(health_status)
+    .bind(command.channel_id)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to test routing channel", error))?;
+    if result.rows_affected() == 0 {
+        return Ok(false);
+    }
+    sqlx::query(
+        r#"
+        UPDATE integration_provider_account
+        SET updated_at = $1::timestamptz,
+            consecutive_error_count = CASE
+                WHEN $2 = 1 THEN 0
+                ELSE COALESCE(consecutive_error_count, 0) + 1
+            END,
+            version = COALESCE(version, 0) + 1
+        WHERE id = (
+            SELECT account_id
+            FROM integration_channel
+            WHERE id = $3
+              AND tenant_id = $4
+              AND organization_id = $5
+        )
+          AND tenant_id = $6
+          AND organization_id = $7
+          AND deleted_at IS NULL
+        "#,
+    )
+    .bind(&command.requested_at)
+    .bind(health_status)
+    .bind(command.channel_id)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to clear routing channel account errors", error))?;
+    insert_provider_health_snapshot(tx, command, target, outcome, health_status).await?;
+    Ok(true)
+}
+
+async fn insert_provider_health_snapshot(
+    tx: &mut Transaction<'_, Postgres>,
+    command: &TestAppRoutingChannelCommand,
+    target: &ChannelHealthProbeTarget,
+    outcome: &ProviderHealthProbeOutcome,
+    health_status: i32,
+) -> DomainResult<()> {
+    let metadata = serde_json::json!({
+        "source": "app_routing_channel_test",
+        "providerModel": target.provider_model
+    })
+    .to_string();
+    sqlx::query(
+        r#"
+        INSERT INTO integration_provider_health_snapshot
+            (uuid, tenant_id, organization_id, user_id, request_id, status, created_at, metadata, provider_id, channel_id, provider_account_id, check_type, health_status, latency_ms, http_status, error_code, error_message_masked, checked_at)
+        VALUES
+            ($1, $2, $3, $4, $5, 1, $6::timestamptz, $7::jsonb, $8, $9, $10, 1, $11, $12, $13, $14, $15, $16::timestamptz)
+        "#,
+    )
+    .bind(format!("health-{}", command.config_snapshot_uuid))
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .bind(command.subject.user_id)
+    .bind(&command.request_id)
+    .bind(&command.requested_at)
+    .bind(metadata)
+    .bind(target.provider_id)
+    .bind(target.channel_id)
+    .bind(target.provider_account_id)
+    .bind(health_status)
+    .bind(outcome.latency_ms)
+    .bind(outcome.http_status)
+    .bind(outcome.error_code.as_deref())
+    .bind(outcome.error_message_masked.as_deref())
+    .bind(&command.requested_at)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to write routing channel health snapshot", error))?;
+    Ok(())
+}
+
+async fn load_channel_by_id(
+    tx: &mut Transaction<'_, Postgres>,
+    channel_id: i64,
+    tenant_id: i64,
+    organization_id: i64,
+) -> DomainResult<Option<AppRoutingChannelItem>> {
+    let row = sqlx::query(
+        r#"
+        SELECT
+            CAST(c.id AS TEXT) AS id,
+            COALESCE(NULLIF(c.name, ''), NULLIF(c.channel_code, ''), NULLIF(c.provider_code, ''), '') AS name,
+            COALESCE(NULLIF(c.provider_code, ''), 'custom') AS vendor,
+            COALESCE(NULLIF(c.provider_code, ''), 'custom') AS provider,
+            COALESCE(NULLIF(c.provider_code, ''), 'custom') AS provider_code,
+            c.protocol AS protocol,
+            c.access_type AS access_type,
+            COALESCE(NULLIF(c.base_url_override, ''), '') AS base_url,
+            COALESCE(NULLIF(a.masked_label, ''), 'configured') AS api_key,
+            CAST(COALESCE(c.capabilities, '["llm"]'::jsonb) AS TEXT) AS capabilities_json,
+            COALESCE(c.weight, 0) AS weight,
+            c.status AS status,
+            c.health_status AS health_status,
+            COALESCE(c.last_latency_ms, 0) AS latency_ms,
+            COALESCE(c.rpm_limit, 0) AS rpm_limit,
+            CAST(a.upstream_balance_amount AS TEXT) AS balance_amount,
+            COALESCE(a.upstream_balance_currency, '') AS balance_currency,
+            COALESCE(c.consecutive_error_count, 0) AS channel_errors,
+            COALESCE(a.consecutive_error_count, 0) AS account_errors
+        FROM integration_channel c
+        LEFT JOIN integration_provider_account a
+          ON a.id = c.account_id
+         AND a.tenant_id = c.tenant_id
+         AND a.organization_id = c.organization_id
+         AND a.deleted_at IS NULL
+        WHERE c.id = $1
+          AND c.tenant_id = $2
+          AND c.organization_id = $3
+          AND c.deleted_at IS NULL
+        LIMIT 1
+        "#,
+    )
+    .bind(channel_id)
+    .bind(tenant_id)
+    .bind(organization_id)
+    .fetch_optional(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to load routing channel", error))?;
+
+    let Some(row) = row else {
+        return Ok(None);
+    };
+    let models = load_models_for_channels_tx(tx, tenant_id, organization_id).await?;
+    row_to_channel(row, &models).map(Some)
+}
+
+async fn load_models_for_channels_tx(
+    tx: &mut Transaction<'_, Postgres>,
+    tenant_id: i64,
+    organization_id: i64,
+) -> DomainResult<HashMap<String, Vec<String>>> {
+    let rows = sqlx::query(
+        r#"
+        SELECT
+            CAST(channel_id AS TEXT) AS channel_id,
+            COALESCE(NULLIF(catalog_key, ''), '') AS model
+        FROM integration_channel_model
+        WHERE tenant_id = $1
+          AND organization_id = $2
+          AND deleted_at IS NULL
+          AND status = 1
+          AND (effective_from IS NULL OR effective_from <= CURRENT_TIMESTAMP)
+          AND (effective_to IS NULL OR effective_to > CURRENT_TIMESTAMP)
+        ORDER BY id ASC
+        "#,
+    )
+    .bind(tenant_id)
+    .bind(organization_id)
+    .fetch_all(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to load routing channel models", error))?;
+    let mut models: HashMap<String, Vec<String>> = HashMap::new();
+    for row in rows {
+        let channel_id = string_cell(&row, "channel_id");
+        let model = string_cell(&row, "model");
+        if !model.trim().is_empty() {
+            models.entry(channel_id).or_default().push(model);
+        }
+    }
+    Ok(models)
+}
+
+fn split_catalog_model_key(catalog_key: &str) -> DomainResult<(&str, &str, &str)> {
+    let value = catalog_key.trim();
+    let mut parts = value.split('/');
+    let (Some(vendor_code), Some(region_code), Some(model_id), None) =
+        (parts.next(), parts.next(), parts.next(), parts.next())
+    else {
+        return Err(DomainError::new(format!(
+            "routing channel model must be a catalog key in vendorCode/regionCode/modelId format: {value}"
+        )));
+    };
+    if vendor_code.trim().is_empty() || region_code.trim().is_empty() || model_id.trim().is_empty()
+    {
+        return Err(DomainError::new(format!(
+            "routing channel model must be a catalog key in vendorCode/regionCode/modelId format: {value}"
+        )));
+    }
+    Ok((value, vendor_code, model_id))
+}
+
+fn row_to_channel(
+    row: sqlx::postgres::PgRow,
+    models: &HashMap<String, Vec<String>>,
+) -> DomainResult<AppRoutingChannelItem> {
+    let id = string_cell(&row, "id");
+    let capabilities = parse_string_array(&string_cell(&row, "capabilities_json"))?;
+    let errors = integer_cell(&row, "channel_errors") + integer_cell(&row, "account_errors");
+    let status = required_integer_cell(&row, "status")?;
+    let health_status = required_integer_cell(&row, "health_status")?;
+    Ok(AppRoutingChannelItem {
+        id: id.clone(),
+        name: string_cell(&row, "name"),
+        vendor: display_vendor(&string_cell(&row, "vendor")),
+        provider: display_vendor(&string_cell(&row, "provider")),
+        provider_code: string_cell(&row, "provider_code"),
+        protocol: protocol_label(required_integer_cell(&row, "protocol")?)?,
+        access_type: access_type_label(required_integer_cell(&row, "access_type")?)?,
+        base_url: string_cell(&row, "base_url"),
+        api_key: string_cell(&row, "api_key"),
+        models: models.get(&id).cloned().unwrap_or_default(),
+        is_multimodal: capabilities.iter().any(|capability| capability != "llm"),
+        capabilities,
+        weight: integer_cell(&row, "weight"),
+        status: status_label(status, health_status, errors)?,
+        latency: duration_or_na(integer_cell(&row, "latency_ms")),
+        rpm: integer_cell(&row, "rpm_limit"),
+        balance: balance_label(
+            &string_cell(&row, "balance_amount"),
+            &string_cell(&row, "balance_currency"),
+        ),
+        errors,
+    })
+}
+
+async fn load_channel_provider_code(
+    tx: &mut Transaction<'_, Postgres>,
+    channel_id: i64,
+    tenant_id: i64,
+    organization_id: i64,
+) -> DomainResult<String> {
+    sqlx::query_scalar(
+        r#"
+        SELECT COALESCE(provider_code, '')
+        FROM integration_channel
+        WHERE id = $1
+          AND tenant_id = $2
+          AND organization_id = $3
+          AND deleted_at IS NULL
+        LIMIT 1
+        "#,
+    )
+    .bind(channel_id)
+    .bind(tenant_id)
+    .bind(organization_id)
+    .fetch_one(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to load routing channel provider code", error))
+}
+
+async fn insert_config_snapshot(
+    tx: &mut Transaction<'_, Postgres>,
+    snapshot_uuid: &str,
+    request_id: &str,
+    tenant_id: i64,
+    organization_id: i64,
+    user_id: i64,
+    action: &'static str,
+    target_id: i64,
+    payload: &serde_json::Value,
+    requested_at: &str,
+) -> DomainResult<()> {
+    let payload = payload.to_string();
+    let snapshot_no = format!("app-channel-{target_id}-{action}-{snapshot_uuid}");
+    sqlx::query(
+        r#"
+        INSERT INTO ops_config_snapshot
+            (uuid, tenant_id, organization_id, user_id, request_id, status, created_at, snapshot_no, config_scope, config_type, source_table, source_ids, config_payload, config_hash, published_at, published_by)
+        VALUES
+            ($1, $2, $3, $4, $5, 1, $6::timestamptz, $7, $8, $9, 'integration_channel', $10::jsonb, $11::jsonb, $12, $13::timestamptz, $14)
+        "#,
+    )
+    .bind(snapshot_uuid)
+    .bind(tenant_id)
+    .bind(organization_id)
+    .bind(user_id)
+    .bind(request_id)
+    .bind(requested_at)
+    .bind(snapshot_no)
+    .bind(CONFIG_SCOPE_ROUTER)
+    .bind(CONFIG_TYPE_CHANNEL)
+    .bind(serde_json::json!([target_id]).to_string())
+    .bind(&payload)
+    .bind(digest_hex(&payload))
+    .bind(requested_at)
+    .bind(user_id)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to write routing channel config snapshot", error))?;
+    Ok(())
+}
+
+async fn insert_audit_log(
+    tx: &mut Transaction<'_, Postgres>,
+    audit_log_uuid: &str,
+    request_id: &str,
+    tenant_id: i64,
+    organization_id: i64,
+    user_id: i64,
+    action: &'static str,
+    target_id: i64,
+    change_summary: serde_json::Value,
+) -> DomainResult<()> {
+    sqlx::query(
+        r#"
+        INSERT INTO ops_audit_log
+            (uuid, tenant_id, organization_id, action, target_type, target_id, request_id, operator_id, operator_type, change_summary)
+        VALUES
+            ($1, $2, $3, $4, $5, $6, $7, $8, 1, $9::jsonb)
+        "#,
+    )
+    .bind(audit_log_uuid)
+    .bind(tenant_id)
+    .bind(organization_id)
+    .bind(action)
+    .bind(CHANNEL_TARGET_TYPE)
+    .bind(target_id)
+    .bind(request_id)
+    .bind(user_id)
+    .bind(change_summary.to_string())
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to write routing channel audit log", error))?;
+    Ok(())
+}
+
+#[derive(Debug, Clone)]
+struct DeleteAppRoutingChannelModelScope {
+    channel_id: i64,
+    tenant_id: i64,
+    organization_id: i64,
+    user_id: i64,
+    requested_at: String,
+}
+
+impl From<DeleteAppRoutingChannelCommand> for DeleteAppRoutingChannelModelScope {
+    fn from(value: DeleteAppRoutingChannelCommand) -> Self {
+        Self {
+            channel_id: value.channel_id,
+            tenant_id: value.subject.tenant_id,
+            organization_id: value.subject.organization_id,
+            user_id: value.subject.user_id,
+            requested_at: value.requested_at,
+        }
+    }
+}
+
+impl From<&UpdateAppRoutingChannelCommand> for DeleteAppRoutingChannelModelScope {
+    fn from(value: &UpdateAppRoutingChannelCommand) -> Self {
+        Self {
+            channel_id: value.channel_id,
+            tenant_id: value.subject.tenant_id,
+            organization_id: value.subject.organization_id,
+            user_id: value.subject.user_id,
+            requested_at: value.requested_at.clone(),
+        }
+    }
+}
+
+fn channel_snapshot_payload(channel_id: i64, name: &str, provider_code: &str) -> serde_json::Value {
+    serde_json::json!({
+        "channelId": channel_id,
+        "name": name,
+        "providerCode": provider_code
+    })
+}
+
+fn entity_code(prefix: &str, uuid: &str) -> String {
+    let short = uuid.chars().take(24).collect::<String>();
+    format!("{prefix}-{short}")
+}
+
+fn string_array_json(values: &[String]) -> DomainResult<String> {
+    serde_json::to_string(values).map_err(|error| DomainError::new(error.to_string()))
+}
+
+fn parse_string_array(value: &str) -> DomainResult<Vec<String>> {
+    let mut parsed: Vec<String> = serde_json::from_str(value).map_err(|error| {
+        DomainError::new(format!(
+            "invalid routing channel capabilities json from database row: {error}"
+        ))
+    })?;
+    parsed.retain(|value| !value.trim().is_empty());
+    if parsed.is_empty() {
+        parsed.push("llm".to_owned());
+    }
+    Ok(parsed)
+}
+
+fn digest_hex(value: &str) -> String {
+    let mut hasher = Sha256::new();
+    hasher.update(value.as_bytes());
+    hex::encode(hasher.finalize())
+}
+
+fn mask_secret_ref(value: &str) -> String {
+    value
+        .rsplit('/')
+        .next()
+        .filter(|part| !part.is_empty())
+        .map(|part| format!("ref:***{part}"))
+        .unwrap_or_else(|| "ref:***".to_owned())
+}
+
+fn protocol_code(value: &str) -> i32 {
+    match value {
+        "Anthropic" => 2,
+        "Gemini" => 3,
+        "Ollama" => 4,
+        "Custom" => 9,
+        _ => 1,
+    }
+}
+
+fn protocol_label(value: i64) -> DomainResult<String> {
+    match value {
+        1 => Ok("OpenAI"),
+        2 => Ok("Anthropic"),
+        3 => Ok("Gemini"),
+        4 => Ok("Ollama"),
+        9 => Ok("Custom"),
+        value => Err(DomainError::new(format!(
+            "invalid routing channel protocol from database row: {value}"
+        ))),
+    }
+    .map(str::to_owned)
+}
+
+fn access_type_code(value: &str) -> i32 {
+    match value {
+        "GCP Vertex OAuth" => 2,
+        "AWS Bedrock" => 3,
+        "Azure OpenAI" => 4,
+        "Claude Code" => 5,
+        _ => 1,
+    }
+}
+
+fn access_type_label(value: i64) -> DomainResult<String> {
+    match value {
+        1 => Ok("Standard API Key"),
+        2 => Ok("GCP Vertex OAuth"),
+        3 => Ok("AWS Bedrock"),
+        4 => Ok("Azure OpenAI"),
+        5 => Ok("Claude Code"),
+        value => Err(DomainError::new(format!(
+            "invalid routing channel access_type from database row: {value}"
+        ))),
+    }
+    .map(str::to_owned)
+}
+
+fn capability_code(value: &str) -> i32 {
+    match value {
+        "image" => 2,
+        "audio" => 3,
+        "music" => 4,
+        "sfx" => 4,
+        "video" => 5,
+        "embedding" | "embeddings" => 6,
+        "rerank" | "ranking" => 7,
+        _ => 1,
+    }
+}
+
+fn status_code(value: &str) -> i32 {
+    match value {
+        "disabled" => 0,
+        "error" => 2,
+        _ => 1,
+    }
+}
+
+fn health_status_code(value: &str) -> i32 {
+    if value == "error" {
+        2
+    } else {
+        1
+    }
+}
+
+fn status_label(status: i64, health_status: i64, errors: i64) -> DomainResult<String> {
+    match health_status {
+        1 | 2 => {}
+        value => {
+            return Err(DomainError::new(format!(
+                "invalid routing channel health_status from database row: {value}"
+            )));
+        }
+    }
+
+    let label = match status {
+        -1 | 0 => "disabled",
+        1 if health_status == 2 || errors > 0 => "error",
+        1 => "active",
+        2 => "error",
+        value => {
+            return Err(DomainError::new(format!(
+                "invalid routing channel status from database row: {value}"
+            )));
+        }
+    };
+    Ok(label.to_owned())
+}
+
+fn display_vendor(value: &str) -> String {
+    match value {
+        "openai" => "OpenAI",
+        "anthropic" => "Anthropic",
+        "google" => "Gemini",
+        "openrouter" => "OpenRouter",
+        "deepseek" => "DeepSeek",
+        "zhipu" => "Zhipu",
+        "mistral" => "Mistral",
+        "meta" => "Meta",
+        "ollama" => "Ollama",
+        "azure_openai" => "Azure OpenAI",
+        "custom" => "Custom",
+        _ => value,
+    }
+    .to_owned()
+}
+
+fn string_cell(row: &sqlx::postgres::PgRow, column: &str) -> String {
+    row.try_get::<Option<String>, _>(column)
+        .ok()
+        .flatten()
+        .unwrap_or_default()
+}
+
+fn integer_cell(row: &sqlx::postgres::PgRow, column: &str) -> i64 {
+    row.try_get::<Option<i64>, _>(column)
+        .ok()
+        .flatten()
+        .or_else(|| {
+            row.try_get::<Option<i32>, _>(column)
+                .ok()
+                .flatten()
+                .map(i64::from)
+        })
+        .or_else(|| string_cell(row, column).parse::<i64>().ok())
+        .unwrap_or_default()
+}
+
+fn required_integer_cell(row: &sqlx::postgres::PgRow, column: &str) -> DomainResult<i64> {
+    row.try_get::<Option<i64>, _>(column)
+        .ok()
+        .flatten()
+        .or_else(|| {
+            row.try_get::<Option<i32>, _>(column)
+                .ok()
+                .flatten()
+                .map(i64::from)
+        })
+        .or_else(|| string_cell(row, column).parse::<i64>().ok())
+        .ok_or_else(|| {
+            DomainError::new(format!(
+                "missing routing channel {column} from database row"
+            ))
+        })
+}
+
+fn optional_u64_cell(row: &sqlx::postgres::PgRow, column: &str) -> Option<u64> {
+    let value = row
+        .try_get::<Option<i64>, _>(column)
+        .ok()
+        .flatten()
+        .or_else(|| {
+            row.try_get::<Option<i32>, _>(column)
+                .ok()
+                .flatten()
+                .map(i64::from)
+        })
+        .or_else(|| string_cell(row, column).parse::<i64>().ok())?;
+    u64::try_from(value).ok().filter(|value| *value > 0)
+}
+
+fn duration_or_na(value: i64) -> String {
+    if value > 0 {
+        duration_label(value)
+    } else {
+        "N/A".to_owned()
+    }
+}
+
+fn duration_label(value: i64) -> String {
+    format!("{value}ms")
+}
+
+fn balance_label(amount: &str, currency: &str) -> String {
+    if amount.trim().is_empty() {
+        return "N/A".to_owned();
+    }
+    if currency.trim().is_empty() {
+        return amount.trim().to_owned();
+    }
+    format!("{} {}", currency.trim(), amount.trim())
+}
+
+fn store_error(context: &str, error: sqlx::Error) -> DomainError {
+    let message = error.to_string();
+    if message.contains("duplicate key value") || message.contains("unique constraint") {
+        return DomainError::conflict(format!("{context}: routing channel already exists"));
+    }
+    DomainError::new(format!("{context}: {message}"))
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn parse_string_array_rejects_invalid_capabilities_json() {
+        assert_eq!(
+            vec!["llm".to_owned(), "image".to_owned()],
+            parse_string_array(r#"["llm", "image"]"#).expect("valid capabilities json")
+        );
+
+        let invalid = parse_string_array("not-json")
+            .expect_err("invalid routing capabilities json must fail");
+        assert!(invalid
+            .to_string()
+            .contains("invalid routing channel capabilities json from database row"));
+    }
+}

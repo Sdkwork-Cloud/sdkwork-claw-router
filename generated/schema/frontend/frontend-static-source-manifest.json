@@ -1,0 +1,97 @@
+{
+  "schema": "sdkwork-claw-router-frontend-static-source-manifest",
+  "snapshots": {
+    "static-route:/": {
+      "id": "static-route:/",
+      "mode": "curated_seed_content",
+      "observed_at": "2026-05-03",
+      "route": "/",
+      "schema_tables": [
+        "content_doc_page",
+        "plus_app"
+      ],
+      "source_hash": "sha256:227cd2c319dea15670b36721093cb785c7fa1487fb8277cc862db1a65599038d",
+      "source_ref": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-home/src/pages/Home.tsx"
+    },
+    "static-route:/courses": {
+      "id": "static-route:/courses",
+      "mode": "curated_seed_content",
+      "observed_at": "2026-05-03",
+      "route": "/courses",
+      "schema_tables": [
+        "content_course",
+        "content_course_relation",
+        "content_reaction"
+      ],
+      "source_hash": "sha256:a4eadce52e69ab307e703f1e52874fffd725b717db7a65e9b4430622fd0e0911",
+      "source_ref": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseCatalog.ts"
+    },
+    "static-route:/courses/:id": {
+      "id": "static-route:/courses/:id",
+      "mode": "curated_seed_content",
+      "observed_at": "2026-05-03",
+      "route": "/courses/:id",
+      "schema_tables": [
+        "content_course",
+        "content_course_section",
+        "content_course_lesson",
+        "content_course_relation"
+      ],
+      "source_hash": "sha256:a4eadce52e69ab307e703f1e52874fffd725b717db7a65e9b4430622fd0e0911",
+      "source_ref": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseCatalog.ts"
+    },
+    "static-route:/docs": {
+      "id": "static-route:/docs",
+      "mode": "generated_reference_snapshot",
+      "observed_at": "2026-05-03",
+      "route": "/docs",
+      "schema_tables": [
+        "content_doc_page",
+        "content_openapi_snapshot",
+        "content_sdk_release"
+      ],
+      "source_hash": "sha256:6f11b264c3e0dd040ed5357b7b16d246288a5192f0aa1bc8cb1b10662e0afd2f",
+      "source_ref": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-api-reference/src/pages/Docs.tsx"
+    },
+    "static-route:/models": {
+      "id": "static-route:/models",
+      "mode": "published_catalog_snapshot",
+      "observed_at": "2026-05-03",
+      "route": "/models",
+      "schema_tables": [
+        "ai_model_vendor",
+        "ai_model",
+        "ai_model_capability",
+        "ai_model_pricing"
+      ],
+      "source_hash": "sha256:d9e4f140182068006b5a8d23f069fdd7be6df7e56464e0b238f41592514da228",
+      "source_ref": "docs/schema-registry/sdkwork-claw-router.tables.yaml"
+    },
+    "static-route:/product-docs": {
+      "id": "static-route:/product-docs",
+      "mode": "generated_reference_snapshot",
+      "observed_at": "2026-05-03",
+      "route": "/product-docs",
+      "schema_tables": [
+        "content_doc_page",
+        "content_openapi_snapshot"
+      ],
+      "source_hash": "sha256:8e7168dc7005e460b407d5c06991ee04d1139e927200c04074e91717a5992bad",
+      "source_ref": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-api-reference/src/pages/ProductDocs.tsx"
+    },
+    "static-route:/rankings": {
+      "id": "static-route:/rankings",
+      "mode": "published_catalog_snapshot",
+      "observed_at": "2026-05-03",
+      "route": "/rankings",
+      "schema_tables": [
+        "ai_model_rank_snapshot",
+        "ai_usage_fact"
+      ],
+      "source_hash": "sha256:d9e4f140182068006b5a8d23f069fdd7be6df7e56464e0b238f41592514da228",
+      "source_ref": "docs/schema-registry/sdkwork-claw-router.tables.yaml"
+    }
+  },
+  "source": "docs/schema-registry/frontend-static-source-snapshots.yaml",
+  "version": 1
+}

@@ -1,0 +1,245 @@
+{
+  "catalogCode": "sdkwork-forum-seed",
+  "catalogVersion": "2026.05.09.1",
+  "schemaVersion": "1",
+  "generatedAt": "2026-05-09T00:00:00Z",
+  "source": {
+    "label": "Curated forum content snapshot",
+    "description": "Java-compatible PlusFeeds and PlusComments seed data for the SDKWork Claw Router forum.",
+    "sourceTables": [
+      "plus_feeds",
+      "plus_comments",
+      "plus_content_vote",
+      "plus_favorite"
+    ]
+  },
+  "feeds": [
+    {
+      "id": 500001,
+      "uuid": "sdkwork-forum-feed-routing-performance",
+      "tenantId": 0,
+      "organizationId": 0,
+      "userId": 1001,
+      "title": "How to optimize routing performance in the latest release?",
+      "summary": "A focused radix indexing proposal for measuring and improving route resolution behavior in large dynamic route maps.",
+      "content": "I have been looking into the recent changes in the router architecture and noticed specific opportunities for improving route resolution speed.\n\nThe current dynamic segment matching path still behaves like a linear scan in highly dynamic route maps. A radix tree based index would keep static and dynamic path branches easier to inspect while improving lookup behavior for large API surfaces.\n\nThe benchmark target should compare the current path against an indexed path matcher using the same route corpus, request mix, and middleware chain. That keeps the discussion tied to measurable routing behavior instead of synthetic microbenchmarks.",
+      "categoryId": 1001,
+      "tags": ["routing", "performance", "v2.0"],
+      "author": {
+        "id": 1001,
+        "name": "Alex Johnson",
+        "avatar": "https://i.pravatar.cc/150?u=1",
+        "bio": "Claw Router maintainer",
+        "isFollowing": false
+      },
+      "viewCount": 3204,
+      "likeCount": 124,
+      "commentCount": 2,
+      "shareCount": 18,
+      "favoriteCount": 42,
+      "isTop": true,
+      "isHot": true,
+      "isRecommended": true,
+      "sortOrder": 100,
+      "createdAt": "2026-05-03T10:00:00Z",
+      "updatedAt": "2026-05-03T11:30:00Z"
+    },
+    {
+      "id": 500002,
+      "uuid": "sdkwork-forum-feed-large-api-specs",
+      "tenantId": 0,
+      "organizationId": 0,
+      "userId": 1002,
+      "title": "Best practices for organizing large API specs",
+      "summary": "A practical structure for splitting large OpenAPI definitions without losing ownership or SDK compatibility.",
+      "content": "Large OpenAPI documents become easier to maintain when ownership and release cadence drive the split, not only file size.\n\nWe use one package per bounded API surface, shared schema components only for stable cross-surface concepts, and generated SDK compatibility checks for every published operation.",
+      "categoryId": 1002,
+      "tags": ["openapi", "architecture"],
+      "author": {
+        "id": 1002,
+        "name": "Sarah Chen",
+        "avatar": "https://i.pravatar.cc/150?u=2",
+        "bio": "API platform architect",
+        "isFollowing": false
+      },
+      "viewCount": 1840,
+      "likeCount": 89,
+      "commentCount": 1,
+      "shareCount": 11,
+      "favoriteCount": 27,
+      "isTop": false,
+      "isHot": true,
+      "isRecommended": true,
+      "sortOrder": 80,
+      "createdAt": "2026-05-03T08:30:00Z",
+      "updatedAt": "2026-05-03T09:10:00Z"
+    },
+    {
+      "id": 500003,
+      "uuid": "sdkwork-forum-feed-middleware-hooks",
+      "tenantId": 0,
+      "organizationId": 0,
+      "userId": 1003,
+      "title": "Introducing the new Middleware Hooks",
+      "summary": "A release note for the middleware hook structure used by routing, policy, and provider relay extensions.",
+      "content": "The new middleware hooks separate request enrichment, route selection, provider relay, and response settlement into clearer extension points.\n\nThis should make custom policy checks easier to test without patching the provider relay path directly.",
+      "categoryId": 1004,
+      "tags": ["features", "middleware"],
+      "author": {
+        "id": 1003,
+        "name": "David Smith",
+        "avatar": "https://i.pravatar.cc/150?u=3",
+        "bio": "Core team",
+        "isFollowing": false
+      },
+      "viewCount": 5200,
+      "likeCount": 256,
+      "commentCount": 1,
+      "shareCount": 32,
+      "favoriteCount": 61,
+      "isTop": false,
+      "isHot": true,
+      "isRecommended": true,
+      "sortOrder": 90,
+      "createdAt": "2026-05-02T16:00:00Z",
+      "updatedAt": "2026-05-02T17:20:00Z"
+    },
+    {
+      "id": 500004,
+      "uuid": "sdkwork-forum-feed-api-key-rotation",
+      "tenantId": 0,
+      "organizationId": 0,
+      "userId": 1004,
+      "title": "How should API keys be rotated across environments?",
+      "summary": "A support thread about API key rotation policy boundaries for tenant and key-group workflows.",
+      "content": "We are standardizing API key rotation across development, staging, and production workspaces.\n\nThe main question is whether rotation should be driven by a single policy per tenant or by separate policies per key group.",
+      "categoryId": 1003,
+      "tags": ["api-keys", "security"],
+      "author": {
+        "id": 1004,
+        "name": "Priya Shah",
+        "avatar": "https://i.pravatar.cc/150?u=6",
+        "bio": "Security operator",
+        "isFollowing": false
+      },
+      "viewCount": 936,
+      "likeCount": 41,
+      "commentCount": 0,
+      "shareCount": 4,
+      "favoriteCount": 9,
+      "isTop": false,
+      "isHot": false,
+      "isRecommended": false,
+      "sortOrder": 40,
+      "createdAt": "2026-05-02T09:45:00Z",
+      "updatedAt": "2026-05-02T09:45:00Z"
+    }
+  ],
+  "comments": [
+    {
+      "id": 510001,
+      "uuid": "sdkwork-forum-comment-routing-benchmark",
+      "feedId": 500001,
+      "userId": 1002,
+      "parentId": null,
+      "content": "We saw a similar pattern in a large API workspace. The useful benchmark was route lookup plus middleware resolution, not lookup alone.",
+      "likes": 45,
+      "replyCount": 1,
+      "isTop": false,
+      "author": {
+        "id": 1002,
+        "name": "Sarah Chen",
+        "avatar": "https://i.pravatar.cc/150?u=2",
+        "isFollowing": false
+      },
+      "createdAt": "2026-05-03T10:45:00Z",
+      "updatedAt": "2026-05-03T10:45:00Z"
+    },
+    {
+      "id": 510002,
+      "uuid": "sdkwork-forum-comment-routing-reply",
+      "feedId": 500001,
+      "userId": 1001,
+      "parentId": 510001,
+      "content": "That makes sense. I will add a mixed route corpus and middleware chain to the benchmark notes.",
+      "likes": 12,
+      "replyCount": 0,
+      "isTop": false,
+      "author": {
+        "id": 1001,
+        "name": "Alex Johnson",
+        "avatar": "https://i.pravatar.cc/150?u=1",
+        "isFollowing": false
+      },
+      "createdAt": "2026-05-03T11:15:00Z",
+      "updatedAt": "2026-05-03T11:15:00Z"
+    },
+    {
+      "id": 510003,
+      "uuid": "sdkwork-forum-comment-routing-precedence",
+      "feedId": 500001,
+      "userId": 1003,
+      "parentId": null,
+      "content": "The indexed matcher is worth exploring. The key constraint is keeping parameter precedence visible and testable.",
+      "likes": 89,
+      "replyCount": 0,
+      "isTop": true,
+      "author": {
+        "id": 1003,
+        "name": "David Smith",
+        "avatar": "https://i.pravatar.cc/150?u=3",
+        "isFollowing": false
+      },
+      "createdAt": "2026-05-03T11:30:00Z",
+      "updatedAt": "2026-05-03T11:30:00Z"
+    },
+    {
+      "id": 510004,
+      "uuid": "sdkwork-forum-comment-spec-boundary",
+      "feedId": 500002,
+      "userId": 1005,
+      "parentId": null,
+      "content": "The bounded-surface rule helped us keep generated SDK packages from depending on unrelated admin models.",
+      "likes": 26,
+      "replyCount": 0,
+      "isTop": false,
+      "author": {
+        "id": 1005,
+        "name": "Maya Lin",
+        "avatar": "https://i.pravatar.cc/150?u=4",
+        "isFollowing": false
+      },
+      "createdAt": "2026-05-03T09:10:00Z",
+      "updatedAt": "2026-05-03T09:10:00Z"
+    },
+    {
+      "id": 510005,
+      "uuid": "sdkwork-forum-comment-hooks-contract",
+      "feedId": 500003,
+      "userId": 1006,
+      "parentId": null,
+      "content": "Keeping provider relay outside policy middleware makes the extension contract much easier to reason about.",
+      "likes": 33,
+      "replyCount": 0,
+      "isTop": false,
+      "author": {
+        "id": 1006,
+        "name": "Noah Reed",
+        "avatar": "https://i.pravatar.cc/150?u=5",
+        "isFollowing": false
+      },
+      "createdAt": "2026-05-02T17:20:00Z",
+      "updatedAt": "2026-05-02T17:20:00Z"
+    }
+  ],
+  "votes": [
+    { "uuid": "sdkwork-forum-vote-routing-1002", "userId": 7900500001, "contentId": 500001 },
+    { "uuid": "sdkwork-forum-vote-routing-1003", "userId": 7900500002, "contentId": 500001 },
+    { "uuid": "sdkwork-forum-vote-spec-1001", "userId": 7900500003, "contentId": 500002 },
+    { "uuid": "sdkwork-forum-vote-hooks-1004", "userId": 7900500004, "contentId": 500003 }
+  ],
+  "favorites": [
+    { "uuid": "sdkwork-forum-favorite-routing-1002", "userId": 7950500001, "contentId": 500001, "title": "How to optimize routing performance in the latest release?" },
+    { "uuid": "sdkwork-forum-favorite-spec-1001", "userId": 7950500002, "contentId": 500002, "title": "Best practices for organizing large API specs" }
+  ]
+}

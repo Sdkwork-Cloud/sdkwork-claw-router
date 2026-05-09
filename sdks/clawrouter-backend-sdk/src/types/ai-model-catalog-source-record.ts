@@ -1,0 +1,32 @@
+export interface AiModelCatalogSourceRecord {
+  catalog_version?: string;
+  created_at?: string;
+  data_scope?: string;
+  deleted_at?: string;
+  deleted_by?: string;
+  error_message_masked?: string;
+  id?: string;
+  last_observed_at?: string;
+  last_success_at?: string;
+  metadata?: Record<string, unknown>;
+  normalized_payload_hash?: string;
+  organization_id: string;
+  parser_kind: string;
+  provider_code?: string;
+  raw_payload_ref?: string;
+  refresh_interval_seconds?: string;
+  region_code?: string;
+  schema_version?: string;
+  source_code: string;
+  source_hash?: string;
+  source_kind: string;
+  source_name: string;
+  source_url?: string;
+  status: string;
+  tenant_id: string;
+  trust_level: string;
+  updated_at?: string;
+  uuid: string;
+  vendor_code?: string;
+  version?: string;
+}

@@ -1,0 +1,48 @@
+type ClawRouterRuntimeWindow = Window & {
+  __CLAWROUTER_ENV__?: Record<string, unknown>;
+};
+
+const DEFAULT_API_BASE_URL = '/v1';
+
+export function readClawRouterRuntimeEnv(name: string): string | undefined {
+  if (typeof window === 'undefined') {
+    return undefined;
+  }
+
+  const value = (window as ClawRouterRuntimeWindow).__CLAWROUTER_ENV__?.[name];
+  return typeof value === 'string' && value.trim().length > 0 ? value.trim() : undefined;
+}
+
+export function resolveClawRouterRuntimeBoolean(name: string, defaultValue = false): boolean {
+  const value = readClawRouterRuntimeEnv(name);
+  if (!value) {
+    return defaultValue;
+  }
+
+  const normalized = value.trim().toLowerCase();
+  if (['1', 'true', 'yes', 'on'].includes(normalized)) {
+    return true;
+  }
+  if (['0', 'false', 'no', 'off'].includes(normalized)) {
+    return false;
+  }
+
+  return defaultValue;
+}
+
+function resolveApiBaseUrl(): string {
+  const configuredUrl = readClawRouterRuntimeEnv('VITE_API_BASE_URL');
+  const baseUrl = configuredUrl ?? DEFAULT_API_BASE_URL;
+
+  try {
+    new URL(baseUrl);
+    return baseUrl;
+  } catch {
+    if (typeof window === 'undefined') {
+      return DEFAULT_API_BASE_URL;
+    }
+    return baseUrl;
+  }
+}
+
+export const API_BASE_URL = resolveApiBaseUrl();

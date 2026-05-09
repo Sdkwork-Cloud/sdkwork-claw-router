@@ -1,0 +1,360 @@
+import React, { useState, useEffect } from 'react';
+import { ChevronRight, ChevronDown, Zap, Search, Calendar, Cpu, SlidersHorizontal, Info, AlignLeft, User } from 'lucide-react';
+import { BusinessStateTableRow } from 'sdkwork-claw-router-commons';
+import { formatDecimalAmount } from 'sdkwork-claw-router-commons/runtime';
+import { RecordService, LogRecord } from './recordService';
+
+export function RecordAdmin() {
+  const [expandedIds, setExpandedIds] = useState<string[]>(['log-1']);
+  const [logs, setLogs] = useState<LogRecord[]>([]);
+  const [total, setTotal] = useState(0);
+  const [loading, setLoading] = useState(true);
+  const [loadError, setLoadError] = useState<string | null>(null);
+
+  const [userFilter, setUserFilter] = useState('');
+  const [tokenFilter, setTokenFilter] = useState('');
+  const [modelFilter, setModelFilter] = useState('');
+
+  const loadRecords = async (filters: { user?: string; token?: string; model?: string } = {}) => {
+    setLoading(true);
+    setLoadError(null);
+    try {
+      const res = await RecordService.fetchLogs(filters);
+      setLogs(res.logs);
+      setTotal(res.total);
+    } catch (error) {
+      setLoadError(error instanceof Error ? error.message : 'Failed to load request records');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    void loadRecords({ user: userFilter, token: tokenFilter, model: modelFilter });
+  }, []);
+
+  const handleSearch = () => {
+    void loadRecords({ user: userFilter, token: tokenFilter, model: modelFilter });
+  };
+
+  const handleReset = () => {
+    setUserFilter('');
+    setTokenFilter('');
+    setModelFilter('');
+    void loadRecords();
+  };
+
+  const toggleExpand = (id: string, e: React.MouseEvent) => {
+    e.stopPropagation();
+    setExpandedIds(prev =>
+      prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]
+    );
+  };
+
+  return (
+    <div className="w-full h-full flex flex-col space-y-6">
+
+      {/* Page Header & Stats */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-200 dark:border-white/10">
+        <div>
+          <div className="flex items-center gap-2 mb-1">
+            <AlignLeft className="w-6 h-6 text-indigo-500" />
+            <h1 className="text-xl lg:text-2xl font-bold text-slate-900 dark:text-white tracking-tight">全站调用明细</h1>
+          </div>
+          <p className="text-sm text-slate-500">审计全平台所有用户的原生模型接口调用日志，用于财务核对与风控排查。</p>
+        </div>
+
+        {/* Top-right Stats Badges */}
+        <div className="flex items-center gap-3 bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-lg p-1.5 shadow-sm text-sm shrink-0">
+          <div className="px-3 py-1 flex items-center gap-1.5 border-r border-slate-200 dark:border-white/10">
+            <span className="text-slate-500">24H消耗:</span>
+            <span className="font-bold text-rose-500 flex items-center"><Zap className="w-3.5 h-3.5 mr-0.5" /> 2,450.12</span>
+          </div>
+          <div className="px-3 py-1 flex items-center gap-1.5 border-r border-slate-200 dark:border-white/10">
+            <span className="text-slate-500">最高并发:</span>
+            <span className="font-bold text-slate-800 dark:text-white">1,245</span>
+          </div>
+          <div className="px-3 py-1 flex items-center gap-1.5">
+            <span className="text-slate-500">接口异常:</span>
+            <span className="font-bold text-slate-800 dark:text-white">0.02%</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Filter Bar */}
+      <div className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-xl p-3 shadow-sm flex flex-col md:flex-row flex-wrap items-center gap-3">
+        {/* Date Range */}
+        <div className="relative w-full md:w-auto flex-1 min-w-[200px]">
+          <Calendar className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+          <input
+            type="text"
+            placeholder="2026-04-21 00:00:00 ~ 2026-04-21 23:59:59"
+            className="w-full bg-slate-50 dark:bg-[#121212] border border-slate-200 dark:border-white/10 pl-9 pr-4 py-2 rounded-lg text-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/20 text-slate-800 dark:text-white transition-all shadow-sm md:shadow-none"
+            readOnly
+          />
+        </div>
+
+        {/* User Search */}
+        <div className="relative w-full md:w-auto flex-1 min-w-[150px]">
+          <User className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+          <input
+            type="text"
+            value={userFilter}
+            onChange={(e) => setUserFilter(e.target.value)}
+            onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
+            placeholder="搜索用户邮箱/ID..."
+            className="w-full bg-slate-50 dark:bg-[#121212] border border-slate-200 dark:border-white/10 pl-9 pr-4 py-2 rounded-lg text-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/20 text-slate-800 dark:text-white transition-all placeholder:text-slate-400 dark:placeholder:text-slate-500 shadow-sm md:shadow-none"
+          />
+        </div>
+
+        {/* Token/Key Search */}
+        <div className="relative w-full md:w-auto flex-1 min-w-[150px]">
+          <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+          <input
+            type="text"
+            value={tokenFilter}
+            onChange={(e) => setTokenFilter(e.target.value)}
+            onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
+            placeholder="搜索令牌/请求ID..."
+            className="w-full bg-slate-50 dark:bg-[#121212] border border-slate-200 dark:border-white/10 pl-9 pr-4 py-2 rounded-lg text-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/20 text-slate-800 dark:text-white transition-all placeholder:text-slate-400 dark:placeholder:text-slate-500 shadow-sm md:shadow-none"
+          />
+        </div>
+
+        {/* Model Search */}
+        <div className="relative w-full md:w-auto flex-1 min-w-[120px]">
+          <Cpu className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+          <input
+            type="text"
+            value={modelFilter}
+            onChange={(e) => setModelFilter(e.target.value)}
+            onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
+            placeholder="搜索模型..."
+            className="w-full bg-slate-50 dark:bg-[#121212] border border-slate-200 dark:border-white/10 pl-9 pr-4 py-2 rounded-lg text-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/20 text-slate-800 dark:text-white transition-all placeholder:text-slate-400 dark:placeholder:text-slate-500 shadow-sm md:shadow-none"
+          />
+        </div>
+
+        {/* Action Buttons */}
+        <div className="flex items-center gap-2 w-full md:w-auto">
+          <button onClick={handleSearch} className="flex-1 md:flex-none px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-sm font-medium transition-colors shadow-sm">
+            查询
+          </button>
+          <button onClick={handleReset} className="px-4 py-2 bg-slate-50 dark:bg-white/5 hover:bg-slate-100 dark:hover:bg-white/10 text-slate-600 dark:text-slate-300 rounded-lg text-sm font-medium transition-colors border border-slate-200 dark:border-white/10 shadow-sm md:shadow-none">
+            重置
+          </button>
+          <button className="px-2.5 py-2 bg-slate-50 dark:bg-white/5 hover:bg-slate-100 dark:hover:bg-white/10 text-slate-600 dark:text-slate-300 rounded-lg text-sm transition-colors border border-slate-200 dark:border-white/10 ml-auto md:ml-2 shadow-sm md:shadow-none">
+            <SlidersHorizontal className="w-4 h-4" />
+          </button>
+        </div>
+      </div>
+
+      {/* Main Data Table */}
+      <div className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-xl shadow-sm overflow-hidden flex flex-col flex-1 min-h-[500px]">
+        <div className="overflow-x-auto relative min-h-[400px]">
+          <table className="w-full text-left text-sm whitespace-nowrap min-w-[1300px]">
+            <thead className="bg-slate-50 dark:bg-[#121212] text-slate-500 dark:text-slate-400 border-b border-slate-200 dark:border-white/10 select-none text-xs uppercase font-semibold">
+              <tr>
+                <th className="px-4 py-3.5 pl-6 font-medium">时间</th>
+                <th className="px-4 py-3.5 font-medium">用户</th>
+                <th className="px-4 py-3.5 font-medium">令牌 / 分组</th>
+                <th className="px-4 py-3.5 font-medium">模型</th>
+                <th className="px-4 py-3.5 font-medium text-center">用时 / 首字</th>
+                <th className="px-4 py-3.5 font-medium text-right relative">
+                  输入
+                  <Info className="w-3.5 h-3.5 inline-block ml-1 opacity-50 cursor-pointer" />
+                </th>
+                <th className="px-4 py-3.5 font-medium text-right">输出</th>
+                <th className="px-4 py-3.5 font-medium text-right">实际扣费</th>
+                <th className="px-4 py-3.5 font-medium text-center relative">
+                  IP
+                  <Info className="w-3.5 h-3.5 inline-block ml-1 opacity-50 cursor-pointer" />
+                </th>
+                <th className="px-4 py-3.5 font-medium">详情</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-100 dark:divide-white/5 text-slate-700 dark:text-slate-300 relative text-xs">
+              {loading ? (
+                <BusinessStateTableRow colSpan={10} kind="loading" title="Loading request records..." />
+              ) : loadError ? (
+                <BusinessStateTableRow
+                  colSpan={10}
+                  kind="error"
+                  title="Request records could not be loaded"
+                  description={loadError}
+                  onRetry={() => { void loadRecords({ user: userFilter, token: tokenFilter, model: modelFilter }); }}
+                  retryLabel="Retry"
+                />
+              ) : logs.length === 0 ? (
+                <BusinessStateTableRow
+                  colSpan={10}
+                  kind="empty"
+                  title="No request records found"
+                  description="Adjust the filters or wait for gateway usage logs to be recorded."
+                />
+              ) : logs.map((log) => {
+                const expanded = expandedIds.includes(log.id);
+                return (
+                  <React.Fragment key={log.id}>
+                    {/* Main Row */}
+                    <tr
+                      onClick={(e) => toggleExpand(log.id, e)}
+                      className={`group cursor-pointer transition-colors ${
+                        expanded
+                          ? 'bg-indigo-50 dark:bg-indigo-900/10'
+                          : 'hover:bg-slate-50 dark:hover:bg-white/[0.02]'
+                      }`}
+                    >
+                      <td className="px-4 py-3.5 pl-6 font-mono text-xs flex items-center gap-1.5 text-slate-800 dark:text-slate-200">
+                        <span className="p-0.5 rounded-md hover:bg-slate-200 dark:hover:bg-white/10 transition-colors">
+                          {expanded ? <ChevronDown className="w-4 h-4 text-indigo-600 dark:text-indigo-500" /> : <ChevronRight className="w-4 h-4 text-slate-400" />}
+                        </span>
+                        {log.time}
+                      </td>
+                      <td className="px-4 py-3.5 text-xs text-slate-800 dark:text-slate-200 font-medium font-mono">
+                        {log.user}
+                      </td>
+                      <td className="px-4 py-3.5">
+                        <div className="flex flex-col gap-1 items-start">
+                          <span className="font-mono text-[11px] px-2 py-0.5 bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded">
+                            {log.tokenName}
+                          </span>
+                          <span className="text-[10px] px-2 py-px rounded-full bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/20">
+                            {log.group}
+                          </span>
+                        </div>
+                      </td>
+                      <td className="px-4 py-3.5 font-medium text-indigo-600 dark:text-indigo-400 flex items-center gap-1.5 pt-[1.125rem]">
+                        <Cpu className="w-3.5 h-3.5 opacity-70" />
+                        {log.model}
+                      </td>
+                      <td className="px-4 py-3.5 text-center">
+                        <div className="flex items-center justify-center gap-1.5">
+                          <span className="text-amber-600 dark:text-amber-400 font-mono text-[10px] bg-amber-50 dark:bg-amber-500/10 px-1.5 py-0.5 rounded border border-amber-100 dark:border-transparent">{log.totalTime}</span>
+                          <span className="text-emerald-600 dark:text-emerald-400 font-mono text-[10px] bg-emerald-50 dark:bg-emerald-500/10 px-1.5 py-0.5 rounded border border-emerald-100 dark:border-transparent">{log.ttft}</span>
+                          {log.isStream && (
+                            <span className="text-[10px] bg-indigo-100 dark:bg-indigo-500/20 text-indigo-600 dark:text-indigo-400 px-1.5 py-0.5 rounded font-bold border border-indigo-200 dark:border-transparent">流</span>
+                          )}
+                        </div>
+                      </td>
+                      <td className="px-4 py-3.5 text-right flex flex-col items-end justify-center h-full min-h-[48px]">
+                        <span className="font-mono text-slate-800 dark:text-slate-200">{log.inputTokens}</span>
+                        <span className="text-[9px] text-slate-500 font-mono mt-0.5">
+                          缓存读 {log.cacheReadTokens}
+                        </span>
+                      </td>
+                      <td className="px-4 py-3.5 text-right font-mono text-slate-800 dark:text-slate-200 align-top pt-4">
+                        {log.outputTokens}
+                      </td>
+                      <td className="px-4 py-3.5 text-right font-mono font-medium text-rose-600 dark:text-rose-500 flex items-center justify-end gap-1 min-h-[48px] align-top pt-4 justify-self-end w-full text-xs">
+                        <Zap className="w-3.5 h-3.5 text-amber-500" />
+                        {formatDecimalAmount(log.cost, 6)}
+                      </td>
+                      <td className="px-4 py-3.5 text-center align-top pt-4">
+                        <span className="font-mono text-xs text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-white cursor-pointer border-b border-dashed border-slate-300 dark:border-white/20">
+                          {log.ip.substring(0, 7)}...
+                        </span>
+                      </td>
+                      <td className="px-4 py-2 align-top pt-3 text-[11px] leading-relaxed">
+                        <div className="text-slate-500 dark:text-slate-400">
+                          分组倍率 <span className="text-slate-800 dark:text-slate-300 font-mono">{formatDecimalAmount(log.multiplier, 6)}x</span>
+                        </div>
+                        <div className="flex items-center gap-1 whitespace-nowrap text-slate-500">
+                          输入 <Zap className="w-3 h-3 text-rose-500/70" /> {formatDecimalAmount(log.baseInputPrice, 6)} / 1M
+                        </div>
+                        <div className="flex items-center gap-1 whitespace-nowrap text-slate-500">
+                          缓存读 <Zap className="w-3 h-3 text-rose-500/70" /> {formatDecimalAmount(log.cacheReadPrice, 6)} / 1M
+                        </div>
+                      </td>
+                    </tr>
+
+                    {/* Expanded Detail Panel */}
+                    {expanded && (
+                      <tr className="bg-slate-50 dark:bg-[#121212]">
+                        <td colSpan={10} className="p-0 border-t border-b border-slate-200 dark:border-white/5">
+                          <div className="py-5 pl-6 pr-6 flex gap-6 text-xs">
+
+                            {/* Left Property Labels */}
+                            <div className="flex flex-col gap-3 text-slate-500 text-right font-medium min-w-[100px] shrink-0">
+                              <div>Request ID</div>
+                              <div>缓存 Tokens</div>
+                              <div>日志详情</div>
+                              <div className="mt-7">计费过程</div>
+                              <div className="mt-[72px]">Reasoning</div>
+                              <div>请求路径</div>
+                              <div>来源 IP</div>
+                            </div>
+
+                            {/* Right Values */}
+                            <div className="flex flex-col gap-3 text-slate-700 dark:text-slate-300">
+                              <div className="font-mono text-[11px] py-0.5 text-slate-500 dark:text-slate-400">{log.requestId}</div>
+                              <div className="font-mono text-[11px] py-0.5 text-slate-500 dark:text-slate-400">{log.cacheReadTokens}</div>
+
+                              <div className="flex flex-wrap items-center gap-x-2 gap-y-1 py-1 px-3 bg-white dark:bg-white/5 rounded border border-slate-200 dark:border-white/5 w-fit shadow-sm dark:shadow-none">
+                                <span>输入价格 <Zap className="w-3 h-3 inline-block text-rose-500 -mt-0.5" /> {formatDecimalAmount(log.baseInputPrice, 6)} / 1M tokens,</span>
+                                <span>输出价格 <Zap className="w-3 h-3 inline-block text-rose-500 -mt-0.5" /> {formatDecimalAmount(log.baseOutputPrice, 6)} / 1M tokens,</span>
+                                <span>缓存读取价格 <Zap className="w-3 h-3 inline-block text-rose-500 -mt-0.5" /> {formatDecimalAmount(log.cacheReadPrice, 6)} / 1M tokens,</span>
+                                <span>分组倍率 {formatDecimalAmount(log.multiplier, 6)}x</span>
+                              </div>
+
+                              <div className="mt-1 flex flex-col gap-1.5 p-3 bg-white dark:bg-[#1a1a1a] rounded-lg border border-slate-200 dark:border-white/5 font-mono text-[11px] shadow-sm dark:shadow-none">
+                                <div className="text-slate-500 dark:text-slate-400">输入价格: <Zap className="w-3 h-3 inline-block text-rose-500/80 -mt-0.5" /> {formatDecimalAmount(log.baseInputPrice, 6)} / 1M tokens</div>
+                                <div className="text-slate-500 dark:text-slate-400">输出价格: <Zap className="w-3 h-3 inline-block text-rose-500/80 -mt-0.5" /> {formatDecimalAmount(log.baseOutputPrice, 6)} / 1M tokens</div>
+                                <div className="text-slate-500 dark:text-slate-400 mb-1">缓存读取价格: <Zap className="w-3 h-3 inline-block text-rose-500/80 -mt-0.5" /> {formatDecimalAmount(log.cacheReadPrice, 6)} / 1M tokens</div>
+                                <div className="text-slate-700 dark:text-slate-300 bg-slate-50 dark:bg-white/5 p-2 rounded">
+                                  {`(输入 ${log.inputTokens - log.cacheReadTokens} / 1M * `}
+                                  <Zap className="w-3 h-3 inline-block text-rose-500/80 -mt-0.5" />
+                                  {` ${formatDecimalAmount(log.baseInputPrice, 6)} + 缓存 ${log.cacheReadTokens} / 1M * `}
+                                  <Zap className="w-3 h-3 inline-block text-rose-500/80 -mt-0.5" />
+                                  {` ${formatDecimalAmount(log.cacheReadPrice, 6)} + 输出 ${log.outputTokens} / 1M * `}
+                                  <Zap className="w-3 h-3 inline-block text-rose-500/80 -mt-0.5" />
+                                  {` ${formatDecimalAmount(log.baseOutputPrice, 6)}) * 倍率 ${formatDecimalAmount(log.multiplier, 6)} = `}
+                                  <Zap className="w-3 h-3 inline-block text-rose-500 -mt-0.5" />
+                                  <span className="font-bold text-rose-600 dark:text-rose-500 ml-1">{formatDecimalAmount(log.cost, 6)}</span>
+                                </div>
+                                <div className="text-slate-400 dark:text-slate-500 mt-1 italic">仅供参考，以实际扣费为准</div>
+                              </div>
+
+                              <div className="font-mono text-[11px] text-slate-500 dark:text-slate-400">{log.reasoningEffort}</div>
+                              <div className="font-mono text-[11px] text-slate-500 dark:text-slate-400">{log.path}</div>
+                              <div className="font-mono text-[11px] text-slate-500 dark:text-slate-400">{log.ip}</div>
+                            </div>
+
+                          </div>
+                        </td>
+                      </tr>
+                    )}
+                  </React.Fragment>
+                )
+              })}
+            </tbody>
+          </table>
+        </div>
+
+        {/* Pagination Details */}
+        <div className="p-4 border-t border-slate-200 dark:border-white/10 flex items-center justify-between text-xs mt-auto bg-slate-50 dark:bg-[#121212]">
+          <div className="text-slate-500">
+            显示第 {logs.length > 0 ? 1 : 0} 条 - 第 {logs.length} 条, 共 {total} 条
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="text-slate-500 mr-2">总页数: {Math.max(1, Math.ceil(total / 10))}</span>
+            <button className="w-7 h-7 flex items-center justify-center rounded border border-slate-200 dark:border-white/10 text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-white/5 disabled:opacity-50">
+              <ChevronRight className="w-3.5 h-3.5 rotate-180" />
+            </button>
+            <button className="w-7 h-7 flex items-center justify-center rounded bg-indigo-600 text-white font-medium">1</button>
+            <button className="w-7 h-7 flex items-center justify-center rounded hover:bg-slate-200 dark:hover:bg-white/5 text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white">2</button>
+            <button className="w-7 h-7 flex items-center justify-center rounded hover:bg-slate-200 dark:hover:bg-white/5 text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white">3</button>
+            <span className="text-slate-500 px-1">...</span>
+            <button className="w-7 h-7 flex items-center justify-center rounded hover:bg-slate-200 dark:hover:bg-white/5 text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white">325</button>
+            <button className="w-7 h-7 flex items-center justify-center rounded border border-slate-200 dark:border-white/10 text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-white/5">
+              <ChevronRight className="w-3.5 h-3.5" />
+            </button>
+            <select className="ml-2 bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded px-2 py-1 focus:outline-none focus:border-indigo-500 text-slate-700 dark:text-slate-300">
+              <option>每页: 10</option>
+              <option>每页: 20</option>
+              <option>每页: 50</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

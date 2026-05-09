@@ -1,0 +1,460 @@
+from __future__ import annotations
+
+import argparse
+import json
+import re
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Any
+
+try:
+    import yaml
+except ImportError as exc:  # pragma: no cover - exercised only on missing tooling
+    yaml = None
+    _YAML_IMPORT_ERROR = exc
+else:
+    _YAML_IMPORT_ERROR = None
+
+
+@dataclass(frozen=True)
+class ClawRouterOpenApiPrecisionAuditResult:
+    ok: bool
+    messages: list[str]
+
+
+@dataclass(frozen=True)
+class _OperationContext:
+    surface: str
+    method: str
+    path: str
+    operation_id: str
+    path_params: list[str]
+    read_sources: list[str]
+    record_component: str | None
+    response_component: str | None
+
+
+class ClawRouterOpenApiPrecisionAudit:
+    """Validate published app/backend OpenAPI response precision against the manifest."""
+
+    SURFACES = ("app", "backend")
+    SPEC_FILES = {
+        "app": "clawrouter-app-openapi.json",
+        "backend": "clawrouter-backend-openapi.json",
+    }
+    GENERIC_RESULT_REF = "#/components/schemas/PlusApiResult"
+    APP_MODEL_CATALOG_PRIVATE_ITEM_FIELDS = frozenset(
+        {
+            "lowestUpstreamCostUnitPrice",
+        }
+    )
+    APP_MODEL_CATALOG_PRIVATE_AVAILABILITY_FIELDS = frozenset(
+        {
+            "customerUnitPrice",
+            "grossMarginPerUnit",
+            "pricingPlanCode",
+            "groupCode",
+        }
+    )
+    APP_MODEL_CATALOG_PUBLIC_AVAILABILITY_ENUM = ["reference", "unavailable"]
+
+    def __init__(
+        self,
+        root: Path,
+        manifest_path: Path | None = None,
+        schema_components_path: Path | None = None,
+        openapi_dir: Path | None = None,
+    ) -> None:
+        self.root = Path(root).resolve()
+        self.manifest_path = (
+            Path(manifest_path).resolve()
+            if manifest_path is not None
+            else self.root / "generated" / "api" / "api-contract-manifest.json"
+        )
+        self.schema_components_path = (
+            Path(schema_components_path).resolve()
+            if schema_components_path is not None
+            else self.root / "generated" / "openapi" / "schema-components.yaml"
+        )
+        self.openapi_dir = Path(openapi_dir).resolve() if openapi_dir is not None else self.root / "generated" / "openapi"
+
+    def run(self) -> ClawRouterOpenApiPrecisionAuditResult:
+        messages: list[str] = []
+        try:
+            manifest = self._load_manifest()
+            table_records = self._table_record_components()
+            operations = [
+                operation
+                for operation in manifest.get("operations", [])
+                if (
+                    isinstance(operation, dict)
+                    and operation.get("api_surface") in self.SURFACES
+                    and operation.get("openapi_exposed", True) is not False
+                )
+            ]
+            operations_by_surface = {
+                surface: [operation for operation in operations if operation.get("api_surface") == surface]
+                for surface in self.SURFACES
+            }
+            operation_ids = {
+                surface: self._operation_ids(surface_operations)
+                for surface, surface_operations in operations_by_surface.items()
+            }
+
+            for surface in self.SURFACES:
+                spec = self._load_spec(surface, messages)
+                if spec is None:
+                    continue
+                messages.extend(
+                    self._validate_surface(
+                        surface=surface,
+                        spec=spec,
+                        operations=operations_by_surface[surface],
+                        operation_ids=operation_ids[surface],
+                        table_records=table_records,
+                    )
+                )
+        except (OSError, ValueError, json.JSONDecodeError) as exc:
+            messages.append(str(exc))
+        return ClawRouterOpenApiPrecisionAuditResult(ok=not messages, messages=messages)
+
+    def _validate_surface(
+        self,
+        surface: str,
+        spec: dict[str, Any],
+        operations: list[dict[str, Any]],
+        operation_ids: dict[int, str],
+        table_records: dict[str, str],
+    ) -> list[str]:
+        messages: list[str] = []
+        paths = spec.get("paths", {})
+        schemas = self._spec_schemas(spec)
+        contexts_by_operation_id: dict[str, _OperationContext] = {}
+        allowed_components: set[str] = set()
+
+        for operation in operations:
+            context = self._operation_context(surface, operation, operation_ids[id(operation)], table_records)
+            contexts_by_operation_id[context.operation_id] = context
+            operation_spec = self._operation_spec(paths, context)
+            if operation_spec is None:
+                messages.append(f"{surface} {context.operation_id} is missing from OpenAPI path {context.path} {context.method}")
+                continue
+
+            declared_operation_id = self._string(operation_spec.get("operationId"))
+            if declared_operation_id != context.operation_id:
+                messages.append(f"{surface} {context.path} {context.method} operationId must be {context.operation_id}")
+
+            response_ref = self._success_response_ref(operation_spec)
+            expected_component = self._operation_result_component_name(context.operation_id)
+            if self._can_use_precise_response(context):
+                allowed_components.add(expected_component)
+                expected_ref = f"#/components/schemas/{expected_component}"
+                if response_ref != expected_ref:
+                    messages.append(f"{surface} {context.operation_id} 200 response must reference {expected_ref}")
+                    continue
+                messages.extend(self._validate_precise_result_schema(surface, context, schemas.get(expected_component)))
+            else:
+                if response_ref != self.GENERIC_RESULT_REF:
+                    messages.append(
+                        f"{surface} {context.operation_id} must use PlusApiResult because precise responses require GET, one read source, and an existing record schema"
+                    )
+                if expected_component in schemas:
+                    messages.append(f"{surface} {context.operation_id} must not declare unsupported result schema {expected_component}")
+
+        messages.extend(
+            self._validate_operation_result_orphans(
+                surface=surface,
+                schemas=schemas,
+                contexts_by_operation_id=contexts_by_operation_id,
+                allowed_components=allowed_components,
+            )
+        )
+        if surface == "app":
+            messages.extend(self._validate_public_app_model_catalog_schema(schemas))
+        return messages
+
+    def _validate_public_app_model_catalog_schema(self, schemas: dict[str, Any]) -> list[str]:
+        messages: list[str] = []
+        item_schema = schemas.get("AppModelCatalogItem")
+        if isinstance(item_schema, dict):
+            properties = item_schema.get("properties", {})
+            if isinstance(properties, dict):
+                for field in sorted(self.APP_MODEL_CATALOG_PRIVATE_ITEM_FIELDS):
+                    if field in properties:
+                        messages.append(
+                            f"app AppModelCatalogItem must not expose public private pricing field {field}"
+                        )
+
+        availability_schema = schemas.get("AppModelCatalogPriceAvailability")
+        if not isinstance(availability_schema, dict):
+            return messages
+        properties = availability_schema.get("properties", {})
+        if not isinstance(properties, dict):
+            messages.append("app AppModelCatalogPriceAvailability properties must be an object")
+            return messages
+
+        status = properties.get("status", {})
+        enum = status.get("enum") if isinstance(status, dict) else None
+        if enum != self.APP_MODEL_CATALOG_PUBLIC_AVAILABILITY_ENUM:
+            messages.append(
+                "app AppModelCatalogPriceAvailability.status enum must be "
+                f"{self.APP_MODEL_CATALOG_PUBLIC_AVAILABILITY_ENUM}"
+            )
+
+        for field in sorted(self.APP_MODEL_CATALOG_PRIVATE_AVAILABILITY_FIELDS):
+            if field in properties:
+                messages.append(
+                    "app AppModelCatalogPriceAvailability must not expose public private "
+                    f"pricing field {field}"
+                )
+        return messages
+
+    def _validate_precise_result_schema(
+        self,
+        surface: str,
+        context: _OperationContext,
+        schema: Any,
+    ) -> list[str]:
+        messages: list[str] = []
+        expected_component = self._operation_result_component_name(context.operation_id)
+        if not isinstance(schema, dict):
+            return [f"{surface} {context.operation_id} result schema is missing: {expected_component}"]
+
+        if schema.get("type") != "object":
+            messages.append(f"{surface} {context.operation_id} result schema type must be object")
+        if schema.get("additionalProperties") is not False:
+            messages.append(f"{surface} {context.operation_id} result schema must disable additionalProperties")
+        if schema.get("required") != ["code"]:
+            messages.append(f"{surface} {context.operation_id} result schema required fields must be ['code']")
+        if schema.get("x-operation-id") != context.operation_id:
+            messages.append(f"{surface} {context.operation_id} result schema x-operation-id must be {context.operation_id}")
+
+        properties = schema.get("properties", {})
+        if not isinstance(properties, dict):
+            messages.append(f"{surface} {context.operation_id} result schema properties must be an object")
+            return messages
+
+        expected_data_schema = self._expected_data_schema(context)
+        actual_data_schema = properties.get("data")
+        if actual_data_schema != expected_data_schema:
+            messages.append(f"{surface} {context.operation_id} data schema must be {expected_data_schema}")
+        return messages
+
+    def _validate_operation_result_orphans(
+        self,
+        surface: str,
+        schemas: dict[str, Any],
+        contexts_by_operation_id: dict[str, _OperationContext],
+        allowed_components: set[str],
+    ) -> list[str]:
+        messages: list[str] = []
+        for component_name, schema in schemas.items():
+            if not isinstance(schema, dict) or "x-operation-id" not in schema:
+                continue
+            operation_id = self._string(schema.get("x-operation-id"))
+            context = contexts_by_operation_id.get(operation_id)
+            if context is None:
+                messages.append(f"{surface} {component_name} references unknown x-operation-id {operation_id}")
+                continue
+            expected_component = self._operation_result_component_name(operation_id)
+            if component_name != expected_component:
+                messages.append(f"{surface} {operation_id} result schema name must be {expected_component}")
+            if component_name not in allowed_components:
+                messages.append(f"{surface} {operation_id} must not declare unsupported result schema {component_name}")
+        return messages
+
+    def _operation_context(
+        self,
+        surface: str,
+        operation: dict[str, Any],
+        operation_id: str,
+        table_records: dict[str, str],
+    ) -> _OperationContext:
+        read_sources = self._string_list(operation.get("read_sources"))
+        record_component = table_records.get(read_sources[0]) if len(read_sources) == 1 else None
+        response_component = self._payload_schema_component(operation.get("response_schema"))
+        return _OperationContext(
+            surface=surface,
+            method=self._string(operation.get("api_method")).upper(),
+            path=self._string(operation.get("api_path")),
+            operation_id=operation_id,
+            path_params=self._string_list(operation.get("path_params")),
+            read_sources=read_sources,
+            record_component=record_component,
+            response_component=response_component,
+        )
+
+    def _can_use_precise_response(self, context: _OperationContext) -> bool:
+        return context.response_component is not None or (
+            context.method == "GET" and len(context.read_sources) == 1 and context.record_component is not None
+        )
+
+    def _expected_data_schema(self, context: _OperationContext) -> dict[str, Any]:
+        if context.response_component is not None:
+            return {"$ref": f"#/components/schemas/{context.response_component}"}
+        record_ref = {"$ref": f"#/components/schemas/{context.record_component}"}
+        if context.path_params:
+            return record_ref
+        return {"type": "array", "items": record_ref}
+
+    def _operation_spec(self, paths: Any, context: _OperationContext) -> dict[str, Any] | None:
+        if not isinstance(paths, dict):
+            return None
+        path_spec = paths.get(context.path)
+        if not isinstance(path_spec, dict):
+            return None
+        method_spec = path_spec.get(context.method.lower())
+        return method_spec if isinstance(method_spec, dict) else None
+
+    def _success_response_ref(self, operation_spec: dict[str, Any]) -> str:
+        responses = operation_spec.get("responses", {})
+        if not isinstance(responses, dict):
+            return ""
+        success = responses.get("200", {})
+        if not isinstance(success, dict):
+            return ""
+        content = success.get("content", {})
+        if not isinstance(content, dict):
+            return ""
+        json_content = content.get("application/json", {})
+        if not isinstance(json_content, dict):
+            return ""
+        schema = json_content.get("schema", {})
+        if not isinstance(schema, dict):
+            return ""
+        return self._string(schema.get("$ref"))
+
+    def _spec_schemas(self, spec: dict[str, Any]) -> dict[str, Any]:
+        components = spec.get("components", {})
+        if not isinstance(components, dict):
+            return {}
+        schemas = components.get("schemas", {})
+        if not isinstance(schemas, dict):
+            return {}
+        return {name: schema for name, schema in schemas.items() if isinstance(name, str)}
+
+    def _table_record_components(self) -> dict[str, str]:
+        schemas = self._schema_component_schemas()
+        records: dict[str, str] = {}
+        for component_name, schema in schemas.items():
+            table_name = schema.get("x-table") if isinstance(schema, dict) else None
+            if isinstance(table_name, str) and table_name:
+                records[table_name] = component_name
+        return records
+
+    def _schema_component_schemas(self) -> dict[str, Any]:
+        if not self.schema_components_path.exists():
+            return {}
+        if yaml is None:
+            raise RuntimeError("PyYAML is required to load OpenAPI schema components") from _YAML_IMPORT_ERROR
+        payload = yaml.safe_load(self.schema_components_path.read_text(encoding="utf-8")) or {}
+        if not isinstance(payload, dict):
+            raise ValueError("OpenAPI schema components root must be an object")
+        components = payload.get("components", {})
+        if not isinstance(components, dict):
+            return {}
+        schemas = components.get("schemas", {})
+        if not isinstance(schemas, dict):
+            return {}
+        return {name: schema for name, schema in schemas.items() if isinstance(name, str) and isinstance(schema, dict)}
+
+    def _load_manifest(self) -> dict[str, Any]:
+        if not self.manifest_path.exists():
+            raise ValueError(f"api contract manifest is missing: {self.manifest_path}")
+        payload = json.loads(self.manifest_path.read_text(encoding="utf-8"))
+        if not isinstance(payload, dict):
+            raise ValueError("api contract manifest root must be an object")
+        return payload
+
+    def _load_spec(self, surface: str, messages: list[str]) -> dict[str, Any] | None:
+        path = self.openapi_dir / self.SPEC_FILES[surface]
+        if not path.exists():
+            messages.append(f"clawrouter {surface} OpenAPI spec is missing: {path}")
+            return None
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        if not isinstance(payload, dict):
+            messages.append(f"clawrouter {surface} OpenAPI spec root must be an object: {path}")
+            return None
+        return payload
+
+    def _operation_ids(self, operations: list[dict[str, Any]]) -> dict[int, str]:
+        counts: dict[str, int] = {}
+        for operation in operations:
+            base = self._safe_operation_id(self._string(operation.get("operation")) or "operation")
+            counts[base] = counts.get(base, 0) + 1
+
+        result: dict[int, str] = {}
+        used: set[str] = set()
+        for operation in operations:
+            base = self._safe_operation_id(self._string(operation.get("operation")) or "operation")
+            if counts[base] > 1:
+                candidate = self._safe_operation_id(f"{self._string(operation.get('tag'))}_{base}")
+            else:
+                candidate = base
+            unique = candidate
+            suffix = 2
+            while unique in used:
+                unique = f"{candidate}{suffix}"
+                suffix += 1
+            used.add(unique)
+            result[id(operation)] = unique
+        return result
+
+    def _safe_operation_id(self, value: str) -> str:
+        parts = [part for part in re.split(r"[^A-Za-z0-9]+", value) if part]
+        if not parts:
+            return "operation"
+        first = parts[0][0].lower() + parts[0][1:]
+        rest = "".join(part[0].upper() + part[1:] for part in parts[1:])
+        candidate = first + rest
+        if not re.match(r"^[A-Za-z_]", candidate):
+            candidate = f"operation{candidate[0].upper()}{candidate[1:]}"
+        return candidate
+
+    def _operation_result_component_name(self, operation_id: str) -> str:
+        if not operation_id:
+            return "OperationResult"
+        return operation_id[0].upper() + operation_id[1:] + "Result"
+
+    def _payload_schema_component(self, value: Any) -> str | None:
+        if not isinstance(value, dict):
+            return None
+        name = value.get("name")
+        schema = value.get("schema")
+        if not isinstance(name, str) or not isinstance(schema, dict):
+            return None
+        return name
+
+    def _string(self, value: Any) -> str:
+        return value if isinstance(value, str) else ""
+
+    def _string_list(self, value: Any) -> list[str]:
+        if not isinstance(value, list):
+            return []
+        return [item for item in value if isinstance(item, str)]
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description="Audit ClawRouter OpenAPI response precision.")
+    parser.add_argument("--root", type=Path, default=Path.cwd(), help="sdkwork-claw-router root directory")
+    parser.add_argument("--manifest", type=Path, default=None, help="API contract manifest path")
+    parser.add_argument("--schema-components", type=Path, default=None, help="OpenAPI schema components path")
+    parser.add_argument("--openapi-dir", type=Path, default=None, help="directory containing generated app/backend OpenAPI JSON")
+    args = parser.parse_args()
+
+    result = ClawRouterOpenApiPrecisionAudit(
+        root=args.root,
+        manifest_path=args.manifest,
+        schema_components_path=args.schema_components,
+        openapi_dir=args.openapi_dir,
+    ).run()
+    if result.ok:
+        print("ClawRouter OpenAPI precision audit passed")
+        return 0
+    for message in result.messages:
+        print(message)
+    return 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

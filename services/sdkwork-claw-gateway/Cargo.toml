@@ -1,0 +1,30 @@
+[package]
+name = "sdkwork-claw-gateway"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+anyhow.workspace = true
+axum.workspace = true
+bytes.workspace = true
+http-body-util.workspace = true
+hyper.workspace = true
+hyper-rustls.workspace = true
+hyper-util.workspace = true
+serde_json.workspace = true
+sdkwork-claw-config = { path = "../../crates/sdkwork-claw-config" }
+sdkwork-claw-http = { path = "../../crates/sdkwork-claw-http" }
+sdkwork-claw-observability = { path = "../../crates/sdkwork-claw-observability" }
+sdkwork-claw-product = { path = "../sdkwork-claw-product" }
+sdkwork-sdk-generator-client = { path = "../../../../sdk/sdkwork-sdk-generator/rust" }
+sqlx.workspace = true
+tokio.workspace = true
+tracing.workspace = true
+
+[dev-dependencies]
+futures-core.workspace = true
+sdkwork-claw-admin-api = { path = "../sdkwork-claw-admin-api" }
+sdkwork-claw-app-api = { path = "../sdkwork-claw-app-api" }
+sdkwork-claw-test-support = { path = "../../crates/sdkwork-claw-test-support" }
+tower.workspace = true

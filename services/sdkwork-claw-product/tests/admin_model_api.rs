@@ -1,0 +1,290 @@
+use std::sync::Arc;
+
+use axum::body::Body;
+use axum::http::{Request, StatusCode};
+use sdkwork_claw_product::application::ApiKeySecretHasher;
+use sdkwork_claw_product::domain::{
+    AiModel, ApiKeyGroup, BillingMeter, DecimalValue, GatewayApiKey, ModelPrice,
+    ModelProviderRoute, ModelVendor, ModelVendorDefinition, Money, PriceSide, PricingPlan,
+};
+use sdkwork_claw_product::infrastructure::crypto::HmacSha256ApiKeySecretHasher;
+use sdkwork_claw_product::infrastructure::InMemoryPricingCatalog;
+use tower::ServiceExt;
+
+fn catalog() -> InMemoryPricingCatalog {
+    let mut catalog = InMemoryPricingCatalog::default();
+    catalog.add_vendor(ModelVendorDefinition::new(
+        "openai",
+        ModelVendor::OpenAi,
+        "OpenAI",
+    ));
+    catalog.add_model(
+        AiModel::new(
+            "gpt-4o-mini",
+            "GPT-4o mini",
+            "openai",
+            vec!["chat", "tools"],
+        )
+        .with_catalog_key("openai/global/gpt-4o-mini"),
+    );
+    catalog.add_provider_route(
+        ModelProviderRoute::new(
+            "gpt-4o-mini",
+            "openrouter",
+            3001,
+            "openai/global/gpt-4o-mini",
+        )
+        .with_catalog_key("openai/global/gpt-4o-mini"),
+    );
+    catalog.add_plan(PricingPlan::new(
+        "standard",
+        PriceSide::OfficialReference,
+        DecimalValue::parse("1.200000").unwrap(),
+        Money::usd("0.000000").unwrap(),
+    ));
+    catalog.add_api_key_group(ApiKeyGroup::new(
+        10,
+        "standard-group",
+        "standard",
+        DecimalValue::parse("1.000000").unwrap(),
+        DecimalValue::parse("1.100000").unwrap(),
+    ));
+    catalog.add_api_key(GatewayApiKey::new(100, 10, "sk-test", "hash:sk-test"));
+    catalog.add_price(
+        ModelPrice::new(
+            "gpt-4o-mini",
+            PriceSide::OfficialReference,
+            BillingMeter::LlmInputToken,
+            Money::usd("0.150000").unwrap(),
+        )
+        .with_catalog_key("openai/global/gpt-4o-mini"),
+    );
+    catalog.add_price(
+        ModelPrice::new(
+            "gpt-4o-mini",
+            PriceSide::UpstreamCost,
+            BillingMeter::LlmInputToken,
+            Money::usd("0.110000").unwrap(),
+        )
+        .with_catalog_key("openai/global/gpt-4o-mini")
+        .for_provider("openrouter", 3001),
+    );
+    catalog
+}
+
+fn catalog_with_hashed_api_key(key_hash: String) -> InMemoryPricingCatalog {
+    let mut catalog = catalog();
+    catalog.add_api_key(GatewayApiKey::new(101, 10, "sk-live", &key_hash));
+    catalog
+}
+
+#[tokio::test]
+async fn admin_model_catalog_route_returns_plus_result_with_catalog_price_view() {
+    let router = sdkwork_claw_product::api::admin_model_catalog_router(Arc::new(catalog()));
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/backend/v3/api/model/list")
+                .header("content-type", "application/json")
+                .body(Body::from(
+                    r#"{"apiKeyId":100,"billingMeter":"llm_input_token","vendorCode":"openai"}"#,
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    let body = axum::body::to_bytes(response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    let payload: serde_json::Value = serde_json::from_slice(&body).unwrap();
+
+    assert_eq!("2000", payload["code"]);
+    assert_eq!("SUCCESS", payload["msg"]);
+    assert_eq!("SUCCESS", payload["message"]);
+    assert_eq!("gpt-4o-mini", payload["data"]["items"][0]["model"]);
+    assert_eq!("openai", payload["data"]["items"][0]["vendorCode"]);
+    assert_eq!(
+        "0.198000",
+        payload["data"]["items"][0]["priceAvailability"]["customerUnitPrice"]
+    );
+    assert_eq!(
+        "0.088000",
+        payload["data"]["items"][0]["priceAvailability"]["grossMarginPerUnit"]
+    );
+    assert_eq!(
+        "available",
+        payload["data"]["items"][0]["priceAvailability"]["status"]
+    );
+}
+
+#[tokio::test]
+async fn admin_model_catalog_route_accepts_api_key_context_from_header() {
+    let router = sdkwork_claw_product::api::admin_model_catalog_router(Arc::new(catalog()));
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/backend/v3/api/model/list")
+                .header("content-type", "application/json")
+                .header("x-sdkwork-api-key-id", "100")
+                .body(Body::from(
+                    r#"{"billingMeter":"llm_input_token","vendorCode":"openai"}"#,
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    let body = axum::body::to_bytes(response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    let payload: serde_json::Value = serde_json::from_slice(&body).unwrap();
+
+    assert_eq!("2000", payload["code"]);
+    assert_eq!(
+        "available",
+        payload["data"]["items"][0]["priceAvailability"]["status"]
+    );
+    assert_eq!(
+        "0.198000",
+        payload["data"]["items"][0]["priceAvailability"]["customerUnitPrice"]
+    );
+}
+
+#[tokio::test]
+async fn admin_model_catalog_route_accepts_empty_body_and_marks_customer_price_unavailable() {
+    let router = sdkwork_claw_product::api::admin_model_catalog_router(Arc::new(catalog()));
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/backend/v3/api/model/list")
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    let body = axum::body::to_bytes(response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    let payload: serde_json::Value = serde_json::from_slice(&body).unwrap();
+
+    assert_eq!("2000", payload["code"]);
+    assert_eq!("gpt-4o-mini", payload["data"]["items"][0]["model"]);
+    assert_eq!(
+        "unavailable",
+        payload["data"]["items"][0]["priceAvailability"]["status"]
+    );
+    assert_eq!(
+        "api key context is required for customer price",
+        payload["data"]["items"][0]["priceAvailability"]["reason"]
+    );
+}
+
+#[tokio::test]
+async fn admin_model_catalog_route_authenticates_bearer_credential_with_configured_hasher() {
+    let hasher = HmacSha256ApiKeySecretHasher::new("0123456789abcdef0123456789abcdef").unwrap();
+    let key_hash = hasher.hash_secret("sk-live-secret").unwrap();
+    let router = sdkwork_claw_product::api::admin_model_catalog_router_with_api_key_hasher(
+        Arc::new(catalog_with_hashed_api_key(key_hash)),
+        Arc::new(hasher),
+    );
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/backend/v3/api/model/list")
+                .header("authorization", "Bearer sk-live-secret")
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    let body = axum::body::to_bytes(response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    let payload: serde_json::Value = serde_json::from_slice(&body).unwrap();
+
+    assert_eq!(
+        "available",
+        payload["data"]["items"][0]["priceAvailability"]["status"]
+    );
+    assert_eq!(
+        "0.198000",
+        payload["data"]["items"][0]["priceAvailability"]["customerUnitPrice"]
+    );
+}
+
+#[tokio::test]
+async fn admin_model_catalog_route_rejects_invalid_bearer_credential_when_hasher_is_configured() {
+    let hasher = HmacSha256ApiKeySecretHasher::new("0123456789abcdef0123456789abcdef").unwrap();
+    let key_hash = hasher.hash_secret("sk-live-secret").unwrap();
+    let router = sdkwork_claw_product::api::admin_model_catalog_router_with_api_key_hasher(
+        Arc::new(catalog_with_hashed_api_key(key_hash)),
+        Arc::new(hasher),
+    );
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/backend/v3/api/model/list")
+                .header("authorization", "Bearer sk-wrong-secret")
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::UNAUTHORIZED, response.status());
+    let body = axum::body::to_bytes(response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    let body = String::from_utf8(body.to_vec()).unwrap();
+    let payload: serde_json::Value = serde_json::from_str(&body).unwrap();
+
+    assert_eq!("4001", payload["code"]);
+    assert_eq!("api key credential is invalid", payload["msg"]);
+    assert!(!body.contains("sk-wrong-secret"));
+}
+
+#[tokio::test]
+async fn admin_model_catalog_route_rejects_spoofed_api_key_context_when_hasher_is_configured() {
+    let hasher = HmacSha256ApiKeySecretHasher::new("0123456789abcdef0123456789abcdef").unwrap();
+    let key_hash = hasher.hash_secret("sk-live-secret").unwrap();
+    let router = sdkwork_claw_product::api::admin_model_catalog_router_with_api_key_hasher(
+        Arc::new(catalog_with_hashed_api_key(key_hash)),
+        Arc::new(hasher),
+    );
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/backend/v3/api/model/list")
+                .header("x-sdkwork-api-key-id", "101")
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::UNAUTHORIZED, response.status());
+    let body = axum::body::to_bytes(response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    let body = String::from_utf8(body.to_vec()).unwrap();
+    let payload: serde_json::Value = serde_json::from_str(&body).unwrap();
+
+    assert_eq!("4001", payload["code"]);
+    assert_eq!("api key credential is required", payload["msg"]);
+}

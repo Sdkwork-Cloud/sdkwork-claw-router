@@ -1,0 +1,32 @@
+export interface ContentCourseRecord {
+  category?: string;
+  content?: string;
+  course_code?: string;
+  created_at?: string;
+  currency?: string;
+  data_scope?: string;
+  deleted_at?: string;
+  deleted_by?: string;
+  description?: string;
+  duration_text?: string;
+  external_bvid?: string;
+  id?: string;
+  instructor_snapshot?: Record<string, unknown>;
+  is_collection?: boolean;
+  lessons_count?: number;
+  level?: string;
+  metadata?: Record<string, unknown>;
+  organization_id?: string;
+  price_amount?: string;
+  published_at?: string;
+  rating_score?: string;
+  status?: string;
+  students_count?: string;
+  tags?: Record<string, unknown>;
+  tenant_id?: string;
+  thumbnail_url?: string;
+  title?: string;
+  updated_at?: string;
+  uuid?: string;
+  version?: string;
+}

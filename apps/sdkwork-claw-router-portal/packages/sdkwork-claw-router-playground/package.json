@@ -1,0 +1,29 @@
+{
+  "name": "sdkwork-claw-router-playground",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "import": "./src/index.ts",
+      "types": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "vite build",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@sdkwork/clawrouter-app-sdk": "file:../../../../sdks/clawrouter-app-sdk",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "sdkwork-claw-router-commons": "file:../sdkwork-claw-router-commons"
+  },
+  "devDependencies": {
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0"
+  }
+}

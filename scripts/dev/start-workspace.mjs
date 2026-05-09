@@ -1,0 +1,669 @@
+#!/usr/bin/env node
+
+import { mkdirSync } from 'node:fs';
+import { spawn } from 'node:child_process';
+import path from 'node:path';
+import process from 'node:process';
+import { fileURLToPath } from 'node:url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const repositoryRoot = path.resolve(__dirname, '..', '..');
+
+const DEFAULT_GATEWAY_BIND = '127.0.0.1:18080';
+const DEFAULT_ADMIN_API_BIND = '127.0.0.1:18081';
+const DEFAULT_APP_API_BIND = '127.0.0.1:18082';
+const DEFAULT_SERVER_BIND = '0.0.0.0:3900';
+const DEFAULT_PORTAL_BIND = '127.0.0.1:3901';
+const DEFAULT_EXTERNAL_SCHEME = 'http';
+const DEFAULT_DEV_DATABASE_RELATIVE_PATH = path.join('target', 'dev', 'sdkwork-claw-router.sqlite');
+const DEFAULT_MODELS_CATALOG_RELATIVE_PATH = path.join('data', 'sdkwork-models');
+const DEFAULT_DEV_SECRET =
+  'sdkwork-claw-router-local-dev-secret-20260507';
+const GATEWAY_API_PREFIX = '/v1';
+const BACKEND_API_PREFIX = '/backend/v3/api';
+const APP_API_PREFIX = '/app/v3/api';
+
+function requireValue(argv, index, flag) {
+  const value = argv[index + 1];
+  if (!value || value.startsWith('--')) {
+    throw new Error(`${flag} requires a value`);
+  }
+  return value;
+}
+
+function splitBind(bind, flagName) {
+  const match = String(bind ?? '').trim().match(/^(.*):(\d+)$/u);
+  if (!match) {
+    throw new Error(`${flagName} must be a host:port value`);
+  }
+
+  const host = match[1];
+  const port = Number.parseInt(match[2], 10);
+  if (!host || !Number.isInteger(port) || port < 1 || port > 65535) {
+    throw new Error(`${flagName} must be a host:port value`);
+  }
+
+  return { host, port: String(port) };
+}
+
+function toPortablePath(value) {
+  return value.replaceAll(path.sep, '/');
+}
+
+function loopbackUrl(bind, pathSuffix) {
+  const { host, port } = splitBind(bind, '--bind');
+  const loopbackHost = host === '0.0.0.0' || host === '[::]' || host === '::'
+    ? '127.0.0.1'
+    : host;
+  return `http://${loopbackHost}:${port}${pathSuffix}`;
+}
+
+function forwardingOrigin(value, flagName) {
+  let parsed;
+  try {
+    parsed = new URL(value);
+  } catch {
+    throw new Error(`${flagName} must be an HTTP/HTTPS origin`);
+  }
+
+  if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') {
+    throw new Error(`${flagName} must be an HTTP/HTTPS origin`);
+  }
+  if ((parsed.pathname && parsed.pathname !== '/') || parsed.search || parsed.hash) {
+    throw new Error(`${flagName} must be an origin without path, query, or hash`);
+  }
+
+  return parsed.origin;
+}
+
+function forwardingOriginFromBind(bind, flagName) {
+  return forwardingOrigin(loopbackUrl(bind, ''), flagName);
+}
+
+function normalizeExternalScheme(value, flagName) {
+  const scheme = String(value ?? '').trim().toLowerCase();
+  if (scheme !== 'http' && scheme !== 'https') {
+    throw new Error(`${flagName} must be http or https`);
+  }
+  return scheme;
+}
+
+function pnpmCommand(platform = process.platform) {
+  return platform === 'win32' ? 'pnpm.cmd' : 'pnpm';
+}
+
+function shellForPnpm(platform = process.platform) {
+  return platform === 'win32';
+}
+
+function cargoCommand(platform = process.platform) {
+  return platform === 'win32' ? 'cargo.exe' : 'cargo';
+}
+
+function localSqliteDatabaseUrl(workspaceRoot) {
+  return `sqlite://${toPortablePath(path.join(workspaceRoot, DEFAULT_DEV_DATABASE_RELATIVE_PATH))}`;
+}
+
+function defaultModelsCatalogRoot(workspaceRoot) {
+  return path.join(workspaceRoot, DEFAULT_MODELS_CATALOG_RELATIVE_PATH);
+}
+
+function resolveModelsCatalogRoot(settings, workspaceRoot) {
+  return String(
+    process.env.SDKWORK_MODELS_CATALOG_ROOT ?? settings.modelsCatalogRoot ?? defaultModelsCatalogRoot(workspaceRoot),
+  ).trim();
+}
+
+function ensureLocalSqliteDatabaseDirectory(settings, workspaceRoot) {
+  const defaultDatabaseUrl = localSqliteDatabaseUrl(workspaceRoot);
+  if (settings.databaseUrl !== defaultDatabaseUrl) {
+    return;
+  }
+  mkdirSync(path.dirname(path.join(workspaceRoot, DEFAULT_DEV_DATABASE_RELATIVE_PATH)), {
+    recursive: true,
+  });
+}
+
+export function parseWorkspaceArgs(argv = []) {
+  const settings = {
+    databaseUrl: null,
+    gatewayBind: DEFAULT_GATEWAY_BIND,
+    adminApiBind: DEFAULT_ADMIN_API_BIND,
+    appApiBind: DEFAULT_APP_API_BIND,
+    serverBind: DEFAULT_SERVER_BIND,
+    portalBind: DEFAULT_PORTAL_BIND,
+    externalScheme: DEFAULT_EXTERNAL_SCHEME,
+    trustForwardedHeaders: false,
+    gatewayForwardUrl: null,
+    backendApiForwardUrl: null,
+    appApiForwardUrl: null,
+    install: false,
+    dryRun: false,
+    planFormat: 'text',
+    help: false,
+  };
+
+  for (let index = 0; index < argv.length; index += 1) {
+    const arg = argv[index];
+    switch (arg) {
+      case '--database-url':
+        settings.databaseUrl = requireValue(argv, index, arg);
+        index += 1;
+        break;
+      case '--gateway-bind':
+        settings.gatewayBind = requireValue(argv, index, arg);
+        index += 1;
+        break;
+      case '--admin-api-bind':
+        settings.adminApiBind = requireValue(argv, index, arg);
+        index += 1;
+        break;
+      case '--app-api-bind':
+        settings.appApiBind = requireValue(argv, index, arg);
+        index += 1;
+        break;
+      case '--server-bind':
+        settings.serverBind = requireValue(argv, index, arg);
+        index += 1;
+        break;
+      case '--portal-bind':
+        settings.portalBind = requireValue(argv, index, arg);
+        index += 1;
+        break;
+      case '--external-scheme':
+        settings.externalScheme = normalizeExternalScheme(requireValue(argv, index, arg), arg);
+        index += 1;
+        break;
+      case '--trust-forwarded-headers':
+        settings.trustForwardedHeaders = true;
+        break;
+      case '--gateway-forward-url':
+        settings.gatewayForwardUrl = forwardingOrigin(requireValue(argv, index, arg), arg);
+        index += 1;
+        break;
+      case '--backend-api-forward-url':
+        settings.backendApiForwardUrl = forwardingOrigin(requireValue(argv, index, arg), arg);
+        index += 1;
+        break;
+      case '--app-api-forward-url':
+        settings.appApiForwardUrl = forwardingOrigin(requireValue(argv, index, arg), arg);
+        index += 1;
+        break;
+      case '--install':
+        settings.install = true;
+        break;
+      case '--dry-run':
+        settings.dryRun = true;
+        break;
+      case '--plan-format':
+        settings.planFormat = requireValue(argv, index, arg);
+        index += 1;
+        break;
+      case '--help':
+      case '-h':
+        settings.help = true;
+        break;
+      default:
+        throw new Error(`unknown option: ${arg}`);
+    }
+  }
+
+  for (const [flagName, value] of [
+    ['--gateway-bind', settings.gatewayBind],
+    ['--admin-api-bind', settings.adminApiBind],
+    ['--app-api-bind', settings.appApiBind],
+    ['--server-bind', settings.serverBind],
+    ['--portal-bind', settings.portalBind],
+  ]) {
+    splitBind(value, flagName);
+  }
+
+  if (!['text', 'json'].includes(settings.planFormat)) {
+    throw new Error('--plan-format must be text or json');
+  }
+  settings.externalScheme = normalizeExternalScheme(settings.externalScheme, '--external-scheme');
+
+  settings.gatewayForwardUrl ??= forwardingOriginFromBind(settings.gatewayBind, '--gateway-bind');
+  settings.backendApiForwardUrl ??= forwardingOriginFromBind(settings.adminApiBind, '--admin-api-bind');
+  settings.appApiForwardUrl ??= forwardingOriginFromBind(settings.appApiBind, '--app-api-bind');
+
+  return settings;
+}
+
+function serviceEnv(settings, bindEnvName, bindValue) {
+  const env = {
+    ...process.env,
+    SDKWORK_CLAW_DEPLOYMENT_MODE: 'server',
+    [bindEnvName]: bindValue,
+    SDKWORK_CLAW_DATABASE_URL: settings.databaseUrl,
+    SDKWORK_MODELS_CATALOG_ROOT: settings.modelsCatalogRoot,
+    SDKWORK_CLAW_API_KEY_PEPPER:
+      process.env.SDKWORK_CLAW_API_KEY_PEPPER ?? DEFAULT_DEV_SECRET,
+    SDKWORK_CLAW_TRUSTED_SUBJECT_SECRET:
+      process.env.SDKWORK_CLAW_TRUSTED_SUBJECT_SECRET ?? DEFAULT_DEV_SECRET,
+    SDKWORK_CLAW_APP_SESSION_SECRET:
+      process.env.SDKWORK_CLAW_APP_SESSION_SECRET ?? DEFAULT_DEV_SECRET,
+    SDKWORK_CLAW_PAYMENT_WEBHOOK_SECRET:
+      process.env.SDKWORK_CLAW_PAYMENT_WEBHOOK_SECRET ?? DEFAULT_DEV_SECRET,
+    SDKWORK_CLAW_INSTALL_ENVIRONMENT:
+      process.env.SDKWORK_CLAW_INSTALL_ENVIRONMENT ?? 'development',
+    SDKWORK_CLAW_INSTALL_SEED_PROFILE:
+      process.env.SDKWORK_CLAW_INSTALL_SEED_PROFILE ?? 'commercial',
+  };
+
+  return env;
+}
+
+function portalEnv(settings) {
+  const { host, port } = splitBind(settings.portalBind, '--portal-bind');
+  return {
+    ...process.env,
+    HOST: host,
+    PORT: port,
+    OPENAPI_DEV_URL: loopbackUrl(settings.gatewayBind, '/openapi.json'),
+    SDKWORK_CLAW_DEPLOYMENT_MODE: 'server',
+    SDKWORK_CLAW_PORTAL_BIND: settings.portalBind,
+    PORTAL_PUBLIC_API_BASE_URL: GATEWAY_API_PREFIX,
+    PORTAL_PUBLIC_BACKEND_API_BASE_URL: BACKEND_API_PREFIX,
+    PORTAL_PUBLIC_APP_API_BASE_URL: APP_API_PREFIX,
+    PORTAL_DEV_PROXY_GATEWAY_TARGET: settings.gatewayForwardUrl,
+    PORTAL_DEV_PROXY_BACKEND_API_TARGET: settings.backendApiForwardUrl,
+    PORTAL_DEV_PROXY_APP_API_TARGET: settings.appApiForwardUrl,
+  };
+}
+
+function edgeServerEnv(settings) {
+  return {
+    ...serviceEnv(settings, 'SDKWORK_CLAW_SERVER_BIND', settings.serverBind),
+    SDKWORK_CLAW_EDGE_SERVER: '1',
+    SDKWORK_CLAW_EDGE_GATEWAY_BASE_URL: settings.gatewayForwardUrl,
+    SDKWORK_CLAW_EDGE_BACKEND_API_BASE_URL: settings.backendApiForwardUrl,
+    SDKWORK_CLAW_EDGE_APP_API_BASE_URL: settings.appApiForwardUrl,
+    SDKWORK_CLAW_EDGE_PORTAL_BASE_URL: forwardingOriginFromBind(
+      settings.portalBind,
+      '--portal-bind',
+    ),
+    SDKWORK_CLAW_EDGE_EXTERNAL_SCHEME: settings.externalScheme,
+    SDKWORK_CLAW_EDGE_TRUST_FORWARDED_HEADERS: settings.trustForwardedHeaders ? '1' : '0',
+    PORTAL_PUBLIC_TOOL_API_ENABLED: process.env.PORTAL_PUBLIC_TOOL_API_ENABLED ?? 'false',
+    PORTAL_TOOL_API_RATE_LIMIT_REQUESTS: process.env.PORTAL_TOOL_API_RATE_LIMIT_REQUESTS ?? '120',
+    PORTAL_TOOL_API_RATE_LIMIT_WINDOW_SECONDS:
+      process.env.PORTAL_TOOL_API_RATE_LIMIT_WINDOW_SECONDS ?? '60',
+    PORTAL_TOOL_API_SDK_ARCHIVE_ROOT: process.env.PORTAL_TOOL_API_SDK_ARCHIVE_ROOT ?? '',
+  };
+}
+
+export function buildWorkspaceCommandPlan(settings, {
+  workspaceRoot = repositoryRoot,
+  platform = process.platform,
+} = {}) {
+  const portalRelativeDir = 'apps/sdkwork-claw-router-portal';
+  const portalBind = splitBind(settings.portalBind, '--portal-bind');
+  settings.databaseUrl ??= localSqliteDatabaseUrl(workspaceRoot);
+  settings.modelsCatalogRoot = resolveModelsCatalogRoot(settings, workspaceRoot);
+  ensureLocalSqliteDatabaseDirectory(settings, workspaceRoot);
+  const steps = [];
+
+  if (settings.install) {
+    steps.push({
+      name: 'portal-install',
+      command: pnpmCommand(platform),
+      args: ['--dir', portalRelativeDir, 'install'],
+      cwd: workspaceRoot,
+      env: process.env,
+      shell: shellForPnpm(platform),
+      windowsHide: platform === 'win32',
+      blocking: true,
+    });
+  }
+
+  steps.push(
+    {
+      name: 'installer',
+      command: cargoCommand(platform),
+      args: ['run', '-p', 'sdkwork-claw-installer', '--', 'ensure'],
+      cwd: workspaceRoot,
+      env: serviceEnv(settings, 'SDKWORK_CLAW_INSTALLER_BIND', '127.0.0.1:0'),
+      shell: false,
+      windowsHide: platform === 'win32',
+      blocking: true,
+    },
+    {
+      name: 'model-catalog-refresh',
+      command: cargoCommand(platform),
+      args: [
+        'run',
+        '-p',
+        'sdkwork-claw-installer',
+        '--',
+        'refresh-catalog',
+        '--catalog-root',
+        settings.modelsCatalogRoot,
+        '--force',
+      ],
+      cwd: workspaceRoot,
+      env: serviceEnv(settings, 'SDKWORK_CLAW_INSTALLER_BIND', '127.0.0.1:0'),
+      shell: false,
+      windowsHide: platform === 'win32',
+      blocking: true,
+      failureHint:
+        'model catalog refresh failed. Run pnpm models:check, verify SDKWORK_MODELS_CATALOG_ROOT, and retry refresh-catalog before starting services.',
+    },
+    {
+      name: 'gateway',
+      command: cargoCommand(platform),
+      args: ['run', '-p', 'sdkwork-claw-gateway'],
+      cwd: workspaceRoot,
+      env: serviceEnv(settings, 'SDKWORK_CLAW_GATEWAY_BIND', settings.gatewayBind),
+      shell: false,
+      windowsHide: platform === 'win32',
+    },
+    {
+      name: 'admin-api',
+      command: cargoCommand(platform),
+      args: ['run', '-p', 'sdkwork-claw-admin-api'],
+      cwd: workspaceRoot,
+      env: serviceEnv(settings, 'SDKWORK_CLAW_ADMIN_API_BIND', settings.adminApiBind),
+      shell: false,
+      windowsHide: platform === 'win32',
+    },
+    {
+      name: 'app-api',
+      command: cargoCommand(platform),
+      args: ['run', '-p', 'sdkwork-claw-app-api'],
+      cwd: workspaceRoot,
+      env: serviceEnv(settings, 'SDKWORK_CLAW_APP_API_BIND', settings.appApiBind),
+      shell: false,
+      windowsHide: platform === 'win32',
+    },
+    {
+      name: 'portal',
+      command: pnpmCommand(platform),
+      args: ['--dir', portalRelativeDir, 'browser:dev'],
+      cwd: workspaceRoot,
+      env: portalEnv(settings),
+      shell: shellForPnpm(platform),
+      windowsHide: platform === 'win32',
+    },
+    {
+      name: 'server',
+      command: cargoCommand(platform),
+      args: ['run', '-p', 'sdkwork-claw-gateway'],
+      cwd: workspaceRoot,
+      env: edgeServerEnv(settings),
+      shell: false,
+      windowsHide: platform === 'win32',
+    },
+  );
+
+  return {
+    nodeExecutable: process.execPath,
+    steps,
+  };
+}
+
+export function workspaceAccessLines(settings) {
+  return [
+    '[start-workspace] Mode: server',
+    '[start-workspace] Edge Server Access',
+    `[start-workspace]   Portal: ${loopbackUrl(settings.serverBind, '/')}`,
+    `[start-workspace]   Gateway API: ${loopbackUrl(settings.serverBind, GATEWAY_API_PREFIX)}`,
+    `[start-workspace]   Backend/Admin API: ${loopbackUrl(settings.serverBind, BACKEND_API_PREFIX)}`,
+    `[start-workspace]   App API: ${loopbackUrl(settings.serverBind, APP_API_PREFIX)}`,
+    `[start-workspace]   Gateway OpenAPI: ${loopbackUrl(settings.serverBind, '/openapi.json')}`,
+    `[start-workspace]   Admin API OpenAPI: ${loopbackUrl(settings.serverBind, `${BACKEND_API_PREFIX}/openapi.json`)}`,
+    `[start-workspace]   App API OpenAPI: ${loopbackUrl(settings.serverBind, `${APP_API_PREFIX}/openapi.json`)}`,
+    '[start-workspace] Direct Service Access',
+    `[start-workspace]   Direct Portal Dev: ${loopbackUrl(settings.portalBind, '/')}`,
+    `[start-workspace]   Direct Portal Gateway API Proxy: ${loopbackUrl(settings.portalBind, GATEWAY_API_PREFIX)}`,
+    `[start-workspace]   Direct Portal Backend/Admin API Proxy: ${loopbackUrl(settings.portalBind, BACKEND_API_PREFIX)}`,
+    `[start-workspace]   Direct Portal App API Proxy: ${loopbackUrl(settings.portalBind, APP_API_PREFIX)}`,
+    `[start-workspace]   Direct Portal Gateway OpenAPI Proxy: ${loopbackUrl(settings.portalBind, '/openapi.json')}`,
+    `[start-workspace]   Direct Portal Admin API OpenAPI Proxy: ${loopbackUrl(settings.portalBind, `${BACKEND_API_PREFIX}/openapi.json`)}`,
+    `[start-workspace]   Direct Portal App API OpenAPI Proxy: ${loopbackUrl(settings.portalBind, `${APP_API_PREFIX}/openapi.json`)}`,
+    '[start-workspace] OpenAPI Schemas',
+    `[start-workspace]   Gateway OpenAPI: ${loopbackUrl(settings.gatewayBind, '/openapi.json')}`,
+    `[start-workspace]   Admin API OpenAPI: ${loopbackUrl(settings.adminApiBind, `${BACKEND_API_PREFIX}/openapi.json`)}`,
+    `[start-workspace]   App API OpenAPI: ${loopbackUrl(settings.appApiBind, `${APP_API_PREFIX}/openapi.json`)}`,
+    '[start-workspace] API Access Paths',
+    `[start-workspace]   OpenAI-compatible Gateway API: ${loopbackUrl(settings.gatewayBind, GATEWAY_API_PREFIX)}`,
+    `[start-workspace]   Backend/Admin API: ${loopbackUrl(settings.adminApiBind, BACKEND_API_PREFIX)}`,
+    `[start-workspace]   App API: ${loopbackUrl(settings.appApiBind, APP_API_PREFIX)}`,
+    '[start-workspace] Health Checks',
+    `[start-workspace]   Edge Server Health: ${loopbackUrl(settings.serverBind, '/healthz')}`,
+    `[start-workspace]   Edge Server Ready: ${loopbackUrl(settings.serverBind, '/readyz')}`,
+    `[start-workspace]   Gateway Health: ${loopbackUrl(settings.gatewayBind, '/healthz')}`,
+    `[start-workspace]   Gateway Ready: ${loopbackUrl(settings.gatewayBind, '/readyz')}`,
+    `[start-workspace]   Admin API Health: ${loopbackUrl(settings.adminApiBind, '/healthz')}`,
+    `[start-workspace]   Admin API Ready: ${loopbackUrl(settings.adminApiBind, '/readyz')}`,
+    `[start-workspace]   App API Health: ${loopbackUrl(settings.appApiBind, '/healthz')}`,
+    `[start-workspace]   App API Ready: ${loopbackUrl(settings.appApiBind, '/readyz')}`,
+  ];
+}
+
+export function workspaceHelpText() {
+  return `Usage: node scripts/dev/start-workspace.mjs [options]
+
+Starts the Rust gateway/admin/app services plus the claw router portal dev server.
+
+Options:
+  --database-url <url>    Optional shared SDKWORK_CLAW_DATABASE_URL override
+  --gateway-bind <bind>   SDKWORK_CLAW_GATEWAY_BIND override (default ${DEFAULT_GATEWAY_BIND})
+  --admin-api-bind <bind> SDKWORK_CLAW_ADMIN_API_BIND override (default ${DEFAULT_ADMIN_API_BIND})
+  --app-api-bind <bind>   SDKWORK_CLAW_APP_API_BIND override (default ${DEFAULT_APP_API_BIND})
+  --server-bind <bind>    Rust edge server HOST:PORT override (default ${DEFAULT_SERVER_BIND})
+  --portal-bind <bind>    Direct portal dev HOST:PORT override (default ${DEFAULT_PORTAL_BIND})
+  --gateway-forward-url <url>
+                         Rust edge server target for /v1 and /openapi.json
+  --backend-api-forward-url <url>
+                         Rust edge server target for /backend/v3/api
+  --app-api-forward-url <url>
+                         Rust edge server target for /app/v3/api
+  --external-scheme <scheme>
+                         External request scheme reported upstream: http or https (default ${DEFAULT_EXTERNAL_SCHEME})
+  --trust-forwarded-headers
+                         Trust inbound x-forwarded-host/proto/for from a controlled upstream proxy
+  --install               Run pnpm install for the portal before starting
+  --dry-run               Print the command plan without running it
+  --plan-format <format>  text or json for dry-run output
+  -h, --help              Show this help
+`;
+}
+
+function formatCommand(step) {
+  return [step.command, ...step.args].join(' ');
+}
+
+export function renderWorkspaceDryRun(settings, plan) {
+  if (settings.planFormat === 'json') {
+    return [JSON.stringify({
+      mode: 'server',
+      gatewayBind: settings.gatewayBind,
+      adminApiBind: settings.adminApiBind,
+      appApiBind: settings.appApiBind,
+      serverBind: settings.serverBind,
+      portalBind: settings.portalBind,
+      modelsCatalogRoot: settings.modelsCatalogRoot,
+      externalScheme: settings.externalScheme,
+      trustForwardedHeaders: settings.trustForwardedHeaders,
+      gatewayForwardUrl: settings.gatewayForwardUrl,
+      backendApiForwardUrl: settings.backendApiForwardUrl,
+      appApiForwardUrl: settings.appApiForwardUrl,
+      steps: plan.steps.map((step) => ({
+        name: step.name,
+        command: step.command,
+        args: step.args,
+        cwd: step.cwd,
+        blocking: step.blocking === true,
+        ...(step.failureHint ? { failureHint: step.failureHint } : {}),
+      })),
+    }, null, 2)];
+  }
+
+  return [
+    '[start-workspace] edge launch settings',
+    `  SDKWORK_CLAW_DATABASE_URL=${settings.databaseUrl ?? '(local SQLite dev database)'}`,
+    `  SDKWORK_MODELS_CATALOG_ROOT=${settings.modelsCatalogRoot}`,
+    `  SDKWORK_CLAW_GATEWAY_BIND=${settings.gatewayBind}`,
+    `  SDKWORK_CLAW_ADMIN_API_BIND=${settings.adminApiBind}`,
+    `  SDKWORK_CLAW_APP_API_BIND=${settings.appApiBind}`,
+    `  SDKWORK_CLAW_SERVER_BIND=${settings.serverBind}`,
+    `  SDKWORK_CLAW_PORTAL_BIND=${settings.portalBind}`,
+    `  PORTAL_PUBLIC_API_BASE_URL=${GATEWAY_API_PREFIX}`,
+    `  PORTAL_PUBLIC_BACKEND_API_BASE_URL=${BACKEND_API_PREFIX}`,
+    `  PORTAL_PUBLIC_APP_API_BASE_URL=${APP_API_PREFIX}`,
+    `  PORTAL_DEV_PROXY_GATEWAY_TARGET=${settings.gatewayForwardUrl}`,
+    `  PORTAL_DEV_PROXY_BACKEND_API_TARGET=${settings.backendApiForwardUrl}`,
+    `  PORTAL_DEV_PROXY_APP_API_TARGET=${settings.appApiForwardUrl}`,
+    `  PORTAL_PUBLIC_TOOL_API_ENABLED=${process.env.PORTAL_PUBLIC_TOOL_API_ENABLED ?? 'false'}`,
+    `  PORTAL_TOOL_API_RATE_LIMIT_REQUESTS=${process.env.PORTAL_TOOL_API_RATE_LIMIT_REQUESTS ?? '120'}`,
+    `  PORTAL_TOOL_API_RATE_LIMIT_WINDOW_SECONDS=${process.env.PORTAL_TOOL_API_RATE_LIMIT_WINDOW_SECONDS ?? '60'}`,
+    `  PORTAL_TOOL_API_SDK_ARCHIVE_ROOT=${process.env.PORTAL_TOOL_API_SDK_ARCHIVE_ROOT ?? '(not configured)'}`,
+    `  SDKWORK_CLAW_EDGE_GATEWAY_BASE_URL=${settings.gatewayForwardUrl}`,
+    `  SDKWORK_CLAW_EDGE_BACKEND_API_BASE_URL=${settings.backendApiForwardUrl}`,
+    `  SDKWORK_CLAW_EDGE_APP_API_BASE_URL=${settings.appApiForwardUrl}`,
+    `  SDKWORK_CLAW_EDGE_PORTAL_BASE_URL=${forwardingOriginFromBind(settings.portalBind, '--portal-bind')}`,
+    `  SDKWORK_CLAW_EDGE_EXTERNAL_SCHEME=${settings.externalScheme}`,
+    `  SDKWORK_CLAW_EDGE_TRUST_FORWARDED_HEADERS=${settings.trustForwardedHeaders ? '1' : '0'}`,
+    ...workspaceAccessLines(settings),
+    ...plan.steps.flatMap((step) => [
+      `[start-workspace] ${step.name}: ${formatCommand(step)}`,
+      ...(step.failureHint ? [`[start-workspace] ${step.name} failure hint: ${step.failureHint}`] : []),
+    ]),
+  ];
+}
+
+function spawnStep(step, children) {
+  console.log(`[start-workspace] ${step.name}: ${formatCommand(step)}`);
+  const child = spawn(step.command, step.args, {
+    cwd: step.cwd,
+    env: step.env,
+    stdio: 'inherit',
+    shell: step.shell ?? false,
+    windowsHide: step.windowsHide ?? process.platform === 'win32',
+  });
+
+  children.push(child);
+  child.on('exit', (code, signal) => {
+    if (signal) {
+      console.log(`[start-workspace] ${step.name} exited with signal ${signal}`);
+      return;
+    }
+    console.log(`[start-workspace] ${step.name} exited with code ${code ?? 0}`);
+  });
+
+  return child;
+}
+
+async function runBlockingStep(step) {
+  console.log(`[start-workspace] ${step.name}: ${formatCommand(step)}`);
+  await new Promise((resolve, reject) => {
+    const child = spawn(step.command, step.args, {
+      cwd: step.cwd,
+      env: step.env,
+      stdio: 'inherit',
+      shell: step.shell ?? false,
+      windowsHide: step.windowsHide ?? process.platform === 'win32',
+    });
+
+    child.on('error', reject);
+    child.on('exit', (code, signal) => {
+      if (signal) {
+        reject(new Error(`${step.name} exited with signal ${signal}`));
+        return;
+      }
+      if ((code ?? 1) !== 0) {
+        reject(new Error(`${step.name} exited with code ${code}`));
+        return;
+      }
+      resolve();
+    });
+  });
+}
+
+async function stopChildren(children) {
+  for (const child of children) {
+    if (!child.killed) {
+      child.kill('SIGTERM');
+    }
+  }
+}
+
+async function main() {
+  let settings;
+  try {
+    settings = parseWorkspaceArgs(process.argv.slice(2));
+  } catch (error) {
+    console.error(`[start-workspace] ${error.message}`);
+    console.error('');
+    console.error(workspaceHelpText());
+    process.exit(1);
+  }
+
+  if (settings.help) {
+    console.log(workspaceHelpText());
+    process.exit(0);
+  }
+
+  const plan = buildWorkspaceCommandPlan(settings);
+  for (const line of renderWorkspaceDryRun(settings, plan)) {
+    console.log(line);
+  }
+
+  if (settings.dryRun) {
+    process.exit(0);
+  }
+
+  const children = [];
+  let shuttingDown = false;
+  const shutdown = (reason, code = 0) => {
+    if (shuttingDown) {
+      return;
+    }
+    shuttingDown = true;
+    console.log(`[start-workspace] stopping workspace: ${reason}`);
+    void stopChildren(children).finally(() => process.exit(code));
+  };
+
+  process.on('SIGINT', () => shutdown('SIGINT', 130));
+  process.on('SIGTERM', () => shutdown('SIGTERM', 143));
+
+  const blockingSteps = plan.steps.filter((step) => step.blocking === true);
+  const serviceSteps = plan.steps.filter((step) => step.blocking !== true);
+
+  for (const step of blockingSteps) {
+    try {
+      await runBlockingStep(step);
+    } catch (error) {
+      console.error(`[start-workspace] ${error.message}`);
+      if (step.failureHint) {
+        console.error(`[start-workspace] ${step.failureHint}`);
+      }
+      process.exit(1);
+    }
+  }
+
+  for (const step of serviceSteps) {
+    const child = spawnStep(step, children);
+    child.on('error', (error) => {
+      console.error(`[start-workspace] ${step.name} failed: ${error.message}`);
+      shutdown(`${step.name} error`, 1);
+    });
+    child.on('exit', (code, signal) => {
+      if (shuttingDown) {
+        return;
+      }
+      if (signal || (code ?? 0) !== 0) {
+        shutdown(`${step.name} exit`, code ?? 1);
+      }
+    });
+  }
+}
+
+if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
+  main().catch((error) => {
+    console.error(`[start-workspace] ${error.message}`);
+    process.exit(1);
+  });
+}

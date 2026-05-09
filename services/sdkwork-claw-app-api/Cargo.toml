@@ -1,0 +1,22 @@
+[package]
+name = "sdkwork-claw-app-api"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+anyhow.workspace = true
+axum.workspace = true
+sdkwork-claw-config = { path = "../../crates/sdkwork-claw-config" }
+sdkwork-claw-http = { path = "../../crates/sdkwork-claw-http" }
+sdkwork-claw-observability = { path = "../../crates/sdkwork-claw-observability" }
+sdkwork-claw-product = { path = "../sdkwork-claw-product" }
+sqlx.workspace = true
+tokio.workspace = true
+tracing.workspace = true
+
+[dev-dependencies]
+sdkwork-claw-test-support = { path = "../../crates/sdkwork-claw-test-support" }
+sdkwork-models = { path = "../../data/sdkwork-models/sdkwork-models-rust" }
+serde_json.workspace = true
+tower.workspace = true

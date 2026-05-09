@@ -1,0 +1,75 @@
+import unittest
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+
+
+class AdminRecordRuntimeStandardTest(unittest.TestCase):
+    def test_admin_record_operation_is_backed_by_real_backend_api_router(self) -> None:
+        product_api_mod = (
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "mod.rs"
+        ).read_text(encoding="utf-8")
+        backend_sdk = (
+            ROOT / "sdks" / "clawrouter-backend-sdk" / "src" / "api" / "record.ts"
+        ).read_text(encoding="utf-8")
+        record_service = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-admin-record"
+            / "src"
+            / "recordService.ts"
+        ).read_text(encoding="utf-8")
+        admin_record_api = (
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "admin_record.rs"
+        ).read_text(encoding="utf-8")
+
+        self.assertIn("mod admin_record;", product_api_mod)
+        self.assertIn("admin_record_router_with_store", product_api_mod)
+        self.assertIn("/backend/v3/api/record/list", admin_record_api)
+        self.assertIn("TrustedRequestSubject", admin_record_api)
+        self.assertIn("AdminRecordStore", admin_record_api)
+        self.assertIn("async fetchLogs", backend_sdk)
+        self.assertIn("backendApiPath(`/record/list`)", backend_sdk)
+        self.assertIn(
+            "getClawRouterBackendSdkClient().record.fetchLogs(toRecordLogQueryBody(filters))",
+            record_service,
+        )
+
+    def test_admin_record_read_models_reject_missing_or_invalid_trace_latency(self) -> None:
+        for relative in [
+            "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/admin_record_store.rs",
+            "services/sdkwork-claw-product/src/infrastructure/sql/postgres/admin_record_store.rs",
+        ]:
+            store = (ROOT / relative).read_text(encoding="utf-8")
+            compact_store = " ".join(store.split())
+            with self.subTest(store=relative):
+                self.assertNotIn("COALESCE(t.latency_ms, 0) AS latency_ms", store)
+                self.assertIn("t.latency_ms AS latency_ms", store)
+                self.assertNotIn(
+                    'total_time: duration_label(integer_cell(&row, "latency_ms"))',
+                    compact_store,
+                )
+                self.assertIn(
+                    'total_time: duration_label(required_latency_cell(&row, "latency_ms")?)',
+                    compact_store,
+                )
+                self.assertIn("missing admin record latency_ms from database row", store)
+                self.assertIn("invalid admin record latency_ms from database row", store)
+
+    def test_admin_record_log_modality_preserves_unknown_values(self) -> None:
+        for relative in [
+            "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/admin_record_store.rs",
+            "services/sdkwork-claw-product/src/infrastructure/sql/postgres/admin_record_store.rs",
+        ]:
+            store = (ROOT / relative).read_text(encoding="utf-8")
+            with self.subTest(store=relative):
+                self.assertIn("None => \"unknown\"", store)
+                self.assertIn("Some(_) => \"unknown\"", store)
+                self.assertNotIn("_ => \"text\"", store)
+
+
+if __name__ == "__main__":
+    unittest.main()

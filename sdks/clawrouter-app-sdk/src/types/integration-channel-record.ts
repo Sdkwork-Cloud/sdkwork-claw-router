@@ -1,0 +1,36 @@
+export interface IntegrationChannelRecord {
+  access_type?: string;
+  account_id?: string;
+  base_url_override?: string;
+  capabilities?: Record<string, unknown>;
+  channel_code?: string;
+  circuit_breaker_policy?: Record<string, unknown>;
+  consecutive_error_count?: string;
+  created_at?: string;
+  data_scope?: string;
+  deleted_at?: string;
+  deleted_by?: string;
+  environment?: string;
+  health_status?: string;
+  id?: string;
+  last_latency_ms?: number;
+  metadata?: Record<string, unknown>;
+  model_mode?: string;
+  name?: string;
+  organization_id?: string;
+  priority?: number;
+  protocol?: string;
+  provider_code?: string;
+  provider_id?: string;
+  proxy_id?: string;
+  region?: string;
+  retry_policy?: Record<string, unknown>;
+  rpm_limit?: string;
+  status?: string;
+  tenant_id?: string;
+  timeout_ms?: number;
+  updated_at?: string;
+  uuid?: string;
+  version?: string;
+  weight?: number;
+}

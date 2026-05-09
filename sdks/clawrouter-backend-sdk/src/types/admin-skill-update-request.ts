@@ -1,0 +1,32 @@
+export interface AdminSkillUpdateRequest {
+  builtin?: boolean;
+  capabilities?: string[];
+  categoryId?: string | null;
+  configSchema?: Record<string, unknown>;
+  coverImage?: string | null;
+  currency?: string;
+  defaultConfig?: Record<string, unknown>;
+  description?: string | null;
+  documentationUrl?: string | null;
+  entrypoint?: string | null;
+  featured?: boolean;
+  homepageUrl?: string | null;
+  icon?: string | null;
+  isBuiltin?: boolean;
+  licenseName?: string | null;
+  manifestUrl?: string | null;
+  name?: string;
+  packageId?: string | null;
+  price?: string | null;
+  provider?: string | null;
+  recommendWeight?: number;
+  repositoryUrl?: string | null;
+  runtime?: string | null;
+  skillKey?: string;
+  sourceType?: 'OFFICIAL' | 'COMMUNITY' | 'ENTERPRISE' | 'PRIVATE' | 'CUSTOM';
+  summary?: string;
+  tags?: string[];
+  version?: string;
+  versionName?: string | null;
+  visibility?: 'PUBLIC' | 'PRIVATE' | 'UNLISTED';
+}

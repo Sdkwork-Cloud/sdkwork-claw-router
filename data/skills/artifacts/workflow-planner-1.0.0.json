@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "builtin://sdkwork.skills.workflow_planner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "builtin",
+  "entrypoint": "sdkwork.skills.workflow_planner",
+  "checksumHash": "sha256:6451ff3603260240ffedaef84da63056cc70a649e3cd5a07d05a3efe795c8a14",
+  "skill": {
+    "id": 8103,
+    "skillKey": "workflow-planner",
+    "name": "Workflow Planner"
+  },
+  "instructions": [
+    "Decompose a product or engineering goal into bounded phases with explicit dependencies.",
+    "For each phase, define implementation tasks, service/API/frontend handoffs, and verification gates.",
+    "Surface assumptions and blockers as first-class plan items instead of burying them in prose."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "required": ["goal"],
+    "properties": {
+      "goal": { "type": "string", "minLength": 1 },
+      "constraints": { "type": "array", "items": { "type": "string" } },
+      "planningDepth": { "type": "string", "enum": ["lean", "standard", "deep"] }
+    },
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "required": ["phases", "verification"],
+    "properties": {
+      "phases": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["name", "tasks"],
+          "properties": {
+            "name": { "type": "string" },
+            "tasks": { "type": "array", "items": { "type": "string" } },
+            "dependencies": { "type": "array", "items": { "type": "string" } }
+          },
+          "additionalProperties": false
+        }
+      },
+      "verification": { "type": "array", "items": { "type": "string" } },
+      "assumptions": { "type": "array", "items": { "type": "string" } }
+    },
+    "additionalProperties": false
+  },
+  "limits": {
+    "maxInputBytes": 65536,
+    "maxOutputBytes": 131072
+  }
+}

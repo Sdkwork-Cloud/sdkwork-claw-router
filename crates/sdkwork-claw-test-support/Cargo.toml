@@ -1,0 +1,16 @@
+[package]
+name = "sdkwork-claw-test-support"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+anyhow.workspace = true
+sdkwork-claw-config = { path = "../sdkwork-claw-config" }
+sdkwork-claw-http = { path = "../sdkwork-claw-http" }
+sdkwork-claw-product = { path = "../../services/sdkwork-claw-product" }
+sqlx.workspace = true
+
+[dev-dependencies]
+axum.workspace = true
+tokio.workspace = true

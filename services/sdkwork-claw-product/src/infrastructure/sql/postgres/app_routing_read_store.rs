@@ -1,0 +1,654 @@
+use std::collections::HashMap;
+
+use sqlx::{PgPool, Row};
+
+use crate::domain::{DomainError, DomainResult};
+use crate::ports::{
+    AppRoutingApiKeyItem, AppRoutingChannelItem, AppRoutingModelStats, AppRoutingReadFuture,
+    AppRoutingReadStore, AppRoutingRequestTraceItem, AppRoutingSubject, AppRoutingUsageData,
+    AppRoutingUsageSnapshot,
+};
+
+const LOAD_ROUTING_CHANNELS: &str = r#"
+SELECT
+    CAST(c.id AS TEXT) AS id,
+    COALESCE(NULLIF(c.name, ''), NULLIF(c.channel_code, ''), NULLIF(c.provider_code, ''), '') AS name,
+    COALESCE(NULLIF(c.provider_code, ''), 'custom') AS vendor,
+    COALESCE(NULLIF(c.provider_code, ''), 'custom') AS provider,
+    COALESCE(NULLIF(c.provider_code, ''), 'custom') AS provider_code,
+    c.protocol AS protocol,
+    c.access_type AS access_type,
+    COALESCE(NULLIF(c.base_url_override, ''), '') AS base_url,
+    COALESCE(NULLIF(a.masked_label, ''), 'configured') AS api_key,
+    CAST(COALESCE(c.capabilities, '["llm"]'::jsonb) AS TEXT) AS capabilities_json,
+    COALESCE(c.weight, 0) AS weight,
+    c.status AS status,
+    c.health_status AS health_status,
+    COALESCE(c.last_latency_ms, 0) AS latency_ms,
+    COALESCE(c.rpm_limit, 0) AS rpm_limit,
+    CAST(a.upstream_balance_amount AS TEXT) AS balance_amount,
+    COALESCE(a.upstream_balance_currency, '') AS balance_currency,
+    COALESCE(c.consecutive_error_count, 0) + COALESCE(a.consecutive_error_count, 0) AS errors
+FROM integration_channel c
+LEFT JOIN integration_provider_account a
+  ON a.id = c.account_id
+ AND a.tenant_id = c.tenant_id
+ AND a.organization_id = c.organization_id
+ AND a.deleted_at IS NULL
+WHERE c.tenant_id = $1
+  AND c.organization_id = $2
+  AND c.deleted_at IS NULL
+ORDER BY c.priority ASC NULLS LAST, c.weight DESC NULLS LAST, c.id DESC
+LIMIT 500
+"#;
+
+const LOAD_CHANNEL_MODELS: &str = r#"
+SELECT
+    CAST(channel_id AS TEXT) AS channel_id,
+    COALESCE(NULLIF(catalog_key, ''), '') AS model
+FROM integration_channel_model
+WHERE tenant_id = $1
+  AND organization_id = $2
+  AND deleted_at IS NULL
+  AND status = 1
+  AND (effective_from IS NULL OR effective_from <= CURRENT_TIMESTAMP)
+  AND (effective_to IS NULL OR effective_to > CURRENT_TIMESTAMP)
+ORDER BY id ASC
+"#;
+
+const LOAD_ROUTING_API_KEYS: &str = r#"
+SELECT
+    CAST(k.id AS TEXT) AS id,
+    COALESCE(NULLIF(k.name, ''), NULLIF(k.key_prefix, ''), 'API Key') AS name,
+    COALESCE(NULLIF(k.key_display_masked, ''), NULLIF(k.key_prefix, ''), '') AS key_display_masked,
+    k.status AS api_key_status,
+    CAST(k.created_at AS TEXT) AS created_at,
+    CAST(COALESCE(SUM(COALESCE(u.request_count, 0)), 0) AS TEXT) AS total_usage
+FROM iam_gateway_api_key k
+LEFT JOIN ai_usage_fact u
+  ON u.tenant_id = k.tenant_id
+ AND u.organization_id = k.organization_id
+ AND u.user_id = k.user_id
+ AND u.api_key_id = k.id
+ AND u.status = 1
+WHERE k.tenant_id = $1
+  AND k.organization_id = $2
+  AND k.user_id = $3
+  AND k.deleted_at IS NULL
+GROUP BY k.id, k.name, k.key_prefix, k.key_display_masked, k.status, k.created_at
+ORDER BY k.updated_at DESC NULLS LAST, k.id DESC
+LIMIT 500
+"#;
+
+const LOAD_ROUTING_REQUEST_TRACES: &str = r#"
+WITH selected_trace AS (
+    SELECT
+        id,
+        request_id,
+        tenant_id,
+        organization_id,
+        user_id,
+        status,
+        created_at,
+        channel_name_snapshot,
+        requested_model,
+        provider_model,
+        http_status,
+        provider_error_code,
+        error_type,
+        started_at,
+        latency_ms,
+        total_tokens
+    FROM (
+        SELECT
+            t.id,
+            t.request_id,
+            t.tenant_id,
+            t.organization_id,
+            t.user_id,
+            t.status,
+            t.created_at,
+            t.channel_name_snapshot,
+            t.requested_model,
+            t.provider_model,
+            t.http_status,
+            t.provider_error_code,
+            t.error_type,
+            t.started_at,
+            t.latency_ms,
+            t.total_tokens,
+            ROW_NUMBER() OVER (
+                PARTITION BY COALESCE(NULLIF(t.request_id, ''), CAST(t.id AS TEXT))
+                ORDER BY t.started_at DESC NULLS LAST, t.id DESC
+            ) AS trace_rank
+        FROM ai_request_trace t
+        WHERE t.status = 1
+          AND t.tenant_id = $1
+          AND t.organization_id = $2
+          AND t.user_id = $3
+    ) ranked_trace
+    WHERE trace_rank = 1
+),
+usage_by_request AS (
+    SELECT
+        tenant_id,
+        organization_id,
+        request_id,
+        MAX(catalog_key) AS catalog_key,
+        COALESCE(SUM(COALESCE(total_tokens, 0)), 0) AS total_tokens
+    FROM ai_usage_fact
+    WHERE status = 1
+      AND tenant_id = $1
+      AND organization_id = $2
+      AND user_id = $3
+      AND NULLIF(request_id, '') IS NOT NULL
+    GROUP BY tenant_id, organization_id, request_id
+)
+SELECT
+    CAST(t.id AS TEXT) AS id,
+    COALESCE(CAST(t.started_at AS TEXT), CAST(t.created_at AS TEXT), '') AS trace_time,
+    COALESCE(NULLIF(u.catalog_key, ''), NULLIF(d.resolved_model, ''), NULLIF(t.provider_model, ''), NULLIF(t.requested_model, ''), '-') AS model,
+    COALESCE(NULLIF(t.channel_name_snapshot, ''), CAST(d.selected_channel_id AS TEXT), '-') AS channel,
+    t.http_status AS http_status,
+    t.provider_error_code AS provider_error_code,
+    t.error_type AS error_type,
+    t.latency_ms AS latency_ms,
+    COALESCE(u.total_tokens, t.total_tokens, 0) AS total_tokens
+FROM selected_trace t
+LEFT JOIN ai_routing_decision_log d
+  ON d.status = 1
+ AND d.tenant_id = t.tenant_id
+ AND d.organization_id = t.organization_id
+ AND d.request_id = t.request_id
+LEFT JOIN usage_by_request u
+  ON u.tenant_id = t.tenant_id
+ AND u.organization_id = t.organization_id
+ AND u.request_id = t.request_id
+ORDER BY t.started_at DESC NULLS LAST, t.id DESC
+LIMIT 100
+"#;
+
+const LOAD_ROUTING_USAGE_CHART: &str = r#"
+SELECT bucket_time, request_count, avg_latency_ms
+FROM (
+    SELECT
+        TO_CHAR(DATE_TRUNC('day', COALESCE(started_at, created_at)), 'YYYY-MM-DD') AS bucket_time,
+        COUNT(1) AS request_count,
+        CAST(COALESCE(AVG(latency_ms), 0) AS BIGINT) AS avg_latency_ms
+    FROM ai_request_trace
+    WHERE status = 1
+      AND tenant_id = $1
+      AND organization_id = $2
+      AND user_id = $3
+      AND COALESCE(started_at, created_at) IS NOT NULL
+    GROUP BY bucket_time
+    ORDER BY bucket_time DESC
+    LIMIT 14
+) recent_usage
+ORDER BY bucket_time ASC
+"#;
+
+const LOAD_ROUTING_MODEL_STATS: &str = r#"
+WITH trace_by_model AS (
+    SELECT
+        COALESCE(NULLIF(u.catalog_key, ''), NULLIF(d.resolved_model, ''), NULLIF(t.provider_model, ''), NULLIF(t.requested_model, ''), 'unknown') AS model,
+        COUNT(1) AS request_count,
+        SUM(
+            CASE
+                WHEN (t.http_status IS NOT NULL AND t.http_status >= 400)
+                  OR t.error_type IS NOT NULL
+                  OR NULLIF(t.provider_error_code, '') IS NOT NULL THEN 0
+                ELSE 1
+            END
+        ) AS success_count,
+        CAST(COALESCE(AVG(t.latency_ms), 0) AS BIGINT) AS avg_latency_ms
+    FROM ai_request_trace t
+    LEFT JOIN (
+        SELECT
+            tenant_id,
+            organization_id,
+            request_id,
+            MAX(catalog_key) AS catalog_key
+        FROM ai_usage_fact
+        WHERE status = 1
+          AND tenant_id = $1
+          AND organization_id = $2
+          AND user_id = $3
+          AND NULLIF(request_id, '') IS NOT NULL
+        GROUP BY tenant_id, organization_id, request_id
+    ) u
+      ON u.tenant_id = t.tenant_id
+     AND u.organization_id = t.organization_id
+     AND u.request_id = t.request_id
+    LEFT JOIN ai_routing_decision_log d
+      ON d.status = 1
+     AND d.tenant_id = t.tenant_id
+     AND d.organization_id = t.organization_id
+     AND d.request_id = t.request_id
+    WHERE t.status = 1
+      AND t.tenant_id = $1
+      AND t.organization_id = $2
+      AND t.user_id = $3
+    GROUP BY model
+),
+usage_by_model AS (
+    SELECT
+        COALESCE(NULLIF(catalog_key, ''), 'unknown') AS model,
+        COALESCE(SUM(COALESCE(total_tokens, 0)), 0) AS total_tokens
+    FROM ai_usage_fact
+    WHERE status = 1
+      AND tenant_id = $1
+      AND organization_id = $2
+      AND user_id = $3
+    GROUP BY COALESCE(NULLIF(catalog_key, ''), 'unknown')
+)
+SELECT
+    t.model,
+    t.request_count,
+    t.success_count,
+    COALESCE(u.total_tokens, 0) AS total_tokens,
+    t.avg_latency_ms
+FROM trace_by_model t
+LEFT JOIN usage_by_model u
+  ON u.model = t.model
+ORDER BY t.request_count DESC, t.model ASC
+LIMIT 10
+"#;
+
+#[derive(Debug, Clone)]
+pub struct PostgresAppRoutingReadStore {
+    pool: PgPool,
+}
+
+impl PostgresAppRoutingReadStore {
+    pub fn new(pool: PgPool) -> Self {
+        Self { pool }
+    }
+}
+
+impl AppRoutingReadStore for PostgresAppRoutingReadStore {
+    fn load_routing_channels<'a>(
+        &'a self,
+        subject: Option<AppRoutingSubject>,
+    ) -> AppRoutingReadFuture<'a, Vec<AppRoutingChannelItem>> {
+        Box::pin(async move {
+            let subject = require_subject(subject)?;
+            let rows = sqlx::query(LOAD_ROUTING_CHANNELS)
+                .bind(subject.tenant_id)
+                .bind(subject.organization_id)
+                .fetch_all(&self.pool)
+                .await
+                .map_err(sql_error)?;
+            let models = load_models_for_channels(&self.pool, subject).await?;
+            rows.into_iter()
+                .map(|row| row_to_channel(row, &models))
+                .collect()
+        })
+    }
+
+    fn load_routing_api_keys<'a>(
+        &'a self,
+        subject: Option<AppRoutingSubject>,
+    ) -> AppRoutingReadFuture<'a, Vec<AppRoutingApiKeyItem>> {
+        Box::pin(async move {
+            let subject = require_subject(subject)?;
+            let rows = sqlx::query(LOAD_ROUTING_API_KEYS)
+                .bind(subject.tenant_id)
+                .bind(subject.organization_id)
+                .bind(subject.user_id)
+                .fetch_all(&self.pool)
+                .await
+                .map_err(sql_error)?;
+            rows.into_iter().map(row_to_api_key).collect()
+        })
+    }
+
+    fn load_routing_request_traces<'a>(
+        &'a self,
+        subject: Option<AppRoutingSubject>,
+    ) -> AppRoutingReadFuture<'a, Vec<AppRoutingRequestTraceItem>> {
+        Box::pin(async move {
+            let subject = require_subject(subject)?;
+            let rows = sqlx::query(LOAD_ROUTING_REQUEST_TRACES)
+                .bind(subject.tenant_id)
+                .bind(subject.organization_id)
+                .bind(subject.user_id)
+                .fetch_all(&self.pool)
+                .await
+                .map_err(sql_error)?;
+            rows.into_iter().map(row_to_request_trace).collect()
+        })
+    }
+
+    fn load_routing_usage<'a>(
+        &'a self,
+        subject: Option<AppRoutingSubject>,
+    ) -> AppRoutingReadFuture<'a, AppRoutingUsageSnapshot> {
+        Box::pin(async move {
+            let subject = require_subject(subject)?;
+            let chart_rows = sqlx::query(LOAD_ROUTING_USAGE_CHART)
+                .bind(subject.tenant_id)
+                .bind(subject.organization_id)
+                .bind(subject.user_id)
+                .fetch_all(&self.pool)
+                .await
+                .map_err(sql_error)?;
+            let model_rows = sqlx::query(LOAD_ROUTING_MODEL_STATS)
+                .bind(subject.tenant_id)
+                .bind(subject.organization_id)
+                .bind(subject.user_id)
+                .fetch_all(&self.pool)
+                .await
+                .map_err(sql_error)?;
+            Ok(AppRoutingUsageSnapshot {
+                chart_data: chart_rows.into_iter().map(row_to_usage_data).collect(),
+                model_stats: model_rows.into_iter().map(row_to_model_stats).collect(),
+            })
+        })
+    }
+}
+
+async fn load_models_for_channels(
+    pool: &PgPool,
+    subject: AppRoutingSubject,
+) -> DomainResult<HashMap<String, Vec<String>>> {
+    let rows = sqlx::query(LOAD_CHANNEL_MODELS)
+        .bind(subject.tenant_id)
+        .bind(subject.organization_id)
+        .fetch_all(pool)
+        .await
+        .map_err(sql_error)?;
+    let mut models: HashMap<String, Vec<String>> = HashMap::new();
+    for row in rows {
+        let channel_id = string_cell(&row, "channel_id");
+        let model = string_cell(&row, "model");
+        if !model.trim().is_empty() {
+            models.entry(channel_id).or_default().push(model);
+        }
+    }
+    Ok(models)
+}
+
+fn row_to_channel(
+    row: sqlx::postgres::PgRow,
+    models: &HashMap<String, Vec<String>>,
+) -> DomainResult<AppRoutingChannelItem> {
+    let id = string_cell(&row, "id");
+    let capabilities = parse_string_array(&string_cell(&row, "capabilities_json"))?;
+    let errors = integer_cell(&row, "errors");
+    let status = required_integer_cell(&row, "status")?;
+    let health_status = required_integer_cell(&row, "health_status")?;
+    Ok(AppRoutingChannelItem {
+        id: id.clone(),
+        name: string_cell(&row, "name"),
+        vendor: display_vendor(&string_cell(&row, "vendor")),
+        provider: display_vendor(&string_cell(&row, "provider")),
+        provider_code: string_cell(&row, "provider_code"),
+        protocol: protocol_label(required_integer_cell(&row, "protocol")?)?,
+        access_type: access_type_label(required_integer_cell(&row, "access_type")?)?,
+        base_url: string_cell(&row, "base_url"),
+        api_key: string_cell(&row, "api_key"),
+        models: models.get(&id).cloned().unwrap_or_default(),
+        is_multimodal: capabilities.iter().any(|capability| capability != "llm"),
+        capabilities,
+        weight: integer_cell(&row, "weight"),
+        status: status_label(status, health_status, errors)?,
+        latency: duration_or_na(integer_cell(&row, "latency_ms")),
+        rpm: integer_cell(&row, "rpm_limit"),
+        balance: balance_label(
+            &string_cell(&row, "balance_amount"),
+            &string_cell(&row, "balance_currency"),
+        ),
+        errors,
+    })
+}
+
+fn row_to_api_key(row: sqlx::postgres::PgRow) -> DomainResult<AppRoutingApiKeyItem> {
+    Ok(AppRoutingApiKeyItem {
+        id: string_cell(&row, "id"),
+        name: string_cell(&row, "name"),
+        key: string_cell(&row, "key_display_masked"),
+        status: api_key_status_label(required_integer_cell(&row, "api_key_status")?)?,
+        total_usage: string_cell(&row, "total_usage"),
+        created_at: string_cell(&row, "created_at"),
+    })
+}
+
+fn row_to_request_trace(row: sqlx::postgres::PgRow) -> DomainResult<AppRoutingRequestTraceItem> {
+    let http_status = routing_trace_http_status(required_integer_cell(&row, "http_status")?)?;
+    let latency_ms = routing_trace_latency_ms(required_integer_cell(&row, "latency_ms")?)?;
+    Ok(AppRoutingRequestTraceItem {
+        id: string_cell(&row, "id"),
+        time: string_cell(&row, "trace_time"),
+        model: string_cell(&row, "model"),
+        channel: string_cell(&row, "channel"),
+        status: http_status,
+        duration: duration_label(latency_ms),
+        tokens: integer_cell(&row, "total_tokens"),
+    })
+}
+
+fn row_to_usage_data(row: sqlx::postgres::PgRow) -> AppRoutingUsageData {
+    AppRoutingUsageData {
+        time: string_cell(&row, "bucket_time"),
+        requests: integer_cell(&row, "request_count"),
+        latency: integer_cell(&row, "avg_latency_ms"),
+    }
+}
+
+fn row_to_model_stats(row: sqlx::postgres::PgRow) -> AppRoutingModelStats {
+    let requests = integer_cell(&row, "request_count");
+    AppRoutingModelStats {
+        m: string_cell(&row, "model"),
+        req: requests.to_string(),
+        sr: success_rate_label(integer_cell(&row, "success_count"), requests),
+        tok: integer_cell(&row, "total_tokens").to_string(),
+        lat: duration_label(integer_cell(&row, "avg_latency_ms")),
+    }
+}
+
+fn require_subject(subject: Option<AppRoutingSubject>) -> DomainResult<AppRoutingSubject> {
+    subject.ok_or_else(|| DomainError::new("trusted request subject is required for app routing"))
+}
+
+fn parse_string_array(value: &str) -> DomainResult<Vec<String>> {
+    let mut parsed: Vec<String> = serde_json::from_str(value).map_err(|error| {
+        DomainError::new(format!(
+            "invalid routing channel capabilities json from database row: {error}"
+        ))
+    })?;
+    parsed.retain(|value| !value.trim().is_empty());
+    if parsed.is_empty() {
+        parsed.push("llm".to_owned());
+    }
+    Ok(parsed)
+}
+
+fn string_cell(row: &sqlx::postgres::PgRow, column: &str) -> String {
+    row.try_get::<Option<String>, _>(column)
+        .ok()
+        .flatten()
+        .unwrap_or_default()
+}
+
+fn integer_cell(row: &sqlx::postgres::PgRow, column: &str) -> i64 {
+    optional_integer_cell(row, column).unwrap_or(0)
+}
+
+fn required_integer_cell(row: &sqlx::postgres::PgRow, column: &str) -> DomainResult<i64> {
+    optional_integer_cell(row, column).ok_or_else(|| missing_integer_cell_error(column))
+}
+
+fn optional_integer_cell(row: &sqlx::postgres::PgRow, column: &str) -> Option<i64> {
+    row.try_get::<Option<i64>, _>(column)
+        .ok()
+        .flatten()
+        .or_else(|| {
+            row.try_get::<Option<i32>, _>(column)
+                .ok()
+                .flatten()
+                .map(i64::from)
+        })
+        .or_else(|| string_cell(row, column).parse::<i64>().ok())
+}
+
+fn display_vendor(value: &str) -> String {
+    match value {
+        "openai" => "OpenAI",
+        "anthropic" => "Anthropic",
+        "google" => "Gemini",
+        "openrouter" => "OpenRouter",
+        "deepseek" => "DeepSeek",
+        "zhipu" => "Zhipu",
+        "mistral" => "Mistral",
+        "meta" => "Meta",
+        "ollama" => "Ollama",
+        "azure_openai" => "Azure OpenAI",
+        "custom" => "Custom",
+        _ => value,
+    }
+    .to_owned()
+}
+
+fn protocol_label(value: i64) -> DomainResult<String> {
+    match value {
+        1 => Ok("OpenAI"),
+        2 => Ok("Anthropic"),
+        3 => Ok("Gemini"),
+        4 => Ok("Ollama"),
+        9 => Ok("Custom"),
+        value => Err(DomainError::new(format!(
+            "invalid routing channel protocol from database row: {value}"
+        ))),
+    }
+    .map(str::to_owned)
+}
+
+fn access_type_label(value: i64) -> DomainResult<String> {
+    match value {
+        1 => Ok("Standard API Key"),
+        2 => Ok("GCP Vertex OAuth"),
+        3 => Ok("AWS Bedrock"),
+        4 => Ok("Azure OpenAI"),
+        5 => Ok("Claude Code"),
+        value => Err(DomainError::new(format!(
+            "invalid routing channel access_type from database row: {value}"
+        ))),
+    }
+    .map(str::to_owned)
+}
+
+fn status_label(status: i64, health_status: i64, errors: i64) -> DomainResult<String> {
+    match health_status {
+        1 | 2 => {}
+        value => {
+            return Err(DomainError::new(format!(
+                "invalid routing channel health_status from database row: {value}"
+            )));
+        }
+    }
+
+    let label = match status {
+        -1 | 0 => "disabled",
+        1 if health_status == 2 || errors > 0 => "error",
+        1 => "active",
+        2 => "error",
+        value => {
+            return Err(DomainError::new(format!(
+                "invalid routing channel status from database row: {value}"
+            )));
+        }
+    };
+    Ok(label.to_owned())
+}
+
+fn api_key_status_label(status: i64) -> DomainResult<String> {
+    match status {
+        1 => Ok("enabled".to_owned()),
+        0 | 4 => Ok("disabled".to_owned()),
+        value => Err(DomainError::new(format!(
+            "invalid routing api key status from database row: {value}"
+        ))),
+    }
+}
+
+fn routing_trace_http_status(value: i64) -> DomainResult<i64> {
+    if (100..=599).contains(&value) {
+        return Ok(value);
+    }
+    Err(DomainError::new(format!(
+        "invalid routing trace http_status from database row: {value}"
+    )))
+}
+
+fn routing_trace_latency_ms(value: i64) -> DomainResult<i64> {
+    if value >= 0 {
+        return Ok(value);
+    }
+    Err(DomainError::new(format!(
+        "invalid routing trace latency_ms from database row: {value}"
+    )))
+}
+
+fn missing_integer_cell_error(column: &str) -> DomainError {
+    match column {
+        "http_status" => DomainError::new("missing routing trace http_status from database row"),
+        "latency_ms" => DomainError::new("missing routing trace latency_ms from database row"),
+        "api_key_status" => DomainError::new("missing routing api key status from database row"),
+        column => DomainError::new(format!(
+            "missing routing channel {column} from database row"
+        )),
+    }
+}
+
+fn duration_or_na(value: i64) -> String {
+    if value > 0 {
+        duration_label(value)
+    } else {
+        "N/A".to_owned()
+    }
+}
+
+fn duration_label(value: i64) -> String {
+    format!("{value}ms")
+}
+
+fn balance_label(amount: &str, currency: &str) -> String {
+    if amount.trim().is_empty() {
+        return "N/A".to_owned();
+    }
+    if currency.trim().is_empty() {
+        return amount.trim().to_owned();
+    }
+    format!("{} {}", currency.trim(), amount.trim())
+}
+
+fn success_rate_label(success: i64, total: i64) -> String {
+    if total <= 0 {
+        return "0%".to_owned();
+    }
+    format!("{:.1}%", (success as f64) * 100.0 / (total as f64))
+}
+
+fn sql_error(error: sqlx::Error) -> DomainError {
+    DomainError::new(error.to_string())
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn parse_string_array_rejects_invalid_capabilities_json() {
+        assert_eq!(
+            vec!["llm".to_owned(), "image".to_owned()],
+            parse_string_array(r#"["llm", "image"]"#).expect("valid capabilities json")
+        );
+
+        let invalid = parse_string_array("not-json")
+            .expect_err("invalid routing capabilities json must fail");
+        assert!(invalid
+            .to_string()
+            .contains("invalid routing channel capabilities json from database row"));
+    }
+}
