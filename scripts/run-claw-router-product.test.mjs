@@ -2375,6 +2375,9 @@ test('release preflight CLI reads env-file values before building the report', a
   assert.equal(byId['env.postgres'].status, 'PASS');
   assert.equal(byId['env.portalPublic'].status, 'PASS');
   assert.ok(byId['env.releaseContract'].details.includes('.env.release.example'));
+  assert.ok(byId['env.releaseContract'].recommendation.includes('pnpm.cmd release:env:write -- --check'));
+  assert.ok(byId['env.releaseContract'].recommendation.includes('pnpm.cmd release:env:write'));
+  assert.ok(!byId['env.releaseContract'].recommendation.includes('Copy .env.release.example'));
 });
 
 test('release env writer creates a dotenv file from the executable contract without leaking values', async () => {
@@ -2602,6 +2605,9 @@ test('release preflight rejects malformed release environment values in strict m
   assert.ok(byId['env.releaseContract'].details.includes('SDKWORK_CLAW_POSTGRES_TEST_DATABASE_URL'));
   assert.ok(byId['env.releaseContract'].details.includes('PORTAL_PUBLIC_API_BASE_URL'));
   assert.ok(byId['env.releaseContract'].details.includes('PORTAL_PUBLIC_TOOL_API_ENABLED'));
+  assert.ok(byId['env.releaseContract'].details.includes('run pnpm.cmd release:env:write'));
+  assert.ok(byId['env.releaseContract'].recommendation.includes('pnpm.cmd release:env:write -- --check'));
+  assert.ok(!byId['env.releaseContract'].recommendation.includes('Copy .env.release.example'));
 });
 
 test('release environment documentation stays aligned with the executable contract', async () => {

@@ -570,8 +570,8 @@ function buildReleasePreflightReport({
     contractIssues.length === 0 ? 'PASS' : settings.strict ? 'FAIL' : 'WARN',
     contractIssues.length === 0
       ? `release environment contract v${RELEASE_ENVIRONMENT_CONTRACT.version} is satisfied; env file: ${envFileLabel}`
-      : `${contractIssues.join('; ')}; use ${RELEASE_ENVIRONMENT_CONTRACT.exampleFile} as the template for ${envFileLabel}`,
-    `Copy ${RELEASE_ENVIRONMENT_CONTRACT.exampleFile} to ${RELEASE_ENVIRONMENT_CONTRACT.localFile} on the release host and run release preflight with --env-file ${RELEASE_ENVIRONMENT_CONTRACT.localFile}.`,
+      : `${contractIssues.join('; ')}; use ${RELEASE_ENVIRONMENT_CONTRACT.exampleFile} as the reference template and run pnpm.cmd release:env:write from release host process environment`,
+    `Run pnpm.cmd release:env:write -- --check, then pnpm.cmd release:env:write, then release preflight with --env-file ${RELEASE_ENVIRONMENT_CONTRACT.localFile}.`,
   ));
 
   checks.push(createCheck(
