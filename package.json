@@ -34,6 +34,7 @@
     "install:packages:plan": "node scripts/plan-claw-router-install-packages.mjs",
     "install:packages:check": "node scripts/plan-claw-router-install-packages.mjs --check",
     "install:package:build": "node scripts/build-claw-router-install-package.mjs",
-    "install:package:check": "node scripts/build-claw-router-install-package.mjs --check --dry-run --all"
+    "install:package:check": "node scripts/build-claw-router-install-package.mjs --check --dry-run --all",
+    "install:init:smoke": "node scripts/smoke-install-package-init.mjs --check --dry-run"
   }
 }

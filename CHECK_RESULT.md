@@ -22,6 +22,9 @@ The main improvements made in this pass are:
   install:package:check` validates the full 18-package builder matrix in
   dry-run mode and
   `pnpm.cmd install:package:build` writes manifest-backed install archives
+- fast install initialization smoke is now executable:
+  `pnpm.cmd install:init:smoke` validates the init contract in dry-run mode
+  without starting services or requiring built binaries
 - the install package matrix now covers Windows, Linux, macOS, x64, arm64,
   archive, service, and container delivery, including contracts such as
   `windows-x64-service` and `linux-arm64-container`
@@ -3403,6 +3406,8 @@ Solution applied:
 - added `scripts/build-claw-router-install-package.mjs`
 - added `pnpm.cmd install:package:check` and
   `pnpm.cmd install:package:build`
+- added `scripts/smoke-install-package-init.mjs`
+- added `pnpm.cmd install:init:smoke`
 - the planner generates an 18-entry matrix across platforms, architectures, and
   deployment modes
 - every package contract declares the edge binary, installer binary,
@@ -3423,6 +3428,11 @@ Solution applied:
   `pnpm.cmd install:package:check` command validates archive, service, and
   container package plans across all 18 platform/architecture/mode combinations
   without requiring staged production artifacts
+- the install init smoke writes a temporary `.env.release.local`, validates a
+  file-backed SQLite initialization URL, verifies `sdkwork-claw-installer
+  ensure` and `sdkwork-claw-installer refresh-catalog --force` are the
+  initialization actions, supports pure JSON for CI, and can execute a real
+  installer only when `--installer-bin` is provided
 - README and CHECK_RESULT now document the install package standard, fast init
   commands, and security defaults
 
@@ -3433,8 +3443,10 @@ node scripts\run-claw-router-product.test.mjs
 python -B -m unittest tests.test_workspace_delivery_standard
 pnpm.cmd install:packages:check
 pnpm.cmd install:package:check
+pnpm.cmd install:init:smoke
 node scripts\plan-claw-router-install-packages.mjs --json --check
 node --check scripts\build-claw-router-install-package.mjs
+node --check scripts\smoke-install-package-init.mjs
 git diff --check
 python -B -m tools.repository_delivery_guardian
 pnpm.cmd verify:fast
@@ -3454,6 +3466,9 @@ Expected install package builder contract:
 - never include `.env.release.local` or secret values
 - run fast install initialization through `sdkwork-claw-installer ensure` and
   `sdkwork-claw-installer refresh-catalog --force`
+- gate package initialization with `pnpm.cmd install:init:smoke` by default, and
+  pass `--installer-bin` on release hosts when a real installer binary is
+  staged
 - treat real `pnpm dev` smoke as an opt-in integration check, not a package
   initialization default
 

@@ -43,6 +43,10 @@ class WorkspaceDeliveryStandardTest(unittest.TestCase):
             "node scripts/build-claw-router-install-package.mjs --check --dry-run --all",
             scripts["install:package:check"],
         )
+        self.assertEqual(
+            "node scripts/smoke-install-package-init.mjs --check --dry-run",
+            scripts["install:init:smoke"],
+        )
 
     def test_portal_production_build_declares_node_heap_budget_in_build_entrypoint(self) -> None:
         portal_package_json = json.loads(
@@ -213,8 +217,10 @@ class WorkspaceDeliveryStandardTest(unittest.TestCase):
             "pnpm.cmd install:packages:check",
             "pnpm.cmd install:package:build",
             "pnpm.cmd install:package:check",
+            "pnpm.cmd install:init:smoke",
             "scripts/plan-claw-router-install-packages.mjs",
             "scripts/build-claw-router-install-package.mjs",
+            "scripts/smoke-install-package-init.mjs",
             "install-packages-manifest.json",
             "windows-x64-service",
             "linux-arm64-container",

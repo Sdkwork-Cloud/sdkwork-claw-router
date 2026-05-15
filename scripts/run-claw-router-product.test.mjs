@@ -1577,6 +1577,148 @@ test('install package builder CLI checks the full package matrix in dry-run mode
   ));
 });
 
+test('install init smoke validates fast initialization without starting dev services', async () => {
+  const rootPackage = JSON.parse(
+    readFileSync(path.join(workspaceRoot, 'package.json'), 'utf8'),
+  );
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'smoke-install-package-init.mjs')).href
+  );
+
+  assert.equal(
+    rootPackage.scripts['install:init:smoke'],
+    'node scripts/smoke-install-package-init.mjs --check --dry-run',
+  );
+  assert.deepEqual(module.parseInstallInitSmokeArgs(['--check', '--dry-run', '--json']), {
+    check: true,
+    dryRun: true,
+    help: false,
+    installerBin: null,
+    json: true,
+    keepTmp: false,
+    packageId: 'windows-x64-archive',
+    packageRoot: null,
+    tmpRoot: null,
+    version: '0.1.0',
+  });
+
+  const fixtureRoot = path.join(workspaceRoot, '.tmp', 'install-init-smoke-test');
+  rmSync(fixtureRoot, { recursive: true, force: true });
+  try {
+    const smokePlan = module.createInstallInitSmokePlan({
+      packageId: 'linux-x64-archive',
+      tmpRoot: fixtureRoot,
+      version: '0.1.0',
+      requireInstaller: false,
+    });
+    assert.equal(smokePlan.package.id, 'linux-x64-archive');
+    assert.equal(smokePlan.mode, 'contract-dry-run');
+    assert.equal(smokePlan.databaseUrl, `sqlite://${path.join(fixtureRoot, 'sdkwork-claw-router-install-init.sqlite').replaceAll('\\', '/')}`);
+    assert.equal(smokePlan.releaseEnvPath, path.join(fixtureRoot, '.env.release.local'));
+    assert.deepEqual(smokePlan.healthChecks, ['/healthz', '/readyz']);
+    assert.ok(smokePlan.steps.some((step) =>
+      step.id === 'release-env-write' && step.command.includes('write-release-env.mjs')
+    ));
+    assert.ok(smokePlan.steps.some((step) =>
+      step.id === 'database-ensure' && step.command === 'sdkwork-claw-installer ensure'
+    ));
+    assert.ok(smokePlan.steps.some((step) =>
+      step.id === 'catalog-refresh' && step.command === 'sdkwork-claw-installer refresh-catalog --force'
+    ));
+    assert.ok(!smokePlan.steps.some((step) =>
+      step.command.includes('pnpm dev') || step.command.includes('smoke:dev')
+    ));
+    assert.deepEqual(module.validateInstallInitSmokePlan(smokePlan), []);
+
+    const result = await module.runInstallInitSmoke(smokePlan, { dryRun: true });
+    assert.equal(result.ok, true);
+    assert.equal(result.executedInstaller, false);
+    assert.equal(result.releaseEnv.written, true);
+    assert.equal(result.releaseEnv.containsLocalDatabaseUrl, true);
+    assert.equal(result.releaseEnv.containsHostSecret, false);
+    assert.equal(existsSync(smokePlan.releaseEnvPath), true);
+    const writtenEnv = readFileSync(smokePlan.releaseEnvPath, 'utf8');
+    assert.ok(writtenEnv.includes('SDKWORK_CLAW_DATABASE_URL="sqlite://'));
+    assert.ok(writtenEnv.includes('SDKWORK_CLAW_POSTGRES_TEST_DATABASE_URL="postgres://release-smoke.invalid:5432/sdkwork_claw_router"'));
+    assert.ok(!writtenEnv.includes('SDKWORK_SECRET'));
+
+    const rendered = module.renderInstallInitSmokePlan(smokePlan).join('\n');
+    assert.ok(rendered.includes('[install-init-smoke] package: linux-x64-archive'));
+    assert.ok(rendered.includes('[install-init-smoke] mode: contract-dry-run'));
+    assert.ok(!rendered.includes('pnpm dev'));
+  } finally {
+    rmSync(fixtureRoot, { recursive: true, force: true });
+  }
+});
+
+test('install init smoke CLI emits pure JSON for CI dry-run checks', async () => {
+  const fixtureRoot = path.join(workspaceRoot, '.tmp', 'install-init-smoke-json-test');
+  rmSync(fixtureRoot, { recursive: true, force: true });
+  try {
+    const { stdout, stderr } = await execFileAsync(process.execPath, [
+      path.join(workspaceRoot, 'scripts', 'smoke-install-package-init.mjs'),
+      '--package-id',
+      'linux-arm64-container',
+      '--tmp-root',
+      fixtureRoot,
+      '--check',
+      '--dry-run',
+      '--json',
+    ], {
+      cwd: workspaceRoot,
+      maxBuffer: 1024 * 1024 * 4,
+    });
+    const payload = JSON.parse(stdout);
+    assert.equal(stderr, '');
+    assert.equal(payload.ok, true);
+    assert.equal(payload.plan.package.id, 'linux-arm64-container');
+    assert.equal(payload.result.executedInstaller, false);
+    assert.equal(payload.result.releaseEnv.containsLocalDatabaseUrl, true);
+    assert.ok(!stdout.includes('[install-init-smoke] package:'));
+  } finally {
+    rmSync(fixtureRoot, { recursive: true, force: true });
+  }
+});
+
+test('install init smoke resolves installer binaries from package root and rejects missing package roots', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'smoke-install-package-init.mjs')).href
+  );
+
+  const fixtureRoot = path.join(workspaceRoot, '.tmp', 'install-init-smoke-package-root-test');
+  const packageRoot = path.join(fixtureRoot, 'package');
+  rmSync(fixtureRoot, { recursive: true, force: true });
+  mkdirSync(path.join(packageRoot, 'bin'), { recursive: true });
+  writeFileSync(path.join(packageRoot, 'bin', 'sdkwork-claw-installer'), 'installer-binary');
+
+  try {
+    const smokePlan = module.createInstallInitSmokePlan({
+      packageId: 'linux-x64-archive',
+      packageRoot,
+      tmpRoot: path.join(fixtureRoot, 'tmp'),
+      installerBin: 'bin/sdkwork-claw-installer',
+      requireInstaller: true,
+    });
+    assert.equal(smokePlan.packageRoot, packageRoot);
+    assert.equal(smokePlan.installerBin, path.join(packageRoot, 'bin', 'sdkwork-claw-installer'));
+    assert.deepEqual(module.validateInstallInitSmokePlan(smokePlan), []);
+
+    const missingRootPlan = module.createInstallInitSmokePlan({
+      packageId: 'linux-x64-archive',
+      packageRoot: path.join(fixtureRoot, 'missing-package'),
+      tmpRoot: path.join(fixtureRoot, 'tmp-missing'),
+      installerBin: 'bin/sdkwork-claw-installer',
+      requireInstaller: true,
+    });
+    assert.ok(
+      module.validateInstallInitSmokePlan(missingRootPlan)
+        .some((issue) => issue.includes('packageRoot must exist when provided')),
+    );
+  } finally {
+    rmSync(fixtureRoot, { recursive: true, force: true });
+  }
+});
+
 test('production SDK archiver creates deterministic ZIP artifacts for generated SDKs', async () => {
   const module = await import(
     pathToFileURL(path.join(workspaceRoot, 'scripts', 'archive-claw-router-sdks.mjs')).href

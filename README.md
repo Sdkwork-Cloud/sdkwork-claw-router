@@ -82,6 +82,7 @@ pnpm.cmd product:check
 pnpm.cmd install:packages:plan
 pnpm.cmd install:packages:check
 pnpm.cmd install:package:check
+pnpm.cmd install:init:smoke
 ```
 
 Validate the standalone model catalog before installer or release work:
@@ -201,6 +202,9 @@ Command intent:
   CI package-builder integration.
 - `pnpm.cmd install:package:check` validates the install package builder in
   dry-run mode without requiring staged production artifacts.
+- `pnpm.cmd install:init:smoke` validates the fast install initialization
+  contract in dry-run mode without starting services or requiring built
+  binaries.
 
 Use `pnpm.cmd`, not `pnpm.ps1`, on Windows shells that block PowerShell scripts.
 
@@ -517,6 +521,7 @@ Run the planner before wiring package builders:
 pnpm.cmd install:packages:plan
 pnpm.cmd install:packages:check
 pnpm.cmd install:package:check
+pnpm.cmd install:init:smoke
 node scripts/plan-claw-router-install-packages.mjs --json --check
 ```
 
@@ -579,6 +584,33 @@ entrypoint (`container/entrypoint` on Linux/macOS,
 `container/entrypoint.ps1` on Windows), and `container/metadata.json` without
 starting services. The builder excludes `.env.release.local` even if it exists
 in the staging directory. Add `--json` for pure machine-readable output.
+
+`scripts/smoke-install-package-init.mjs` validates the fast initialization
+contract separately from service startup. The default root command is a dry-run
+smoke that creates a temporary install root, writes a safe
+`.env.release.local`, verifies the SQLite initialization URL, verifies
+`sdkwork-claw-installer ensure` plus `sdkwork-claw-installer refresh-catalog
+--force` are the only installer actions, and confirms `/healthz` plus
+`/readyz` remain the readiness contract. It never starts `pnpm dev`, the live
+edge dev smoke, or production services.
+
+```powershell
+pnpm.cmd install:init:smoke
+node scripts/smoke-install-package-init.mjs --package-id linux-arm64-container --check --dry-run --json
+```
+
+On a release host with a staged package or built installer binary, upgrade the
+same smoke to a real installer check by passing `--installer-bin` and an
+isolated `--tmp-root`:
+
+```powershell
+node scripts/smoke-install-package-init.mjs --package-id linux-x64-archive --package-root dist\install-package-staging --installer-bin bin\sdkwork-claw-installer --tmp-root target\install-init-smoke\linux-x64 --check
+```
+
+Relative `--installer-bin` values are resolved from `--package-root` first, then
+from the workspace root. When `--package-root` is provided it must already
+exist, which prevents a typo from silently creating and validating an empty
+package directory.
 
 ## Production Browser Smoke
 
